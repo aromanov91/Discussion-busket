@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
+		3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
+		3A19C3F224FC2AE400FD67FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DE24FC2AE300FD67FB /* ContentView.swift */; };
+		3A19C3F324FC2AE400FD67FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DE24FC2AE300FD67FB /* ContentView.swift */; };
+		3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */; };
+		3A19C3F524FC2AE400FD67FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion_busketApp.swift; sourceTree = "<group>"; };
+		3A19C3DE24FC2AE300FD67FB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3A19C3E424FC2AE400FD67FB /* Discussion busket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discussion busket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A19C3E724FC2AE400FD67FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discussion busket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A19C3EE24FC2AE400FD67FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A19C3EF24FC2AE400FD67FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3A19C3E124FC2AE400FD67FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A19C3E924FC2AE400FD67FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3A19C3D724FC2AE300FD67FB = {
+			isa = PBXGroup;
+			children = (
+				3A19C3DC24FC2AE300FD67FB /* Shared */,
+				3A19C3E624FC2AE400FD67FB /* iOS */,
+				3A19C3ED24FC2AE400FD67FB /* macOS */,
+				3A19C3E524FC2AE400FD67FB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3A19C3DC24FC2AE300FD67FB /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */,
+				3A19C3DE24FC2AE300FD67FB /* ContentView.swift */,
+				3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		3A19C3E524FC2AE400FD67FB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3A19C3E424FC2AE400FD67FB /* Discussion busket.app */,
+				3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3A19C3E624FC2AE400FD67FB /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A19C3E724FC2AE400FD67FB /* Info.plist */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		3A19C3ED24FC2AE400FD67FB /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				3A19C3EE24FC2AE400FD67FB /* Info.plist */,
+				3A19C3EF24FC2AE400FD67FB /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3A19C3E324FC2AE400FD67FB /* Discussion busket (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (iOS)" */;
+			buildPhases = (
+				3A19C3E024FC2AE400FD67FB /* Sources */,
+				3A19C3E124FC2AE400FD67FB /* Frameworks */,
+				3A19C3E224FC2AE400FD67FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Discussion busket (iOS)";
+			productName = "Discussion busket (iOS)";
+			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3A19C3EB24FC2AE400FD67FB /* Discussion busket (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (macOS)" */;
+			buildPhases = (
+				3A19C3E824FC2AE400FD67FB /* Sources */,
+				3A19C3E924FC2AE400FD67FB /* Frameworks */,
+				3A19C3EA24FC2AE400FD67FB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Discussion busket (macOS)";
+			productName = "Discussion busket (macOS)";
+			productReference = 3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3A19C3D824FC2AE300FD67FB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					3A19C3E324FC2AE400FD67FB = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					3A19C3EB24FC2AE400FD67FB = {
+						CreatedOnToolsVersion = 12.0;
+					};
+				};
+			};
+			buildConfigurationList = 3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Discussion busket" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3A19C3D724FC2AE300FD67FB;
+			productRefGroup = 3A19C3E524FC2AE400FD67FB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3A19C3E324FC2AE400FD67FB /* Discussion busket (iOS) */,
+				3A19C3EB24FC2AE400FD67FB /* Discussion busket (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3A19C3E224FC2AE400FD67FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A19C3EA24FC2AE400FD67FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A19C3F524FC2AE400FD67FB /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3A19C3E024FC2AE400FD67FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A19C3F224FC2AE400FD67FB /* ContentView.swift in Sources */,
+				3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3A19C3E824FC2AE400FD67FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A19C3F324FC2AE400FD67FB /* ContentView.swift in Sources */,
+				3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3A19C3F624FC2AE400FD67FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3A19C3F724FC2AE400FD67FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		3A19C3F924FC2AE400FD67FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VF3N89U52T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_NAME = "Discussion busket";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3A19C3FA24FC2AE400FD67FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VF3N89U52T;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_NAME = "Discussion busket";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3A19C3FC24FC2AE400FD67FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VF3N89U52T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_NAME = "Discussion busket";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3A19C3FD24FC2AE400FD67FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VF3N89U52T;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = macOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_NAME = "Discussion busket";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Discussion busket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A19C3F624FC2AE400FD67FB /* Debug */,
+				3A19C3F724FC2AE400FD67FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A19C3F924FC2AE400FD67FB /* Debug */,
+				3A19C3FA24FC2AE400FD67FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3A19C3FC24FC2AE400FD67FB /* Debug */,
+				3A19C3FD24FC2AE400FD67FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3A19C3D824FC2AE300FD67FB /* Project object */;
+}
