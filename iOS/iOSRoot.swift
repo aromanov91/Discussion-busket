@@ -32,45 +32,46 @@ struct iOSRoot: View {
                     
                     
                 ListView()
-                    .animation(.interactiveSpring())
-                    .offset(x: self.position.width)
-                    .gesture(DragGesture()
-                                
-                                .onChanged{ value in
-                                    
-                                    self.position = value.translation
-                                    
-                                    print(value.translation)
-                                }
-                                
-                                .onEnded { value in
-                                    if value.translation.width < -geometry.size.width + 100  {
-                                        self.position.width = -geometry.size.width + 16
-                                        self.currentIndex = 0
-                                        
-                                        
-                                    } else if value.translation.width > geometry.size.width - 100 {
-                                        self.position.width = geometry.size.width - 16
-                                        self.currentIndex = 2
-                                        
-                                        
-                                        
-                                    } else {
-                                        self.position = .zero
-                                        self.currentIndex = 1
-                                    }
-                                    
-                                    print(value.translation)
-                                }
-                    )
+
                     
-                   
-                    //    ChatView()
+                //ChatView()
+                    
+                }                    .animation(.interactiveSpring())
+                .offset(x: self.position.width)
+                .gesture(DragGesture()
+                            
+                            .onChanged{ value in
+                                
+                                self.position = value.translation
+                                
+                                print(value.translation)
+                            }
+                            
+                            .onEnded { value in
+                                if value.translation.width < -geometry.size.width + 100  {
+                                    self.position.width = -geometry.size.width + 16
+                                    self.currentIndex = 0
+                                    
+                                    
+                                } else if value.translation.width > geometry.size.width - 100 {
+                                    self.position.width = geometry.size.width - 16
+                                    self.currentIndex = 2
+                                    
+                                    
+                                    
+                                } else {
+                                    self.position = .zero
+                                    self.currentIndex = 1
+                                }
+                                
+                                print(value.translation)
+                            }
+                )
                     
 
             }.ignoresSafeArea(edges: .bottom)
                 
-            }
+            
             
         }
     }
