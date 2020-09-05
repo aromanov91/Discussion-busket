@@ -11,7 +11,13 @@ import SwiftUI
 struct Discussion_busketApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            
+            #if os(macOS)
+                MacRoot()
+            #else
+                iOSRoot()
+            #endif
+            
         }
     }
 }
