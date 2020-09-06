@@ -9,8 +9,6 @@ import SwiftUI
 
 struct LeftMenu: View {
     var body: some View {
-      
-        
         
         VStack {
         
@@ -20,12 +18,6 @@ struct LeftMenu: View {
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
         .frame(minHeight: 0, maxHeight: .infinity)
-        .background(Color.red)
-        .cornerRadius(12)
-        .shadow(color: Color.black.opacity(0.12),
-                radius: 16,
-                x: 0,
-                y: 12)
     }
 }
 

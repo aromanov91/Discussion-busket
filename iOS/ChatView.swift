@@ -19,12 +19,7 @@ struct ChatView: View {
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
         .frame(minHeight: 0, maxHeight: .infinity)
-        .background(Color.blue)
-        .cornerRadius(12)
-        .shadow(color: Color.black.opacity(0.12),
-                radius: 16,
-                x: 0,
-                y: 12)
+        
     }
 }
 

@@ -10,9 +10,14 @@ import SwiftUI
 struct ListView: View {
     var body: some View {
         
+     
         VStack {
         
-        Text("Hello, World!")
+            List {
+                ForEach((1...200).reversed(), id: \.self) { item in
+                    Text("Item")
+                }
+            }
             
         }
         .padding(.all, 0)
