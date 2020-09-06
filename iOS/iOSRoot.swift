@@ -23,6 +23,8 @@ struct iOSRoot: View {
     
     @State var isShowMenu = false
     
+    @State var listOffset: CGFloat = -62
+    
     var body: some View {
         
         GeometryReader { geometry in
@@ -39,18 +41,20 @@ struct iOSRoot: View {
                                     nameAction: { listButtonsShowAction()},
                                     chatAction: { chatShowAction()})
                         
-                        
                         if isShowMenu {
-                        
-                        ListMenuButtons()
+                            
+                            ListMenuButtons()
                             
                         }
                         
+                        
+                        
                         ListView()
                             
-//
-                           .frame(width: geometry.size.width)
-//                            .offset(y: isShowMenu ? 0 : -70)
+                            
+                            .frame(width: geometry.size.width)
+                        
+                        
                         
                     }
                     
@@ -59,25 +63,27 @@ struct iOSRoot: View {
                 }
                 .frame(width: geometry.size.width, alignment: .leading)
                 .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
-                .offset(x: self.translation + ( self.currentIndex == 0 ? -20 : self.currentIndex == 2 ? 20 : 0 ))
-                .animation(.interactiveSpring())
+                .offset(x: self.translation + ( self.currentIndex == 0 ? -16 : self.currentIndex == 2 ? 16 : 0 ))
+                .animation(.easeInOut(duration: 0.26))
                 .gesture(
                     
-                    DragGesture().updating(self.$translation) { value, state, _ in
+                    DragGesture()
                         
-                        state = value.translation.width
-                        
-                        print(value.translation.width)
-                        
-                    }
-                    .onEnded { value in
-                        
-                        self.offset = value.translation.width / geometry.size.width
-                        
-                        let newIndex = (CGFloat(self.currentIndex) - self.offset).rounded()
-                        
-                        self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
-                    }
+                        .updating(self.$translation) { value, state, _ in
+                            
+                            state = value.translation.width
+                            
+                        }
+                        .onEnded { value in
+                            
+                            self.offset = value.translation.width / geometry.size.width
+                            
+                            let newIndex = (CGFloat(self.currentIndex) - self.offset).rounded()
+                            
+                            self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
+                            
+                            
+                        }
                 )
                 
             }.ignoresSafeArea(edges: .bottom)
@@ -86,7 +92,7 @@ struct iOSRoot: View {
     }
     
     private func menuShowAction() {
-          
+        
         
         currentIndex = 0
         print(currentIndex)
