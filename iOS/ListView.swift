@@ -13,6 +13,7 @@ struct ListView: View {
      
         VStack {
         
+            Spacer(minLength: 24)
             List {
                 ForEach((1...200).reversed(), id: \.self) { item in
                     Text("Item")
