@@ -26,10 +26,11 @@ struct HeadButtons: View {
     }
     
     var body: some View {
+        
         HStack {
             
-            Button(action: nameAction) {
-                Image(systemName: "line.horizontal.3").accentColor(Color.black).font(.title)
+            Button(action: menuAction) {
+                Image(systemName: "line.horizontal.3").accentColor(Color.black).font(.title2)
             }
             
             Spacer()
@@ -39,13 +40,12 @@ struct HeadButtons: View {
                     .fontWeight(.semibold)
                     .accentColor(Color.black)
                     .font(.title3)
-                    
             }
             
             Spacer()
             
             Button(action: chatAction) {
-                Image(systemName: "paperplane").accentColor(Color.black).font(.title)
+                Image(systemName: "paperplane").accentColor(Color.black).font(.title2)
             }
             
         }.padding()

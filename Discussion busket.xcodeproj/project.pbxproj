@@ -17,6 +17,7 @@
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
+		3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		3A7204FA250415AA00D04910 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		3AF2D7DE2504344300EB239C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		3AF2D7E02504352100EB239C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */,
 				3A19C40124FC2B6C00FD67FB /* HeadButtons.swift */,
 				3A7204FA250415AA00D04910 /* ListView.swift */,
+				3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */,
 				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
 				3AF2D7E02504352100EB239C /* ChatView.swift */,
 				3A19C3E724FC2AE400FD67FB /* Info.plist */,
@@ -203,6 +206,7 @@
 			files = (
 				3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
+				3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */,
 				3A7204FB250415AA00D04910 /* ListView.swift in Sources */,
 				3A19C40224FC2B6C00FD67FB /* HeadButtons.swift in Sources */,
 				3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,

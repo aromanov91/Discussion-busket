@@ -13,13 +13,15 @@ struct iOSRoot: View {
     
     @State var currentIndex = 1
     
-    @State var position = CGSize.zero
+    //@State var position = CGSize.zero
     
     @State var  positionHeight = CGSize.zero
     
     @GestureState private var translation: CGFloat = 0
     
     @State var offset: CGFloat = 0
+    
+    @State var isShowMenu = false
     
     var body: some View {
         
@@ -30,28 +32,46 @@ struct iOSRoot: View {
                 HStack(spacing: 0) {
                     
                     LeftMenu().frame(width: geometry.size.width)
-
+                    
                     VStack {
                         
-                        HeadButtons(menuAction: {}, nameAction: {}, chatAction: {})
-                    ListView().frame(width: geometry.size.width)
-                                                                       
+                        HeadButtons(menuAction: { menuShowAction()},
+                                    nameAction: { listButtonsShowAction()},
+                                    chatAction: { chatShowAction()})
+                        
+                        
+                        if isShowMenu {
+                        
+                        ListMenuButtons()
+                            
+                        }
+                        
+                        ListView()
+                            
+//
+                           .frame(width: geometry.size.width)
+//                            .offset(y: isShowMenu ? 0 : -70)
+                        
                     }
                     
                     ChatView().frame(width: geometry.size.width)
-
+                    
                 }
                 .frame(width: geometry.size.width, alignment: .leading)
                 .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
                 .offset(x: self.translation + ( self.currentIndex == 0 ? -20 : self.currentIndex == 2 ? 20 : 0 ))
                 .animation(.interactiveSpring())
                 .gesture(
+                    
                     DragGesture().updating(self.$translation) { value, state, _ in
+                        
                         state = value.translation.width
-
+                        
                         print(value.translation.width)
                         
-                    }.onEnded { value in
+                    }
+                    .onEnded { value in
+                        
                         self.offset = value.translation.width / geometry.size.width
                         
                         let newIndex = (CGFloat(self.currentIndex) - self.offset).rounded()
@@ -59,10 +79,30 @@ struct iOSRoot: View {
                         self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
                     }
                 )
-
+                
             }.ignoresSafeArea(edges: .bottom)
-
+            
         }
+    }
+    
+    private func menuShowAction() {
+          
+        
+        currentIndex = 0
+        print(currentIndex)
+    }
+    
+    private func listButtonsShowAction() {
+        
+        isShowMenu.toggle()
+        
+    }
+    
+    private func chatShowAction() {
+        
+        currentIndex = 2
+        print(currentIndex)
+        
     }
 }
 
@@ -70,15 +110,15 @@ struct PagerView<Content: View>: View {
     let pageCount: Int
     @Binding var currentIndex: Int
     let content: Content
-
+    
     @GestureState private var translation: CGFloat = 0
-
+    
     init(pageCount: Int, currentIndex: Binding<Int>, @ViewBuilder content: () -> Content) {
         self.pageCount = pageCount
         self._currentIndex = currentIndex
         self.content = content()
     }
-
+    
     var body: some View {
         GeometryReader { geometry in
             HStack(spacing: 0) {
