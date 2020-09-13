@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import M7Native
 
 struct HeadButtons: View {
     
@@ -30,22 +31,19 @@ struct HeadButtons: View {
         HStack {
             
             Button(action: menuAction) {
-                Image(systemName: "line.horizontal.3").accentColor(Color.black).font(.title2)
+                M7Icon(.menuLine2)
             }
             
             Spacer()
             
             Button(action: nameAction) {
-                Text("Для дома")
-                    .fontWeight(.semibold)
-                    .accentColor(Color.black)
-                    .font(.title3)
+                M7Text("Для дома", style: .title3).accentColor(M7Colors.onBackground.highEmphasis)
             }
             
             Spacer()
             
             Button(action: chatAction) {
-                Image(systemName: "paperplane").accentColor(Color.black).font(.title2)
+                M7Icon(.send)
             }
             
         }.padding()

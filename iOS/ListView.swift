@@ -11,8 +11,6 @@ struct ListView: View {
     var body: some View {
         
         VStack {
-        
-            Spacer(minLength: 24)
             List {
                 ForEach((1...200).reversed(), id: \.self) { item in
                     Text("Item")
@@ -23,7 +21,7 @@ struct ListView: View {
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
         .frame(minHeight: 0, maxHeight: .infinity)
-        .background(Color.blue)
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(12)
         .shadow(color: Color.black.opacity(0.12),
                 radius: 16,

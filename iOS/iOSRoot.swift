@@ -21,14 +21,16 @@ struct iOSRoot: View {
     
     
     var body: some View {
-        
+
         GeometryReader { geometry in
             
-            VStack {
-                
+            ZStack {
+
                 PagesSliderView(pageCount: pageCount, currentIndex: $currentIndex) {
                     
                     LeftMenu().frame(width: geometry.size.width)
+                    
+                    
                     
                     VStack {
                         
@@ -36,7 +38,11 @@ struct iOSRoot: View {
                                     nameAction: { listButtonsShowAction()},
                                     chatAction: { chatShowAction()})
                         
+                        
+                        
                         if isShowMenu {
+                            
+                            Divider()
                             
                             ListMenuButtons()
                             
@@ -45,20 +51,28 @@ struct iOSRoot: View {
                         
                         
                         ListView()
+                            .frame(maxHeight: currentIndex != 1 ? geometry.size.height - 80 : .infinity )
                             
-                            
-                            .frame(width: geometry.size.width)
                         
                         
-                        
-                    }
                     
+                    }
                     ChatView().frame(width: geometry.size.width)
                     
                 }
+                .padding(.trailing, geometry.safeAreaInsets.trailing)
+                .padding(.leading, geometry.safeAreaInsets.leading)
+                .padding(.top, geometry.safeAreaInsets.top)
+                .onAppear() {
+                    print("dfsd" + "\(geometry.safeAreaInsets.top)")
+                }
 
                 
-            }.ignoresSafeArea(edges: .bottom)
+            
+            .background(Color(UIColor.systemGroupedBackground))
+       
+            
+        }.ignoresSafeArea(edges: .all)
             
         }
     }
@@ -72,6 +86,8 @@ struct iOSRoot: View {
     private func listButtonsShowAction() {
         
         isShowMenu.toggle()
+        
+        
     }
     
     private func chatShowAction() {
@@ -83,6 +99,10 @@ struct iOSRoot: View {
 
 struct iOSRoot_Previews: PreviewProvider {
     static var previews: some View {
-        iOSRoot()
+        Group {
+            iOSRoot()
+            iOSRoot()
+                .previewDevice("iPhone SE (2nd generation)")
+        }
     }
 }

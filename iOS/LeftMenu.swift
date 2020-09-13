@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct LeftMenu: View {
+    
     var body: some View {
-        
-        VStack {
-        
-            Text("Меню")
+       
+            VStack {
+                
+                UserProfileButton(firstName: "Alex",
+                                  lastName: "Rom",
+                                  email: "aromanov07@gmail.com",
+                                  action: { print(#function) })
+                
+                Spacer()
+                
+            }
+            .padding(.all, 0)
+            .frame(minWidth: 0, maxWidth: .infinity)
+            .frame(minHeight: 0, maxHeight: .infinity)
+            
             
         }
-        .padding(.all, 0)
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .frame(minHeight: 0, maxHeight: .infinity)
-    }
+    
 }
 
 struct LeftMenu_Previews: PreviewProvider {

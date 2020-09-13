@@ -27,8 +27,6 @@ struct ListMenuButtons: View {
         }
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
-        //.frame(height: .infinity)
-        .background(Color.green)
 
         
     }

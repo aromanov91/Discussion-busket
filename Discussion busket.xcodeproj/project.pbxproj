@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,10 +15,18 @@
 		3A1C0B1D25040E600087E5E3 /* iOSRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */; };
 		3A1C0B2025040E630087E5E3 /* MacRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C0B1C25040B350087E5E3 /* MacRoot.swift */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
+		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
 		3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */; };
 		3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E42505857300EB239C /* PagesSliderView.swift */; };
+		3AF369B7250E3C57005D934F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B5250E3C56005D934F /* Colors.xcassets */; };
+		3AF369B8250E3C57005D934F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B5250E3C56005D934F /* Colors.xcassets */; };
+		3AF369B9250E3C57005D934F /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B6250E3C57005D934F /* Icons.xcassets */; };
+		3AF369BA250E3C57005D934F /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B6250E3C57005D934F /* Icons.xcassets */; };
+		3AF369BD250E4042005D934F /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF369BC250E4042005D934F /* M7Native */; };
+		3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF369BE250E41F2005D934F /* ListInfoCard.swift */; };
+		3AF369C0250E41F2005D934F /* ListInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF369BE250E41F2005D934F /* ListInfoCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,10 +41,14 @@
 		3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSRoot.swift; sourceTree = "<group>"; };
 		3A1C0B1C25040B350087E5E3 /* MacRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRoot.swift; sourceTree = "<group>"; };
 		3A7204FA250415AA00D04910 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
+		3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
 		3AF2D7DE2504344300EB239C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		3AF2D7E02504352100EB239C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuButtons.swift; sourceTree = "<group>"; };
 		3AF2D7E42505857300EB239C /* PagesSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesSliderView.swift; sourceTree = "<group>"; };
+		3AF369B5250E3C56005D934F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3AF369B6250E3C57005D934F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		3AF369BE250E41F2005D934F /* ListInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF369BD250E4042005D934F /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */,
+				3AF369B5250E3C56005D934F /* Colors.xcassets */,
+				3AF369B6250E3C57005D934F /* Icons.xcassets */,
 				3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -111,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				3A19C40124FC2B6C00FD67FB /* HeadButtons.swift */,
-				3A7204FA250415AA00D04910 /* ListView.swift */,
 				3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */,
+				3A7204FA250415AA00D04910 /* ListView.swift */,
 			);
 			name = ListView;
 			sourceTree = "<group>";
@@ -129,6 +144,8 @@
 		3AF2D7E8250585DE00EB239C /* LeftBar */ = {
 			isa = PBXGroup;
 			children = (
+				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
+				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
 				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
 			);
 			name = LeftBar;
@@ -158,6 +175,9 @@
 			dependencies = (
 			);
 			name = "Discussion busket (iOS)";
+			packageProductDependencies = (
+				3AF369BC250E4042005D934F /* M7Native */,
+			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
 			productType = "com.apple.product-type.application";
@@ -205,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 3A19C3D724FC2AE300FD67FB;
+			packageReferences = (
+				3AF369BB250E4042005D934F /* XCRemoteSwiftPackageReference "M7Native" */,
+			);
 			productRefGroup = 3A19C3E524FC2AE400FD67FB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -221,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */,
+				3AF369B9250E3C57005D934F /* Icons.xcassets in Resources */,
+				3AF369B7250E3C57005D934F /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +254,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A19C3F524FC2AE400FD67FB /* Assets.xcassets in Resources */,
+				3AF369BA250E3C57005D934F /* Icons.xcassets in Resources */,
+				3AF369B8250E3C57005D934F /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +267,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */,
+				3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */,
+				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
 				3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */,
 				3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */,
@@ -255,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1C0B2025040E630087E5E3 /* MacRoot.swift in Sources */,
+				3AF369C0250E41F2005D934F /* ListInfoCard.swift in Sources */,
 				3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,7 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VF3N89U52T;
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -401,7 +431,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VF3N89U52T;
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -497,6 +527,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3AF369BB250E4042005D934F /* XCRemoteSwiftPackageReference "M7Native" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aromanov91/M7Native.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3AF369BC250E4042005D934F /* M7Native */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3AF369BB250E4042005D934F /* XCRemoteSwiftPackageReference "M7Native" */;
+			productName = M7Native;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3A19C3D824FC2AE300FD67FB /* Project object */;
 }
