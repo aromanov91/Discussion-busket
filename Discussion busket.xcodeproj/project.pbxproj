@@ -11,14 +11,14 @@
 		3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
 		3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */; };
 		3A19C3F524FC2AE400FD67FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */; };
-		3A19C40224FC2B6C00FD67FB /* HeadButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C40124FC2B6C00FD67FB /* HeadButtons.swift */; };
+		3A19C40224FC2B6C00FD67FB /* ListTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C40124FC2B6C00FD67FB /* ListTitle.swift */; };
 		3A1C0B1D25040E600087E5E3 /* iOSRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */; };
 		3A1C0B2025040E630087E5E3 /* MacRoot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C0B1C25040B350087E5E3 /* MacRoot.swift */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
-		3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */; };
+		3AF2D7E32505759D00EB239C /* ListTitleMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListTitleMenuButtons.swift */; };
 		3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E42505857300EB239C /* PagesSliderView.swift */; };
 		3AF369B7250E3C57005D934F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B5250E3C56005D934F /* Colors.xcassets */; };
 		3AF369B8250E3C57005D934F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF369B5250E3C56005D934F /* Colors.xcassets */; };
@@ -27,6 +27,7 @@
 		3AF369BD250E4042005D934F /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3AF369BC250E4042005D934F /* M7Native */; };
 		3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF369BE250E41F2005D934F /* ListInfoCard.swift */; };
 		3AF369C0250E41F2005D934F /* ListInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF369BE250E41F2005D934F /* ListInfoCard.swift */; };
+		3AF369C2250E74BE005D934F /* ListTitleMenuButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF369C1250E74BE005D934F /* ListTitleMenuButtonRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,18 +38,19 @@
 		3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discussion busket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A19C3EE24FC2AE400FD67FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A19C3EF24FC2AE400FD67FB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
-		3A19C40124FC2B6C00FD67FB /* HeadButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadButtons.swift; sourceTree = "<group>"; };
+		3A19C40124FC2B6C00FD67FB /* ListTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTitle.swift; sourceTree = "<group>"; };
 		3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSRoot.swift; sourceTree = "<group>"; };
 		3A1C0B1C25040B350087E5E3 /* MacRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRoot.swift; sourceTree = "<group>"; };
 		3A7204FA250415AA00D04910 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
 		3AF2D7DE2504344300EB239C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
 		3AF2D7E02504352100EB239C /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
-		3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListMenuButtons.swift; sourceTree = "<group>"; };
+		3AF2D7E22505759D00EB239C /* ListTitleMenuButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTitleMenuButtons.swift; sourceTree = "<group>"; };
 		3AF2D7E42505857300EB239C /* PagesSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagesSliderView.swift; sourceTree = "<group>"; };
 		3AF369B5250E3C56005D934F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3AF369B6250E3C57005D934F /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		3AF369BE250E41F2005D934F /* ListInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListInfoCard.swift; sourceTree = "<group>"; };
+		3AF369C1250E74BE005D934F /* ListTitleMenuButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTitleMenuButtonRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				3AF2D7E7250585C200EB239C /* Root */,
-				3AF2D7E8250585DE00EB239C /* LeftBar */,
 				3AF2D7E6250585A100EB239C /* ListView */,
+				3AF2D7E8250585DE00EB239C /* LeftBar */,
 				3AF2D7E9250585FD00EB239C /* ChatView */,
 				3A19C3E724FC2AE400FD67FB /* Info.plist */,
 			);
@@ -125,8 +127,9 @@
 		3AF2D7E6250585A100EB239C /* ListView */ = {
 			isa = PBXGroup;
 			children = (
-				3A19C40124FC2B6C00FD67FB /* HeadButtons.swift */,
-				3AF2D7E22505759D00EB239C /* ListMenuButtons.swift */,
+				3A19C40124FC2B6C00FD67FB /* ListTitle.swift */,
+				3AF2D7E22505759D00EB239C /* ListTitleMenuButtons.swift */,
+				3AF369C1250E74BE005D934F /* ListTitleMenuButtonRow.swift */,
 				3A7204FA250415AA00D04910 /* ListView.swift */,
 			);
 			name = ListView;
@@ -271,9 +274,10 @@
 				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
 				3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */,
-				3AF2D7E32505759D00EB239C /* ListMenuButtons.swift in Sources */,
+				3AF2D7E32505759D00EB239C /* ListTitleMenuButtons.swift in Sources */,
 				3A7204FB250415AA00D04910 /* ListView.swift in Sources */,
-				3A19C40224FC2B6C00FD67FB /* HeadButtons.swift in Sources */,
+				3AF369C2250E74BE005D934F /* ListTitleMenuButtonRow.swift in Sources */,
+				3A19C40224FC2B6C00FD67FB /* ListTitle.swift in Sources */,
 				3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
 				3A1C0B1D25040E600087E5E3 /* iOSRoot.swift in Sources */,
 			);

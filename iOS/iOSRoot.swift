@@ -21,41 +21,39 @@ struct iOSRoot: View {
     
     
     var body: some View {
-
+        
         GeometryReader { geometry in
             
             ZStack {
-
+                
                 PagesSliderView(pageCount: pageCount, currentIndex: $currentIndex) {
                     
                     LeftMenu().frame(width: geometry.size.width)
                     
                     
                     
-                    VStack {
+                    VStack(spacing: 0) {
                         
-                        HeadButtons(menuAction: { menuShowAction()},
-                                    nameAction: { listButtonsShowAction()},
-                                    chatAction: { chatShowAction()})
+                        ListTitle(menuAction: { menuShowAction()},
+                                  nameAction: { listButtonsShowAction()},
+                                  chatAction: { chatShowAction()})
                         
                         
                         
                         if isShowMenu {
-                            
+
                             Divider()
-                            
-                            ListMenuButtons()
-                            
+
+                            ListTitleMenuButtons(renameAction: { renameAction() },
+                                                 addUserAction: { addUserAction() },
+                                                 historyAction: { historyAction() },
+                                                 deleteAction: { deleteAction() })
+
                         }
-                        
-                        
                         
                         ListView()
                             .frame(maxHeight: currentIndex != 1 ? geometry.size.height - 80 : .infinity )
-                            
                         
-                        
-                    
                     }
                     ChatView().frame(width: geometry.size.width)
                     
@@ -63,18 +61,12 @@ struct iOSRoot: View {
                 .padding(.trailing, geometry.safeAreaInsets.trailing)
                 .padding(.leading, geometry.safeAreaInsets.leading)
                 .padding(.top, geometry.safeAreaInsets.top)
-                .onAppear() {
-                    print("dfsd" + "\(geometry.safeAreaInsets.top)")
-                }
-
+                .background(Color(UIColor.systemGroupedBackground))
                 
-            
-            .background(Color(UIColor.systemGroupedBackground))
-       
-            
-        }.ignoresSafeArea(edges: .all)
+            }.ignoresSafeArea(edges: .all)
             
         }
+        
     }
     
     private func menuShowAction() {
@@ -87,7 +79,6 @@ struct iOSRoot: View {
         
         isShowMenu.toggle()
         
-        
     }
     
     private func chatShowAction() {
@@ -95,12 +86,18 @@ struct iOSRoot: View {
         currentIndex = 2
         print(currentIndex)
     }
+    
+    private func renameAction() {}
+    private func addUserAction() {}
+    private func historyAction() {}
+    private func deleteAction() {}
 }
 
 struct iOSRoot_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             iOSRoot()
+                .previewDevice("iPhone X")
             iOSRoot()
                 .previewDevice("iPhone SE (2nd generation)")
         }

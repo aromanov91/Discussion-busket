@@ -8,7 +8,7 @@
 import SwiftUI
 import M7Native
 
-struct HeadButtons: View {
+struct ListTitle: View {
     
     let menuAction: () -> Void
     
@@ -46,13 +46,13 @@ struct HeadButtons: View {
                 M7Icon(.send)
             }
             
-        }.padding()
+        }.padding(.all, M7Space.m)
     }
 }
 
 struct HeadButtons_Previews: PreviewProvider {
     static var previews: some View {
-        HeadButtons(menuAction: { print(#function)},
+        ListTitle(menuAction: { print(#function)},
                     nameAction: { print(#function)},
                     chatAction: { print(#function)})
     }
