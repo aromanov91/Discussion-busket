@@ -19,7 +19,7 @@ struct ListInfoCard: View {
         M7Surface(elevation: .z1, background: .primary, padding: .s) {
             
             
-            HStack {
+            HStack(spacing: M7Space.xs) {
                 
                 Image("user")
                     .frame(width: 48, height: 48)
@@ -30,16 +30,45 @@ struct ListInfoCard: View {
                     
                     HStack {
                         
-                        M7Text("Название", style: .subtitle1, color: M7Colors.onSurface.highEmphasis)
+                        M7Text("Название", style: .subtitle1, color: .onSurfaceHighEmphasis)
                         
                         Spacer()
                         
-                        M7Icon(.chevronDown)
+                        HStack(spacing: -8) {
+                            
+                            Image("user")
+                                .frame(width: 24, height: 24)
+                                .background(M7Colors.surface.tertiary)
+                                .cornerRadius(12)
+                                .overlay(RoundedRectangle(cornerRadius: 12)
+                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
+                            
+                            
+                            
+                            
+                            
+                            Image("user")
+                                .frame(width: 24, height: 24)
+                                .background(M7Colors.surface.tertiary)
+                                .cornerRadius(12)
+                                .overlay(RoundedRectangle(cornerRadius: 12)
+                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
+                            
+                            
+                            Circle()
+                                .frame(width: 24, height: 24)
+                                .background(M7Colors.surface.tertiary)
+                                .cornerRadius(12)
+                                .overlay(RoundedRectangle(cornerRadius: 12)
+                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
+                            
+                            
+                        }.offset(x: M7Space.s + M7Space.xxxs)
                         
                     }
                     
                     
-                    M7Text("Описание", style: .caption, color: M7Colors.onBackground.mediumEmphasis)
+                    M7Text("Описание", style: .caption, color: .onSurfaceMediumEmphasis)
                 }
                 
                 Spacer()

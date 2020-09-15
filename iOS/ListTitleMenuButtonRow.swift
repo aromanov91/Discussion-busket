@@ -13,13 +13,13 @@ struct ListTitleMenuButtonRow: View {
     let icon: M7IconNames
     let title: String
     let rowAction: () -> Void
-    let color: Color
+    let color: M7Color
     
     private struct Constans {
         static var textSpasing: CGFloat { return M7Space.xs }
     }
     
-    public init(icon: M7IconNames, title: String, color: Color = M7Colors.onBackground.highEmphasis, rowAction: @escaping () -> Void) {
+    public init(icon: M7IconNames, title: String, color: M7Color = .onBackgroundHighEmphasis, rowAction: @escaping () -> Void) {
         self.icon = icon
         self.title = title
         self.color = color
@@ -31,7 +31,7 @@ struct ListTitleMenuButtonRow: View {
         
         Button(action: rowAction, label: {
            
-            M7Icon(icon)
+            M7Icon(icon, color: color)
             
             Spacer().frame(width: Constans.textSpasing)
             
@@ -46,7 +46,7 @@ struct ListTitleMenuButtonRow: View {
 
 struct ListTitleOptionRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListTitleMenuButtonRow(icon: .airplay, title: "Memu", color: M7Colors.onSurface.highEmphasis, rowAction: { print() })
+        ListTitleMenuButtonRow(icon: .send, title: "Memu", color: .error, rowAction: { print() })
             .previewLayout(.sizeThatFits)
             .frame(width: 375.0, height: 80.0)
     }

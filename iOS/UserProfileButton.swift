@@ -43,7 +43,7 @@ struct UserProfileButton: View {
                 
                 VStack(alignment: .leading, spacing: Constans.textSpasing) {
                     M7Text("\(firstName)" + " " + "\(lastName)", style: .subtitle1)
-                    M7Text(email, style: .caption, color: M7Colors.onBackground.mediumEmphasis)
+                    M7Text(email, style: .caption, color: .onBackgroundMediumEmphasis)
                 }
                 
                 Spacer()

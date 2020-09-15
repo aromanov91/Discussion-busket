@@ -6,28 +6,74 @@
 //
 
 import SwiftUI
+import M7Native
 
 struct LeftMenu: View {
     
+    @State var proVersion = false
+    
+    @State var showProfileView = false
+    
+    @State var showSettingsView = false
+    
     var body: some View {
-       
-            VStack {
+        
+        VStack(spacing: .zero) {
+            
+            Spacer().frame(height: M7Space.s)
+            
+            ScrollView {
                 
-                UserProfileButton(firstName: "Alex",
-                                  lastName: "Rom",
-                                  email: "aromanov07@gmail.com",
-                                  action: { print(#function) })
-                
-                Spacer()
+                HStack(spacing: .zero) {
+
+                    VStack(spacing: .zero) {
+
+                        UserProfileButton(firstName: "Alex",
+                                          lastName: "Rom",
+                                          email: "aromanov07@gmail.com",
+                                          action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
+                                            ProfileView()
+                                          })
+                        
+                        
+                        Spacer().frame(height: M7Space.l)
+                        
+                        ForEach(0..<3) { item in
+                            ListInfoCard()
+                                .padding(.bottom, M7Space.m)
+                        }
+                        
+                    }
+                    
+                    Spacer().frame(width: M7Space.m)
+                }
                 
             }
-            .padding(.all, 0)
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .frame(minHeight: 0, maxHeight: .infinity)
             
-            
+            HStack {
+                
+                VStack {
+                    
+                    if !proVersion {
+                        
+                        ProVersonBanner()
+                        
+                    }
+                    
+                    ListTitleMenuButtonRow(icon: .settingsHexagon,
+                                           title: "Настройки",
+                                           color: .onBackgroundHighEmphasis,
+                                           rowAction: { showSettingsView.toggle() })
+                        .padding(.vertical, M7Space.m)
+                        .sheet(isPresented: $showSettingsView, content: {
+                            SettingsView()
+                        })
+                }
+                
+                Spacer().frame(width: M7Space.m)
+            }
         }
-    
+    }
 }
 
 struct LeftMenu_Previews: PreviewProvider {

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import M7Native
 
 struct iOSRoot: View {
     
@@ -28,34 +29,45 @@ struct iOSRoot: View {
                 
                 PagesSliderView(pageCount: pageCount, currentIndex: $currentIndex) {
                     
-                    LeftMenu().frame(width: geometry.size.width)
+                    HStack {
+                        
+                        Spacer().frame(width: M7Space.s + M7Space.m)
+                        
+                        LeftMenu().padding(.bottom, geometry.safeAreaInsets.bottom)
+                        
+                    }
                     
-                    
-                    
-                    VStack(spacing: 0) {
+                    VStack(spacing: .zero) {
                         
                         ListTitle(menuAction: { menuShowAction()},
                                   nameAction: { listButtonsShowAction()},
                                   chatAction: { chatShowAction()})
                         
-                        
-                        
                         if isShowMenu {
-
+                            
                             Divider()
-
+                            
                             ListTitleMenuButtons(renameAction: { renameAction() },
                                                  addUserAction: { addUserAction() },
                                                  historyAction: { historyAction() },
                                                  deleteAction: { deleteAction() })
-
+                            
                         }
                         
                         ListView()
-                            .frame(maxHeight: currentIndex != 1 ? geometry.size.height - 80 : .infinity )
+                            .frame(maxHeight: currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
                         
                     }
-                    ChatView().frame(width: geometry.size.width)
+                    
+                    HStack {
+                        
+                        Spacer().frame(width: M7Space.m)
+                        
+                        ChatView()
+                        
+                        Spacer().frame(width: M7Space.s + M7Space.m)
+                        
+                    }
                     
                 }
                 .padding(.trailing, geometry.safeAreaInsets.trailing)

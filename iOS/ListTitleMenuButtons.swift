@@ -33,13 +33,13 @@ struct ListTitleMenuButtons: View {
         
         VStack(spacing: M7Space.l) {
            
-            ListTitleMenuButtonRow(icon: .type, title: "Переименовать", rowAction: renameAction )
+            ListTitleMenuButtonRow(icon: .newItem, title: "Переименовать", rowAction: renameAction )
             
             ListTitleMenuButtonRow(icon: .userAdd, title: "Пригласить", rowAction: renameAction )
             
-            ListTitleMenuButtonRow(icon: .book, title: "История", rowAction: renameAction )
+            ListTitleMenuButtonRow(icon: .book, title: "История", rowAction: renameAction)
             
-            ListTitleMenuButtonRow(icon: .trash2, title: "Удалить", color: M7Colors.error, rowAction: renameAction )
+            ListTitleMenuButtonRow(icon: .trash2, title: "Удалить", color: .error, rowAction: renameAction )
             
         }
         .padding(.all, M7Space.m)
