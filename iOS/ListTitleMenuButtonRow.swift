@@ -34,7 +34,7 @@ struct ListTitleMenuButtonRow: View {
             M7Icon(icon, color: color)
             
             Spacer().frame(width: Constans.textSpasing)
-            
+        
             M7Text(title, style: .button, color: color)
             
             Spacer()

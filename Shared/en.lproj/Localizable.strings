@@ -6,26 +6,3 @@
   
 */
 
-// Action buttons
-"Action.CancelButton" = "Cancel";
-"Action.AddButton" = "Add";
-"StoryList.DeleteButton" = "Delete";
-
-// Settings
-"Settings.SubscriptionTitle" = "Premium";
-
-"Settings.SupportSectionTitle" = "Support";
-"Settings.ReviewAppStoreTitle" = "Leave a review";
-"Settings.FeedbakToAuthorTitle" = "Write to the author";
-"Settings.TelegramChatTitle" = "Chat to Telegram";
-
-//Subscription
-"Subscriptions.Navbar.Title" = "Subscription";
-"Subscriptions.InfoBlock.Title" = "Get Premium";
-"Subscriptions.InfoBlock.Description" = "Listen to your favorite radio stations without ads and background";
-"Subscriptions.Navbar.RestoreButton.Title" = "Restore";
-"Subscriptions.Price.Month" = " / month";
-"Subscriptions.Price.Year" = " / year";
-"Subscriptions.Footer.Info" = "Payment will be charged to your Apple ID account at the confirmation of purchase. Subscription automatically renews unless it canceled at lasted 24 hours before the end of the current period. Your account will be charged for renewal within 24 hours prior to the end of the current period. You can manage and cancel your subscriptions by going to your account settings on the App Store after purchase.";
-"Subscriptions.Active" = "Active";
-"Subscriptions.NotActive" = "Not active";

@@ -21,7 +21,7 @@ struct ListInfoCard: View {
             
             HStack(spacing: M7Space.xs) {
                 
-                Image("user")
+                M7Icon(.user)
                     .frame(width: 48, height: 48)
                     .background(M7Colors.surface.secondary)
                     .cornerRadius(12)
