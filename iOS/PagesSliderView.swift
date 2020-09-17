@@ -28,7 +28,7 @@ struct PagesSliderView<Content: View>: View {
             .frame(width: geometry.size.width, alignment: .leading)
             .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
             .offset(x: self.translation + ( self.currentIndex == 0 ? -16 : self.currentIndex == 2 ? 16 : 0 ))
-            .animation(.easeInOut(duration: 0.26))
+            .animation(.easeOut(duration: 0.1))
             .gesture(
                 
                 DragGesture()

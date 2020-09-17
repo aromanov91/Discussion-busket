@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A0B522725129842009F9F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B522625129842009F9F12 /* LaunchScreen.storyboard */; };
 		3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
 		3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
 		3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */; };
@@ -19,9 +20,10 @@
 		3A22A9B1251079DC00404E2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3A22A9B3251079DC00404E2E /* Localizable.strings */; };
 		3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */; };
 		3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */; };
-		3A3C1CF4250F2DDF0076D0C0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF3250F2DDF0076D0C0 /* SettingsView.swift */; };
+		3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
+		3ACADB3625114DE90012921A /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACADB3525114DE90012921A /* M7Native */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
 		3AF2D7E32505759D00EB239C /* ListTitleMenuButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListTitleMenuButtons.swift */; };
@@ -32,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A0B522625129842009F9F12 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion_busketApp.swift; sourceTree = "<group>"; };
 		3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A19C3E424FC2AE400FD67FB /* Discussion busket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Discussion busket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,7 +50,7 @@
 		3A22A9B4251079DF00404E2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProVersonBanner.swift; sourceTree = "<group>"; };
 		3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		3A3C1CF3250F2DDF0076D0C0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelView.swift; sourceTree = "<group>"; };
 		3A7204FA250415AA00D04910 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
 		3AF2D7DE2504344300EB239C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3ACADB3625114DE90012921A /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,12 +115,13 @@
 		3A19C3E624FC2AE400FD67FB /* iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3A0B522625129842009F9F12 /* LaunchScreen.storyboard */,
 				3AF2D7E7250585C200EB239C /* Root */,
 				3AF2D7E6250585A100EB239C /* ListView */,
 				3AF2D7E8250585DE00EB239C /* LeftBar */,
 				3AF2D7E9250585FD00EB239C /* ChatView */,
 				3A22A995251077A600404E2E /* Settings */,
-				3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */,
+				3AA8907F2512AEBF00B56126 /* Profile */,
 				3A19C3E724FC2AE400FD67FB /* Info.plist */,
 			);
 			path = iOS;
@@ -142,9 +147,17 @@
 		3A22A995251077A600404E2E /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				3A3C1CF3250F2DDF0076D0C0 /* SettingsView.swift */,
+				3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		3AA8907F2512AEBF00B56126 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		3AF2D7E6250585A100EB239C /* ListView */ = {
@@ -170,10 +183,10 @@
 		3AF2D7E8250585DE00EB239C /* LeftBar */ = {
 			isa = PBXGroup;
 			children = (
+				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
 				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
 				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
 				3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */,
-				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
 			);
 			name = LeftBar;
 			sourceTree = "<group>";
@@ -222,6 +235,9 @@
 			dependencies = (
 			);
 			name = "Discussion busket (macOS)";
+			packageProductDependencies = (
+				3ACADB3525114DE90012921A /* M7Native */,
+			);
 			productName = "Discussion busket (macOS)";
 			productReference = 3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */;
 			productType = "com.apple.product-type.application";
@@ -270,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0B522725129842009F9F12 /* LaunchScreen.storyboard in Resources */,
 				3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */,
 				3A22A9B0251079DC00404E2E /* Localizable.strings in Resources */,
 			);
@@ -298,7 +315,7 @@
 				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
 				3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */,
-				3A3C1CF4250F2DDF0076D0C0 /* SettingsView.swift in Sources */,
+				3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */,
 				3AF2D7E32505759D00EB239C /* ListTitleMenuButtons.swift in Sources */,
 				3A7204FB250415AA00D04910 /* ListView.swift in Sources */,
 				3AF369C2250E74BE005D934F /* ListTitleMenuButtonRow.swift in Sources */,
@@ -385,6 +402,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -439,6 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -450,12 +469,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -472,12 +490,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,7 +516,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VF3N89U52T;
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -523,7 +540,7 @@
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VF3N89U52T;
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = macOS/Info.plist;
@@ -573,6 +590,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		3A22A993251075FD00404E2E /* M7Native */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7Native;
+		};
+		3ACADB3525114DE90012921A /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;
 		};

@@ -75,7 +75,7 @@ struct iOSRoot: View {
                 .padding(.top, geometry.safeAreaInsets.top)
                 .background(Color(UIColor.systemGroupedBackground))
                 
-            }.ignoresSafeArea(edges: .all)
+            }.edgesIgnoringSafeArea(.all)
             
         }
         

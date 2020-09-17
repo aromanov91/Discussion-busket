@@ -29,8 +29,7 @@ struct ProfileView: View {
                 }
                 
                 
-                List {
-                    
+                M7List(style: .insetGroupedListStyle) {
                     Section {
                         
                         Text("Имя и email")
@@ -44,15 +43,15 @@ struct ProfileView: View {
                         }
                         
                     }
-                }.listStyle(InsetGroupedListStyle())
+                }
+                
+                
                 
                 Spacer()
             }
             
         }.background(Color(UIColor.systemGroupedBackground))
-        .ignoresSafeArea(edges: .bottom)
-    
-        
+        .edgesIgnoringSafeArea(.all)
     }
 }
 

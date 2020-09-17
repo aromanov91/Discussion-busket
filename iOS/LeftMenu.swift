@@ -66,7 +66,7 @@ struct LeftMenu: View {
                                            rowAction: { showSettingsView.toggle() })
                         .padding(.vertical, M7Space.m)
                         .sheet(isPresented: $showSettingsView, content: {
-                            SettingsView()
+                            M7SettingsViews()
                         })
                 }
                 

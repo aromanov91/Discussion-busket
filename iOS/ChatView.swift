@@ -6,19 +6,25 @@
 //
 
 import SwiftUI
+import M7Native
 
 struct ChatView: View {
     var body: some View {
         
         
-        VStack {
+        M7TitleAndButtonView(title: "Обсуждайте списокс друзьями",
+                           subtitle: "Отправьте приглашение и делитесь идеями",
+                           primaryButtonTitle: "Пригласить",
+                           primaryAction: { print("") }).frame(width: 280)
         
-            Text("Chat")
-            
-        }
-        .padding(.all, 0)
-        .frame(minWidth: 0, maxWidth: .infinity)
-        .frame(minHeight: 0, maxHeight: .infinity)
+//        VStack {
+//
+//            Text("Chat")
+//
+//        }
+//        .padding(.all, 0)
+//        .frame(minWidth: 0, maxWidth: .infinity)
+//        .frame(minHeight: 0, maxHeight: .infinity)
         
     }
 }

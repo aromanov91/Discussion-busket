@@ -36,7 +36,7 @@ struct UserProfileButton: View {
             
             HStack {
                 
-                Image("user")
+                M7Icon(.user)
                     .frame(width: 48, height: 48)
                     .background(M7Colors.surface.tertiary)
                     .cornerRadius(24)
