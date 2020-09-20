@@ -20,10 +20,16 @@ struct iOSRoot: View {
     
     @State var isShowMenu = false
     
+   
+    
     
     var body: some View {
         
+        M7ThemingView {
+        
         GeometryReader { geometry in
+            
+            M7ThemingView {
             
             ZStack {
                 
@@ -76,7 +82,10 @@ struct iOSRoot: View {
                 .background(Color(UIColor.systemGroupedBackground))
                 
             }.edgesIgnoringSafeArea(.all)
+
+            }
             
+        }
         }
         
     }

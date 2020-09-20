@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct Discussion_busketApp {
+    
     static func main() {
         
         if #available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *) {
+            
             SwiftUIApp.main()
         } else {
             #if os(iOS) // iOS 13.0 or lower
@@ -29,11 +31,16 @@ struct Discussion_busketApp {
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SwiftUIApp: App {
+    
+    
+    
     var body: some Scene {
         return WindowGroup {
             #if os(macOS)
             MacRoot().frame(minWidth: 100, idealWidth: 300, maxWidth: .infinity, minHeight: 100, idealHeight: 200, maxHeight: .infinity)
             #else
+            
+           
             iOSRoot()
             #endif
         }

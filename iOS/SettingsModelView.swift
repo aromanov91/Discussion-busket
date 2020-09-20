@@ -19,19 +19,19 @@ struct SettingsModelView: View {
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Оформление", leadingImage: .grid, size: .s)
+                        M7Row("Оформление", leadingIcon: .grid, size: .s)
 
                     }
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Уведомления", leadingImage: .bell, size: .s)
+                        M7Row("Уведомления", leadingIcon: .bell, size: .s)
                         
                     }
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Пароль и Face ID", leadingImage: .lock, size: .s)
+                        M7Row("Пароль и Face ID", leadingIcon: .lock, size: .s)
                         
                     }
                     
@@ -41,19 +41,19 @@ struct SettingsModelView: View {
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Settings.ReviewAppStoreTitle", leadingImage: .heart, size: .s)
+                        M7Row("Settings.ReviewAppStoreTitle", leadingIcon: .heart, size: .s)
 
                     }
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Settings.FeedbakToAuthorTitle", leadingImage: .messageSquare, size: .s)
+                        M7Row("Settings.FeedbakToAuthorTitle", leadingIcon: .messageSquare, size: .s)
                         
                     }
                     
                     NavigationLink(destination: ProfileView()) {
                         
-                        M7Row("Settings.TelegramChatTitle", leadingImage: .send, size: .s)
+                        M7Row("Settings.TelegramChatTitle", leadingIcon: .send, size: .s)
                         
                     }
    
@@ -63,7 +63,7 @@ struct SettingsModelView: View {
                     
                     
                     
-                    M7Row("Settings.About", leadingImage: .info, size: .s)
+                    M7Row("Settings.About", leadingIcon: .info, size: .s)
                 }
                 
             }.navigationBarTitle("Настройки")
