@@ -36,10 +36,7 @@ struct UserProfileButton: View {
             
             HStack {
                 
-                M7Icon(.user)
-                    .frame(width: 48, height: 48)
-                    .background(M7Colors.surface.tertiary)
-                    .cornerRadius(24)
+                M7AvatarView(firstName: "A", lastName: "R", size: .m)
                 
                 VStack(alignment: .leading, spacing: Constans.textSpasing) {
                     M7Text("\(firstName)" + " " + "\(lastName)", style: .subtitle1)

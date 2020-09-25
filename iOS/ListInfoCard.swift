@@ -21,7 +21,7 @@ struct ListInfoCard: View {
             
             HStack(spacing: M7Space.xs) {
                 
-                M7Icon(.user)
+                M7Icon(.home)
                     .frame(width: 48, height: 48)
                     .background(M7Colors.surface.secondary)
                     .cornerRadius(12)
@@ -36,31 +36,14 @@ struct ListInfoCard: View {
                         
                         HStack(spacing: -8) {
                             
-                            Image("user")
-                                .frame(width: 24, height: 24)
-                                .background(M7Colors.surface.tertiary)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 12)
-                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
+                            M7AvatarView(size: .s, avatar: Image("userpic"), stroke: true)
+                                            .previewDisplayName("Only avatar")
                             
+                                        M7AvatarView(firstName: "Jhon", lastName: "Smith", size: .s, stroke: true)
+                                            .previewDisplayName("First name, last name and storke")
                             
-                            
-                            
-                            
-                            Image("user")
-                                .frame(width: 24, height: 24)
-                                .background(M7Colors.surface.tertiary)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 12)
-                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
-                            
-                            
-                            Circle()
-                                .frame(width: 24, height: 24)
-                                .background(M7Colors.surface.tertiary)
-                                .cornerRadius(12)
-                                .overlay(RoundedRectangle(cornerRadius: 12)
-                                            .stroke(M7Colors.surface.primary, lineWidth: 2))
+                                        M7AvatarView(size: .s, avatar: Image("userpic"), stroke: true)
+                                            .previewDisplayName("Only avatar")
                             
                             
                         }.offset(x: M7Space.s + M7Space.xxxs)

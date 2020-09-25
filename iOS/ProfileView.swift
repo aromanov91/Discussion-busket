@@ -17,10 +17,8 @@ struct ProfileView: View {
                 
                 Spacer().frame(height: M7Space.xl)
                 
-                Image("user")
-                    .frame(width: 96, height: 96)
-                    .background(M7Colors.surface.tertiary)
-                    .cornerRadius(48)
+
+                M7AvatarView(firstName: "Алксандр", lastName: "Романов", size: .l)
                 
                 VStack(spacing: M7Space.xxs) {
                     M7Text("Александр Романов", style: .title3, color: .onBackgroundHighEmphasis)
@@ -44,9 +42,7 @@ struct ProfileView: View {
                         
                     }
                 }
-                
-                
-                
+
                 Spacer()
             }
             
