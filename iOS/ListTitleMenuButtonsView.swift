@@ -2,13 +2,13 @@
 //  ListMenuButtons.swift
 //  Discussion busket (iOS)
 //
-//  Created by 18391981 on 06.09.2020.
+//  Created by Alexander Romanov  on 06.09.2020.
 //
 
 import SwiftUI
 import M7Native
 
-struct ListTitleMenuButtons: View {
+struct ListTitleMenuButtonsView: View {
     
     let renameAction: () -> Void
     
@@ -33,13 +33,13 @@ struct ListTitleMenuButtons: View {
         
         VStack(spacing: M7Space.l) {
            
-            ListTitleMenuButtonRow(icon: .newItem, title: "Переименовать", rowAction: renameAction )
+            ListTitleMenuButtonRowView(icon: .newItem, title: "Переименовать", rowAction: renameAction )
             
-            ListTitleMenuButtonRow(icon: .userAdd, title: "Пригласить", rowAction: renameAction )
+            ListTitleMenuButtonRowView(icon: .userAdd, title: "Пригласить", rowAction: renameAction )
             
-            ListTitleMenuButtonRow(icon: .book, title: "История", rowAction: renameAction)
+            ListTitleMenuButtonRowView(icon: .book, title: "История", rowAction: renameAction)
             
-            ListTitleMenuButtonRow(icon: .trash2, title: "Удалить", color: .error, rowAction: renameAction )
+            ListTitleMenuButtonRowView(icon: .trash2, title: "Удалить", color: .error, rowAction: renameAction )
             
         }
         .padding(.all, M7Space.m)
@@ -49,7 +49,7 @@ struct ListTitleMenuButtons: View {
 
 struct ListMenuButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ListTitleMenuButtons(renameAction:  { print(#function) },
+        ListTitleMenuButtonsView(renameAction:  { print(#function) },
                              addUserAction: { print(#function) },
                              historyAction: { print(#function) },
                              deleteAction:  { print(#function) })

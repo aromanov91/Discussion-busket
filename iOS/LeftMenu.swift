@@ -2,7 +2,7 @@
 //  LeftMenu.swift
 //  Discussion busket (iOS)
 //
-//  Created by 18391981 on 06.09.2020.
+//  Created by Alexander Romanov  on 06.09.2020.
 //
 
 import SwiftUI
@@ -60,7 +60,7 @@ struct LeftMenu: View {
                         
                     }
                     
-                    ListTitleMenuButtonRow(icon: .settingsHexagon,
+                    ListTitleMenuButtonRowView(icon: .settingsHexagon,
                                            title: "Настройки",
                                            color: .onBackgroundHighEmphasis,
                                            rowAction: { showSettingsView.toggle() })

@@ -2,13 +2,14 @@
 //  ProfileView.swift
 //  Discussion busket (iOS)
 //
-//  Created by 18391981 on 13.09.2020.
+//  Created by Alexander Romanov on 13.09.2020.
 //
 
 import SwiftUI
 import M7Native
 
 struct ProfileView: View {
+    
     var body: some View {
         
         ZStack {
@@ -17,10 +18,11 @@ struct ProfileView: View {
                 
                 Spacer().frame(height: M7Space.xl)
                 
-
+                
                 M7AvatarView(firstName: "Алксандр", lastName: "Романов", size: .l)
                 
                 VStack(spacing: M7Space.xxs) {
+                    
                     M7Text("Александр Романов", style: .title3, color: .onBackgroundHighEmphasis)
                     
                     M7Text("aromanov07@gmail.com", style: .paragraph1, color: .onBackgroundMediumEmphasis)
@@ -42,7 +44,7 @@ struct ProfileView: View {
                         
                     }
                 }
-
+                
                 Spacer()
             }
             

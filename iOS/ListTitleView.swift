@@ -2,13 +2,13 @@
 //  HeadButtons.swift
 //  Discussion busket
 //
-//  Created by 18391981 on 30.08.2020.
+//  Created by Alexander Romanov  on 30.08.2020.
 //
 
 import SwiftUI
 import M7Native
 
-struct ListTitle: View {
+struct ListTitleView: View {
     
     let menuAction: () -> Void
     
@@ -52,7 +52,7 @@ struct ListTitle: View {
 
 struct HeadButtons_Previews: PreviewProvider {
     static var previews: some View {
-        ListTitle(menuAction: { print(#function)},
+        ListTitleView(menuAction: { print(#function)},
                     nameAction: { print(#function)},
                     chatAction: { print(#function)})
     }

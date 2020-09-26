@@ -2,7 +2,7 @@
 //  UserProfileButton.swift
 //  Discussion busket (iOS)
 //
-//  Created by 18391981 on 07.09.2020.
+//  Created by Alexander Romanov  on 07.09.2020.
 //
 
 import SwiftUI

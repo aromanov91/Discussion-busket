@@ -2,13 +2,13 @@
 //  ListTitleOptionRow.swift
 //  Discussion busket
 //
-//  Created by 18391981 on 13.09.2020.
+//  Created by Alexander Romanov  on 13.09.2020.
 //
 
 import SwiftUI
 import M7Native
 
-struct ListTitleMenuButtonRow: View {
+struct ListTitleMenuButtonRowView: View {
 
     let icon: M7IconNames
     let title: String
@@ -46,7 +46,7 @@ struct ListTitleMenuButtonRow: View {
 
 struct ListTitleOptionRow_Previews: PreviewProvider {
     static var previews: some View {
-        ListTitleMenuButtonRow(icon: .send, title: "Memu", color: .error, rowAction: { print() })
+        ListTitleMenuButtonRowView(icon: .send, title: "Memu", color: .error, rowAction: { print() })
             .previewLayout(.sizeThatFits)
             .frame(width: 375.0, height: 80.0)
     }

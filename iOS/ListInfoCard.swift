@@ -2,7 +2,7 @@
 //  ListInfoCard.swift
 //  Discussion busket
 //
-//  Created by 18391981 on 13.09.2020.
+//  Created by Alexander Romanov on 13.09.2020.
 //
 
 import SwiftUI
