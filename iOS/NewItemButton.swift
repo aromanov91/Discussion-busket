@@ -37,7 +37,7 @@ struct NewItemButton: View {
         
         Button(action: action) {
             
-            HStack {
+            HStack(spacing: M7Space.xs) {
                 
                 M7Icon(.camera,color: .onSurfaceMediumEmphasis)
                 

@@ -49,7 +49,7 @@ struct iOSRoot: View {
                             
                             // Center
                             
-                            ZStack {
+                            
                                 
                                 VStack(spacing: .zero) {
                                     
@@ -68,10 +68,43 @@ struct iOSRoot: View {
                                         
                                     }
                                     
-                                    
+                                    ZStack {
                                     
                                     ListView()
                                         
+                                        VStack {
+                                            
+                                            Spacer()
+                                            
+                                            if isNewItemButtonActive {
+                                                
+                                                NewItemButton(action: { isNewItemButtonActive.toggle() })
+                                                    .padding(.horizontal, M7Paddings.all.s)
+                                                    .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
+                                                
+                                            } else {
+                                                
+                                                NewItemTextFieldView(sendAction: { hideKeyboardAndEditorTextField()} )
+                                                    .padding(.bottom, keyboard.currentHeight)
+                                                    .animation(.default)
+                                                    //.animation(.easeOut(duration: 0.3))
+                                                    //.animation(.easeOut(duration: 0.33))
+                                                    //.offset(y: geometry.size.height)
+        //                                            .modifier(AdaptsToKeyboard())
+                                                   // .padding(.bottom, self.keyboardHeightHelper.keyboardHeight)
+                                                   
+                                                
+                                                //                                        .gesture(DragGesture().onChanged { _ in
+                                                //                                            UIApplication.shared.windows.forEach { $0.endEditing(false) }
+                                                //                                        })
+                                                
+                                                
+                                                
+                                            }
+                                        }
+                                        
+                                        
+                                    }
                                         
                                         
                                         .frame(maxHeight: currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
@@ -80,35 +113,8 @@ struct iOSRoot: View {
                                     
                                     
                                 }
-                                VStack {
-                                    
-                                    Spacer()
-                                    
-                                    if isNewItemButtonActive {
-                                        
-                                        NewItemButton(action: { isNewItemButtonActive.toggle() })
-                                            .padding(.horizontal, M7Paddings.all.s)
-                                            .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
-                                        
-                                    } else {
-                                        
-                                        NewItemTextFieldView(sendAction: { hideKeyboardAndEditorTextField()} )
-                                            .padding(.bottom, keyboard.currentHeight)
-                                            //.animation(.easeOut(duration: 0.32))
-                                            //.offset(y: geometry.size.height)
-//                                            .modifier(AdaptsToKeyboard())
-                                           // .padding(.bottom, self.keyboardHeightHelper.keyboardHeight)
-                                           
-                                        
-                                        //                                        .gesture(DragGesture().onChanged { _ in
-                                        //                                            UIApplication.shared.windows.forEach { $0.endEditing(false) }
-                                        //                                        })
-                                        
-                                        
-                                        
-                                    }
-                                }
-                            }
+
+                            
                             
                             // Right
                             HStack {

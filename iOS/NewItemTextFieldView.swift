@@ -25,19 +25,17 @@ struct NewItemTextFieldView: View {
         
         HStack {
             
-            HStack {
+            HStack(spacing: M7Space.s) {
                 
                 Button(action: sendAction ) {
                     M7Icon(.camera)
                 }
                 
                 CustomTextField(text: $text, isFirstResponder: true)
-           
-                            .background(Color.red)
                 
                 
                 Button(action: sendAction ) {
-                    M7Icon(.send)
+                    M7Icon(.arrowUp)
                 }
                 
                 
@@ -54,7 +52,7 @@ struct NewItemTextFieldView: View {
 //                    .padding(.horizontal, 24)
                     
                 
-            }
+            }.padding(.horizontal, M7Paddings.all.m)
         }
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
