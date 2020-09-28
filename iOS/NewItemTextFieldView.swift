@@ -30,28 +30,13 @@ struct NewItemTextFieldView: View {
                 Button(action: sendAction ) {
                     M7Icon(.camera)
                 }
-                
+
                 CustomTextField(text: $text, isFirstResponder: true)
-                
                 
                 Button(action: sendAction ) {
                     M7Icon(.arrowUp)
                 }
-                
-                
-//                TextField("Text", text: $text, onEditingChanged: { focused in
-//                    self.focused = focused
-//                })
-//                .padding(.vertical, 16)
-//                .padding(.horizontal, 24)
-                
-                
-                
-//                TextField("Text", text: $text)
-//                    .padding(.vertical, 16)
-//                    .padding(.horizontal, 24)
-                    
-                
+
             }.padding(.horizontal, M7Paddings.all.m)
         }
         .padding(.all, 0)

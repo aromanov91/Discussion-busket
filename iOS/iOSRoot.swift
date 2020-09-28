@@ -10,21 +10,20 @@ import M7Native
 import Combine
 
 struct iOSRoot: View {
-
     
     @ObservedObject private var keyboard = KeyboardResponder()
     
-    let pageCount: Int = 3
+    private let pageCount: Int = 3
     
-    @State var currentIndex = 1
+    @State private var currentIndex = 1
     
-    @State var  positionHeight = CGSize.zero
+    @State private var  positionHeight = CGSize.zero
     
     @GestureState private var translation: CGFloat = 0
     
-    @State var isShowMenu = false
+    @State private var isShowMenu = false
     
-    @State var isNewItemButtonActive = true
+    @State private var isNewItemButtonActive = true
     
     var body: some View {
         
@@ -50,70 +49,54 @@ struct iOSRoot: View {
                             // Center
                             
                             
+                            
+                            VStack(spacing: .zero) {
                                 
-                                VStack(spacing: .zero) {
+                                ListTitleView(menuAction: { menuShowAction(); hideKeyboardAndEditorTextField() },
+                                              nameAction: { listButtonsShowAction()},
+                                              chatAction: { chatShowAction(); hideKeyboardAndEditorTextField() })
+                                
+                                if isShowMenu {
                                     
-                                    ListTitleView(menuAction: { menuShowAction()},
-                                                  nameAction: { listButtonsShowAction()},
-                                                  chatAction: { chatShowAction()})
+                                    Divider()
                                     
-                                    if isShowMenu {
-                                        
-                                        Divider()
-                                        
-                                        ListTitleMenuButtonsView(renameAction: { renameAction() },
-                                                                 addUserAction: { addUserAction() },
-                                                                 historyAction: { historyAction() },
-                                                                 deleteAction: { deleteAction() })
-                                        
-                                    }
+                                    ListTitleMenuButtonsView(renameAction: { renameAction() },
+                                                             addUserAction: { addUserAction() },
+                                                             historyAction: { historyAction() },
+                                                             deleteAction: { deleteAction() })
                                     
-                                    ZStack {
+                                }
+                                
+                                ZStack {
                                     
                                     ListView()
+                                    
+                                    VStack {
                                         
-                                        VStack {
+                                        Spacer()
+                                        
+                                        if isNewItemButtonActive {
                                             
-                                            Spacer()
+                                            NewItemButton(action: { isNewItemButtonActive.toggle() })
+                                                .padding(.horizontal, M7Paddings.all.s)
+                                                .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
                                             
-                                            if isNewItemButtonActive {
-                                                
-                                                NewItemButton(action: { isNewItemButtonActive.toggle() })
-                                                    .padding(.horizontal, M7Paddings.all.s)
-                                                    .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
-                                                
-                                            } else {
-                                                
-                                                NewItemTextFieldView(sendAction: { hideKeyboardAndEditorTextField()} )
-                                                    .padding(.bottom, keyboard.currentHeight)
-                                                    .animation(.default)
-                                                    //.animation(.easeOut(duration: 0.3))
-                                                    //.animation(.easeOut(duration: 0.33))
-                                                    //.offset(y: geometry.size.height)
-        //                                            .modifier(AdaptsToKeyboard())
-                                                   // .padding(.bottom, self.keyboardHeightHelper.keyboardHeight)
-                                                   
-                                                
-                                                //                                        .gesture(DragGesture().onChanged { _ in
-                                                //                                            UIApplication.shared.windows.forEach { $0.endEditing(false) }
-                                                //                                        })
-                                                
-                                                
-                                                
-                                            }
+                                        } else {
+                                            
+                                            NewItemTextFieldView(sendAction: { hideKeyboardAndEditorTextField()} )
+                                                .padding(.bottom, keyboard.currentHeight +
+                                                            ( keyboard.currentHeight > 0 ? 0 : geometry.safeAreaInsets.top) )
+                                                .animation(.default)
+                                            
                                         }
-                                        
-                                        
                                     }
-                                        
-                                        
-                                        .frame(maxHeight: currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
-                                    
-                                    
                                     
                                     
                                 }
-
+                                .frame(maxHeight: currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                                
+                            }
+                            
                             
                             
                             // Right
@@ -161,7 +144,7 @@ struct iOSRoot: View {
     }
     
     private func hideKeyboardAndEditorTextField() {
-        isNewItemButtonActive.toggle()
+        isNewItemButtonActive = true
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
         
     }
@@ -186,23 +169,23 @@ struct iOSRoot_Previews: PreviewProvider {
 final class KeyboardResponder: ObservableObject {
     private var notificationCenter: NotificationCenter
     @Published private(set) var currentHeight: CGFloat = 0
-
+    
     init(center: NotificationCenter = .default) {
         notificationCenter = center
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         notificationCenter.addObserver(self, selector: #selector(keyBoardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-
+    
     deinit {
         notificationCenter.removeObserver(self)
     }
-
+    
     @objc func keyBoardWillShow(notification: Notification) {
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             currentHeight = keyboardSize.height
         }
     }
-
+    
     @objc func keyBoardWillHide(notification: Notification) {
         currentHeight = 0
     }

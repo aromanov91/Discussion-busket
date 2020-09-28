@@ -246,9 +246,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3A19C3E324FC2AE400FD67FB /* Discussion busket (iOS) */ = {
+		3A19C3E324FC2AE400FD67FB /* Listixs (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (iOS)" */;
+			buildConfigurationList = 3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Listixs (iOS)" */;
 			buildPhases = (
 				3A19C3E024FC2AE400FD67FB /* Sources */,
 				3A19C3E124FC2AE400FD67FB /* Frameworks */,
@@ -258,7 +258,7 @@
 			);
 			dependencies = (
 			);
-			name = "Discussion busket (iOS)";
+			name = "Listixs (iOS)";
 			packageProductDependencies = (
 				3A22A993251075FD00404E2E /* M7Native */,
 			);
@@ -266,9 +266,9 @@
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3A19C3EB24FC2AE400FD67FB /* Discussion busket (macOS) */ = {
+		3A19C3EB24FC2AE400FD67FB /* Listixs (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (macOS)" */;
+			buildConfigurationList = 3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Listixs (macOS)" */;
 			buildPhases = (
 				3A19C3E824FC2AE400FD67FB /* Sources */,
 				3A19C3E924FC2AE400FD67FB /* Frameworks */,
@@ -278,7 +278,7 @@
 			);
 			dependencies = (
 			);
-			name = "Discussion busket (macOS)";
+			name = "Listixs (macOS)";
 			packageProductDependencies = (
 				3ACADB3525114DE90012921A /* M7Native */,
 			);
@@ -303,7 +303,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Discussion busket" */;
+			buildConfigurationList = 3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Listixs" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -319,8 +319,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3A19C3E324FC2AE400FD67FB /* Discussion busket (iOS) */,
-				3A19C3EB24FC2AE400FD67FB /* Discussion busket (macOS) */,
+				3A19C3E324FC2AE400FD67FB /* Listixs (iOS) */,
+				3A19C3EB24FC2AE400FD67FB /* Listixs (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -527,7 +527,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.romanov.Listixs;
 				PRODUCT_NAME = "Discussion busket";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -549,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "cc.romanov.Discussion-busket";
+				PRODUCT_BUNDLE_IDENTIFIER = cc.romanov.Listixs;
 				PRODUCT_NAME = "Discussion busket";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
@@ -609,7 +609,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Discussion busket" */ = {
+		3A19C3DB24FC2AE300FD67FB /* Build configuration list for PBXProject "Listixs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A19C3F624FC2AE400FD67FB /* Debug */,
@@ -618,7 +618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (iOS)" */ = {
+		3A19C3F824FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Listixs (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A19C3F924FC2AE400FD67FB /* Debug */,
@@ -627,7 +627,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Discussion busket (macOS)" */ = {
+		3A19C3FB24FC2AE400FD67FB /* Build configuration list for PBXNativeTarget "Listixs (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3A19C3FC24FC2AE400FD67FB /* Debug */,

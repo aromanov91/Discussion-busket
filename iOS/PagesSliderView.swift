@@ -28,7 +28,7 @@ struct PagesSliderView<Content: View>: View {
             .frame(width: geometry.size.width, alignment: .leading)
             .offset(x: -CGFloat(self.currentIndex) * geometry.size.width)
             .offset(x: self.translation + ( self.currentIndex == 0 ? -16 : self.currentIndex == 2 ? 16 : 0 ))
-            .animation(.easeOut(duration: 0.1))
+            .animation(.default)
             .gesture(
                 
                 DragGesture()
@@ -46,10 +46,16 @@ struct PagesSliderView<Content: View>: View {
                         
                         self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
                         
+                        hideKeyboard() 
                         
                     }
             )
         }
+    }
+    
+    private func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        
     }
 }
 
