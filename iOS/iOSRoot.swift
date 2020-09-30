@@ -13,17 +13,7 @@ struct iOSRoot: View {
     
     @ObservedObject private var keyboard = KeyboardResponder()
     
-    private let pageCount: Int = 3
-    
-    @State private var currentIndex = 1
-    
-    @State private var  positionHeight = CGSize.zero
-    
-    @GestureState private var translation: CGFloat = 0
-    
-    @State private var isShowMenu = false
-    
-    @State private var isNewItemButtonActive = true
+    @ObservedObject private var viewModel = iOSRootViewModel()
     
     var body: some View {
         
@@ -35,7 +25,7 @@ struct iOSRoot: View {
                     
                     ZStack {
                         
-                        PagesSliderView(pageCount: pageCount, currentIndex: $currentIndex) {
+                        PagesSliderView(pageCount: viewModel.pageCount, currentIndex: $viewModel.currentIndex) {
                             
                             // Left menu
                             HStack {
@@ -48,22 +38,20 @@ struct iOSRoot: View {
                             
                             // Center
                             
-                            
-                            
                             VStack(spacing: .zero) {
                                 
-                                ListTitleView(menuAction: { menuShowAction(); hideKeyboardAndEditorTextField() },
-                                              nameAction: { listButtonsShowAction()},
-                                              chatAction: { chatShowAction(); hideKeyboardAndEditorTextField() })
+                                ListTitleView(menuAction: { viewModel.menuShowAction(); viewModel.hideKeyboardAndEditorTextField() },
+                                              nameAction: { viewModel.listButtonsShowAction()},
+                                              chatAction: { viewModel.chatShowAction(); viewModel.hideKeyboardAndEditorTextField() })
                                 
-                                if isShowMenu {
+                                if viewModel.isShowMenu {
                                     
                                     Divider()
                                     
-                                    ListTitleMenuButtonsView(renameAction: { renameAction() },
-                                                             addUserAction: { addUserAction() },
-                                                             historyAction: { historyAction() },
-                                                             deleteAction: { deleteAction() })
+                                    ListTitleMenuButtonsView(renameAction: { viewModel.renameAction() },
+                                                             addUserAction: { viewModel.addUserAction() },
+                                                             historyAction: { viewModel.historyAction() },
+                                                             deleteAction: { viewModel.deleteAction() })
                                     
                                 }
                                 
@@ -75,15 +63,15 @@ struct iOSRoot: View {
                                         
                                         Spacer()
                                         
-                                        if isNewItemButtonActive {
+                                        if viewModel.isNewItemButtonActive {
                                             
-                                            NewItemButton(action: { isNewItemButtonActive.toggle() })
+                                            NewItemButton(action: { viewModel.isNewItemButtonActive.toggle() })
                                                 .padding(.horizontal, M7Paddings.all.s)
                                                 .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
                                             
                                         } else {
                                             
-                                            NewItemTextFieldView(sendAction: { hideKeyboardAndEditorTextField()} )
+                                            NewItemTextFieldView(sendAction: { viewModel.hideKeyboardAndEditorTextField()} )
                                                 .padding(.bottom, keyboard.currentHeight +
                                                             ( keyboard.currentHeight > 0 ? 0 : geometry.safeAreaInsets.top) )
                                                 .animation(.default)
@@ -93,16 +81,13 @@ struct iOSRoot: View {
                                     
                                     
                                 }
-                                .frame(maxHeight: currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                                .frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
                                 
                             }
                             
-                            
-                            
+
                             // Right
                             HStack {
-                                
-                                //Spacer().frame(width: M7Space.m)
                                 
                                 ChatView()
                                 
@@ -125,34 +110,6 @@ struct iOSRoot: View {
         
     }
     
-    private func menuShowAction() {
-        
-        currentIndex = 0
-        print(currentIndex)
-    }
-    
-    private func listButtonsShowAction() {
-        
-        isShowMenu.toggle()
-        
-    }
-    
-    private func chatShowAction() {
-        
-        currentIndex = 2
-        print(currentIndex)
-    }
-    
-    private func hideKeyboardAndEditorTextField() {
-        isNewItemButtonActive = true
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        
-    }
-    
-    private func renameAction() {}
-    private func addUserAction() {}
-    private func historyAction() {}
-    private func deleteAction() {}
 }
 
 struct iOSRoot_Previews: PreviewProvider {
