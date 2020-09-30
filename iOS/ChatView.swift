@@ -12,9 +12,13 @@ struct ChatView: View {
     
     @State var showAuthView = false
     
+    @State var isEmpty = false
+    
     var body: some View {
         
-        
+        if isEmpty {
+            
+            
         M7TitleAndButtonView(title: "Обсуждайте списокс друзьями",
                            subtitle: "Отправьте приглашение и делитесь идеями",
                            image: "EmptyMessages",
@@ -24,15 +28,40 @@ struct ChatView: View {
                 M7AuthView(title: "Состовляйте списки\nс друзьями и храните\nих в облаке", image: Image("Auth"), registrationGoogleAction: { print() } )
             })
         
-//        VStack {
-//
-//            Text("Chat")
-//
-//        }
-//        .padding(.all, 0)
-//        .frame(minWidth: 0, maxWidth: .infinity)
-//        .frame(minHeight: 0, maxHeight: .infinity)
         
+        
+        
+        } else {
+            
+            //ScrollViewReader{reader in
+                
+                ScrollView{
+                    
+                    VStack(spacing: 15){
+                        
+                        ForEach(/*homeData.msgs*/ 0..<20){msg in
+                            
+                            ChatRow(chatData: MsgModel(id: "20", msg: "Message", user: "User", timeStamp: Date()))
+//                            .onAppear{
+//                                // First Time Scroll
+//                                if msg.id == self.homeData.msgs.last!.id && !scrolled{
+//
+//                                    reader.scrollTo(homeData.msgs.last!.id,anchor: .bottom)
+//                                    scrolled = true
+//                                }
+//                            }
+                        }
+//                        .onChange(of: homeData.msgs, perform: { value in
+//
+//                            // You can restrict only for current user scroll....
+//                            reader.scrollTo(homeData.msgs.last!.id,anchor: .bottom)
+//                        })
+                    }
+                    
+               // }
+                }
+
+        }
     }
 }
 

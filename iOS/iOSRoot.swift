@@ -102,11 +102,11 @@ struct iOSRoot: View {
                             // Right
                             HStack {
                                 
-                                Spacer().frame(width: M7Space.m)
+                                //Spacer().frame(width: M7Space.m)
                                 
                                 ChatView()
                                 
-                                Spacer().frame(width: M7Space.s + M7Space.m)
+                                Spacer().frame(width: M7Space.m - M7Space.xxs )
                                 
                             }
                             
