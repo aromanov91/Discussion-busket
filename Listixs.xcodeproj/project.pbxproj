@@ -28,6 +28,8 @@
 		3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */; };
 		3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */; };
 		3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */; };
+		3A683D9B252595CD00DE2AF4 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3A683D9A252595CD00DE2AF4 /* M7NativeViews */; };
+		3A683D9D252595D500DE2AF4 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3A683D9C252595D500DE2AF4 /* M7NativeViews */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3ACADB3625114DE90012921A /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACADB3525114DE90012921A /* M7Native */; };
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A683D9B252595CD00DE2AF4 /* M7NativeViews in Frameworks */,
 				3A22A994251075FD00404E2E /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A683D9D252595D500DE2AF4 /* M7NativeViews in Frameworks */,
 				3ACADB3625114DE90012921A /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +274,7 @@
 			name = "Listixs (iOS)";
 			packageProductDependencies = (
 				3A22A993251075FD00404E2E /* M7Native */,
+				3A683D9A252595CD00DE2AF4 /* M7NativeViews */,
 			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
@@ -290,6 +295,7 @@
 			name = "Listixs (macOS)";
 			packageProductDependencies = (
 				3ACADB3525114DE90012921A /* M7Native */,
+				3A683D9C252595D500DE2AF4 /* M7NativeViews */,
 			);
 			productName = "Discussion busket (macOS)";
 			productReference = 3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */;
@@ -654,6 +660,14 @@
 		3A22A993251075FD00404E2E /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;
+		};
+		3A683D9A252595CD00DE2AF4 /* M7NativeViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7NativeViews;
+		};
+		3A683D9C252595D500DE2AF4 /* M7NativeViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7NativeViews;
 		};
 		3ACADB3525114DE90012921A /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;

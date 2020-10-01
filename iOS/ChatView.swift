@@ -7,12 +7,13 @@
 
 import SwiftUI
 import M7Native
+import M7NativeViews
 
 struct ChatView: View {
     
     @State var showAuthView = false
     
-    @State var isEmpty = false
+    @State var isEmpty = true
     
     var body: some View {
         
