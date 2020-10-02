@@ -13,7 +13,7 @@ struct ChatView: View {
     
     @State var showAuthView = false
     
-    @State var isEmpty = true
+    @State var isEmpty = false
     
     var body: some View {
         

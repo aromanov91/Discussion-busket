@@ -63,20 +63,23 @@ struct iOSRoot: View {
                                         
                                         Spacer()
                                         
-                                        if viewModel.isNewItemButtonActive {
-                                            
-                                            NewItemButton(action: { viewModel.isNewItemButtonActive.toggle() })
-                                                .padding(.horizontal, M7Paddings.all.s)
-                                                .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
-                                            
-                                        } else {
-                                            
-                                            NewItemTextFieldView(sendAction: { viewModel.hideKeyboardAndEditorTextField()} )
-                                                .padding(.bottom, keyboard.currentHeight +
-                                                            ( keyboard.currentHeight > 0 ? 0 : geometry.safeAreaInsets.top) )
-                                                .animation(.default)
-                                            
-                                        }
+                                        NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                            .frame(height: 56 + geometry.safeAreaInsets.bottom)
+                                        
+//                                        if viewModel.isNewItemButtonActive {
+//
+//                                            NewItemButton(action: { viewModel.isNewItemButtonActive.toggle() })
+//                                                .padding(.horizontal, M7Paddings.all.s)
+//                                                .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
+//
+//                                        } else {
+//
+//                                            NewItemTextFieldView(sendAction: { viewModel.hideKeyboardAndEditorTextField()} )
+//                                                .padding(.bottom, keyboard.currentHeight +
+//                                                            ( keyboard.currentHeight > 0 ? 0 : geometry.safeAreaInsets.top) )
+//                                                .animation(.default)
+//
+//                                        }
                                     }
                                     
                                     
@@ -85,11 +88,30 @@ struct iOSRoot: View {
                                 
                             }
                             
-
+                            
                             // Right
                             HStack {
                                 
-                                ChatView()
+                                VStack(spacing: 0) {
+                                    
+                                    ChatTitleView()
+                                    
+                                    ZStack  {
+                                        
+                                        ChatView()
+                                        
+                                        VStack(spacing: 0) {
+                                            
+                                            Spacer()
+                                            
+                                            NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                                .frame(height: 56 + geometry.safeAreaInsets.bottom)
+                                                //.padding(.bottom,)
+                                            
+                                        }
+                                    }
+                                    
+                                }
                                 
                                 Spacer().frame(width: M7Space.m - M7Space.xxs )
                                 

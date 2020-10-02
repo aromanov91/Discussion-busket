@@ -11,6 +11,7 @@
 		3A061DA3251E5920004E25BF /* ListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DA2251E5920004E25BF /* ListItemRowView.swift */; };
 		3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */; };
 		3A061DBA251F3AD6004E25BF /* NewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB9251F3AD6004E25BF /* NewItemButton.swift */; };
+		3A089A7F252675EC00671CB2 /* NewItemCreateTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */; };
 		3A0B522725129842009F9F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B522625129842009F9F12 /* LaunchScreen.storyboard */; };
 		3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
 		3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
@@ -28,11 +29,12 @@
 		3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */; };
 		3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */; };
 		3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */; };
+		3A4220CD252664B100EDC7CF /* ChatTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4220CC252664B100EDC7CF /* ChatTitleView.swift */; };
 		3A683D9B252595CD00DE2AF4 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3A683D9A252595CD00DE2AF4 /* M7NativeViews */; };
-		3A683D9D252595D500DE2AF4 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3A683D9C252595D500DE2AF4 /* M7NativeViews */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3ACADB3625114DE90012921A /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACADB3525114DE90012921A /* M7Native */; };
+		3AD71B082526689100830FF6 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD71B072526689100830FF6 /* M7NativeViews */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
 		3AF2D7E32505759D00EB239C /* ListTitleMenuButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListTitleMenuButtonsView.swift */; };
@@ -47,6 +49,7 @@
 		3A061DA2251E5920004E25BF /* ListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRowView.swift; sourceTree = "<group>"; };
 		3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTextFieldView.swift; sourceTree = "<group>"; };
 		3A061DB9251F3AD6004E25BF /* NewItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemButton.swift; sourceTree = "<group>"; };
+		3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemCreateTextFieldView.swift; sourceTree = "<group>"; };
 		3A0B522625129842009F9F12 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion_busketApp.swift; sourceTree = "<group>"; };
 		3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 		3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProVersonBanner.swift; sourceTree = "<group>"; };
 		3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelView.swift; sourceTree = "<group>"; };
+		3A4220CC252664B100EDC7CF /* ChatTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTitleView.swift; sourceTree = "<group>"; };
 		3A7204FA250415AA00D04910 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileButton.swift; sourceTree = "<group>"; };
 		3AF2D7DE2504344300EB239C /* LeftMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A683D9D252595D500DE2AF4 /* M7NativeViews in Frameworks */,
+				3AD71B082526689100830FF6 /* M7NativeViews in Frameworks */,
 				3ACADB3625114DE90012921A /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +253,8 @@
 		3AF2D7E9250585FD00EB239C /* RightViews */ = {
 			isa = PBXGroup;
 			children = (
+				3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */,
+				3A4220CC252664B100EDC7CF /* ChatTitleView.swift */,
 				3AF2D7E02504352100EB239C /* ChatView.swift */,
 				3A1AD142252511C500008FE9 /* ChatBubble.swift */,
 				3A1AD148252511F900008FE9 /* ChatRow.swift */,
@@ -295,7 +301,7 @@
 			name = "Listixs (macOS)";
 			packageProductDependencies = (
 				3ACADB3525114DE90012921A /* M7Native */,
-				3A683D9C252595D500DE2AF4 /* M7NativeViews */,
+				3AD71B072526689100830FF6 /* M7NativeViews */,
 			);
 			productName = "Discussion busket (macOS)";
 			productReference = 3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */;
@@ -370,10 +376,12 @@
 			files = (
 				3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */,
 				3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */,
+				3A089A7F252675EC00671CB2 /* NewItemCreateTextFieldView.swift in Sources */,
 				3A1AD143252511C500008FE9 /* ChatBubble.swift in Sources */,
 				3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */,
 				3A1AD14F2525295600008FE9 /* iOSRootViewModel.swift in Sources */,
 				3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */,
+				3A4220CD252664B100EDC7CF /* ChatTitleView.swift in Sources */,
 				3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */,
 				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
@@ -665,13 +673,13 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = M7NativeViews;
 		};
-		3A683D9C252595D500DE2AF4 /* M7NativeViews */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = M7NativeViews;
-		};
 		3ACADB3525114DE90012921A /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;
+		};
+		3AD71B072526689100830FF6 /* M7NativeViews */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7NativeViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
