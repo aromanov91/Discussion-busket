@@ -12,16 +12,20 @@ struct ListView: View {
     
     var isEmpty = false
     
-    @State private var draggedOffset: CGSize = .zero
+    @GestureState private var draggedOffset: CGSize = .zero
+    
+   
+    
+    @ObservedObject private var viewModel = iOSRootViewModel()
     
     
-    init() {
-        if #available(iOS 14.0, *) {} else {
-            UITableView.appearance().tableFooterView = UIView()
-            UITableView.appearance().separatorStyle = .none
-        }
-        
-    }
+//    init() {
+//        if #available(iOS 14.0, *) {} else {
+//            UITableView.appearance().tableFooterView = UIView()
+//            UITableView.appearance().separatorStyle = .none
+//        }
+//
+//    }
     
     var body: some View {
         
@@ -62,19 +66,26 @@ struct ListView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .gesture(DragGesture()
                                 
-                        .onChanged { value in
-                            self.draggedOffset = value.translation
-                        }
+                                .updating($draggedOffset) { value, state, transaction in
+                                            state = value.translation
+                                    
+                                    
+                                        }
+
                         .onEnded { value in
-                            
-                            if self.draggedOffset.height > 100 {
+
+                            if value.translation.height > 100 {
+
+                                self.viewModel.listItemsCardPosition.height = 250
                                 
-                                self.draggedOffset.height = 250
-                                
+                             //   self.viewModel.isShowMenu = true
+
                             } else {
+
+                                self.viewModel.listItemsCardPosition.height = .zero
                                 
-                                self.draggedOffset.height = .zero
-                                
+                               // self.viewModel.isShowMenu = false
+
                             }
                         }
                     )
@@ -104,7 +115,8 @@ struct ListView: View {
                     radius: 16,
                     x: 0,
                     y: 12)
-            .offset(y: self.draggedOffset.height)
+            .offset(y: viewModel.listItemsCardPosition.height + draggedOffset.height)
+                   
             
         }
         

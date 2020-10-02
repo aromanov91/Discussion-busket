@@ -18,13 +18,42 @@ class iOSRootViewModel: ObservableObject{
     @Published public var isShowMenu = false
     
     @Published public var isNewItemButtonActive = true
+    
+    @Published public var listItemsCardPosition: CGSize = .zero
 
     public func menuShowAction() {
         currentIndex = 0
     }
     
     public func listButtonsShowAction() {
-        isShowMenu.toggle()
+        
+        if isShowMenu  {
+
+            listItemsCardPosition.height = .zero
+
+            print(0)
+            
+            //isShowMenu = true
+
+        } else {
+
+            listItemsCardPosition.height = 250
+
+            print(200)
+            
+            //isShowMenu = false
+
+
+
+        }
+//
+//
+//
+//        print("listButtonsShowAction")
+//
+        
+        
+         isShowMenu.toggle()
         
     }
     
