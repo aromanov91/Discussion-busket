@@ -10,7 +10,10 @@ import M7Native
 
 struct ListView: View {
     
-    var isEmpty = true
+    var isEmpty = false
+    
+    @State private var draggedOffset: CGSize = .zero
+    
     
     init() {
         if #available(iOS 14.0, *) {} else {
@@ -25,47 +28,69 @@ struct ListView: View {
         if #available(iOS 14.0, *) {
             
             
-            VStack {
+            VStack(spacing: .zero) {
                 
                 if isEmpty {
-                    
-                    
                     
                     
                     VStack(spacing: M7Space.m) {
                         
                         
+                        Image("EmptyList")
                         
-                       
-                            Image("EmptyList")
                         
-                
                         VStack(spacing: M7Space.xxs) {
-                        
-                            M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
-                        
                             
-                                
-                                M7Text("Добавьте ваш первый продукт", style: .paragraph1, color: .onSurfaceHighEmphasis, alignment: .center)
+                            M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
+                            
+                            
+                            M7Text("Добавьте ваш первый продукт", style: .paragraph1, color: .onSurfaceHighEmphasis, alignment: .center)
                             
                         }
-                        
                         
                     }
+                    
                 } else {
-                
-                
-                ScrollView() {
                     
-                    LazyVStack(alignment: .leading, spacing: 8) {
-                        ForEach((1...200).reversed(), id: \.self) { item in
-                            
-                            ListItemRowView("Text")
-                            
+                    HStack {
+                        
+                        Capsule().frame(width: 56, height: 6)
+                            .foregroundColor(M7Color.surfaceSecondary.color)
+
+                        
+                    }.frame(height: 14, alignment: .bottom)
+                    .frame(minWidth: 0, maxWidth: .infinity)
+                    .gesture(DragGesture()
+                                
+                        .onChanged { value in
+                            self.draggedOffset = value.translation
                         }
-                    }.padding(.all, 20)
+                        .onEnded { value in
+                            
+                            if self.draggedOffset.height > 100 {
+                                
+                                self.draggedOffset.height = 250
+                                
+                            } else {
+                                
+                                self.draggedOffset.height = .zero
+                                
+                            }
+                        }
+                    )
                     
-                }
+                    
+                    ScrollView() {
+                        
+                        LazyVStack(alignment: .leading, spacing: 8) {
+                            ForEach((1...200).reversed(), id: \.self) { item in
+                                
+                                ListItemRowView("Text")
+                                
+                            }
+                        }.padding(.all, 20)
+                        
+                    }
                     
                 }
                 
@@ -79,6 +104,8 @@ struct ListView: View {
                     radius: 16,
                     x: 0,
                     y: 12)
+            .offset(y: self.draggedOffset.height)
+            
         }
         
         else {
@@ -93,6 +120,7 @@ struct ListView: View {
             .frame(minHeight: 0, maxHeight: .infinity)
             .background(Color(UIColor.systemBackground))
             .cornerRadius(12)
+            .offset( y: self.draggedOffset.height)
             
         }
         

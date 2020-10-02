@@ -44,20 +44,28 @@ struct iOSRoot: View {
                                               nameAction: { viewModel.listButtonsShowAction()},
                                               chatAction: { viewModel.chatShowAction(); viewModel.hideKeyboardAndEditorTextField() })
                                 
-                                if viewModel.isShowMenu {
+                                //if viewModel.isShowMenu {
                                     
-                                    Divider()
                                     
-                                    ListTitleMenuButtonsView(renameAction: { viewModel.renameAction() },
-                                                             addUserAction: { viewModel.addUserAction() },
-                                                             historyAction: { viewModel.historyAction() },
-                                                             deleteAction: { viewModel.deleteAction() })
                                     
-                                }
+                                //}
                                 
                                 ZStack {
                                     
+                                    VStack(spacing: .zero) {
+                                        
+                                        Divider()
+                                        
+                                        ListTitleMenuButtonsView(renameAction: { viewModel.renameAction() },
+                                                                 addUserAction: { viewModel.addUserAction() },
+                                                                 historyAction: { viewModel.historyAction() },
+                                                                 deleteAction: { viewModel.deleteAction() })
+                                        
+                                        Spacer()
+                                    }
+                                    
                                     ListView()
+                                    
                                     
                                     VStack {
                                         
