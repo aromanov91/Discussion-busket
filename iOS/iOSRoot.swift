@@ -80,7 +80,7 @@ struct iOSRoot: View {
                                     
                                     ChatTitleView()
                                     
-                                    ZStack  {
+                                    ZStack {
                                         
                                         ChatView()
                                         
@@ -90,7 +90,6 @@ struct iOSRoot: View {
                                             
                                             NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                                 .frame(height: 56 + geometry.safeAreaInsets.bottom)
-                                                //.padding(.bottom,)
                                             
                                         }
                                     }

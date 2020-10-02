@@ -13,18 +13,14 @@ struct NewItemCreateTextFieldView: View {
     @State var text = ""
     @State private var focused: Bool = true
     
-    
     let sendAction: () -> Void
     
     public init(sendAction: @escaping () -> Void) {
         self.sendAction = sendAction
     }
     
-    
     var body: some View {
-        
-        
-        
+
         HStack(alignment: .top) {
             
             ZStack {
@@ -33,12 +29,13 @@ struct NewItemCreateTextFieldView: View {
                 
                 VStack {
                     
-                    HStack(spacing: M7Space.s) {
+                    HStack(spacing: M7Space.xs) {
+                        
+                    
                         
                         Button(action: sendAction ) {
                             M7Icon(.camera)
                         }
-                        
                         
                         TextField("New message", text:  $text)
                             .frame(height: 40)
@@ -46,14 +43,14 @@ struct NewItemCreateTextFieldView: View {
                             .cornerRadius(16)
                         
                         Button(action: sendAction ) {
-                            M7Icon(.arrowUp)
-                        }
-                        
+                            M7Icon(.arrowUp, color: .onPrimaryHighEmphasis)
+                        }.frame(width: 28, height: 28)
+                        .background(M7Color.primary.color)
+                        .cornerRadius(10)
                         
                     }.frame(height: 40)
                     .padding(.leading, 12)
                     .padding(.trailing, 8)
-                    
                     .background(M7Color.onBackgroundHighEmphasis.color.opacity(0.07))
                     .cornerRadius(14)
                     
@@ -62,19 +59,12 @@ struct NewItemCreateTextFieldView: View {
                 }
                 .padding(.horizontal, M7Space.xs)
                 .padding(.vertical, M7Space.xxs)
-                
-               
-                
-                
+
             }
         }
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)
-        
-        //.background(Color(UIColor.systemBackground))
 
-        
-        
     }
 }
 
