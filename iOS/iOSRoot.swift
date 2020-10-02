@@ -65,26 +65,10 @@ struct iOSRoot: View {
                                         
                                         NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                             .frame(height: 56 + geometry.safeAreaInsets.bottom)
-                                        
-//                                        if viewModel.isNewItemButtonActive {
-//
-//                                            NewItemButton(action: { viewModel.isNewItemButtonActive.toggle() })
-//                                                .padding(.horizontal, M7Paddings.all.s)
-//                                                .padding(.bottom, geometry.safeAreaInsets.bottom + M7Paddings.all.s)
-//
-//                                        } else {
-//
-//                                            NewItemTextFieldView(sendAction: { viewModel.hideKeyboardAndEditorTextField()} )
-//                                                .padding(.bottom, keyboard.currentHeight +
-//                                                            ( keyboard.currentHeight > 0 ? 0 : geometry.safeAreaInsets.top) )
-//                                                .animation(.default)
-//
-//                                        }
                                     }
                                     
                                     
-                                }
-                                .frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                                }.frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
                                 
                             }
                             

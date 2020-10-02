@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import M7Native
 
 struct ListView: View {
+    
+    var isEmpty = true
     
     init() {
         if #available(iOS 14.0, *) {} else {
@@ -21,21 +24,51 @@ struct ListView: View {
         
         if #available(iOS 14.0, *) {
             
+            
             VStack {
-            ScrollView() {
                 
-                LazyVStack(alignment: .leading, spacing: 8) {
-                    ForEach((1...200).reversed(), id: \.self) { item in
+                if isEmpty {
+                    
+                    
+                    
+                    
+                    VStack(spacing: M7Space.m) {
                         
-                        ListItemRowView("Text")
+                        
+                        
+                       
+                            Image("EmptyList")
+                        
+                
+                        VStack(spacing: M7Space.xxs) {
+                        
+                            M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
+                        
+                            
+                                
+                                M7Text("Добавьте ваш первый продукт", style: .paragraph1, color: .onSurfaceHighEmphasis, alignment: .center)
+                            
+                        }
+                        
                         
                     }
-                }.padding(.all, 20)
+                } else {
                 
-            }
                 
-                //NewItemTextFieldView()
-            
+                ScrollView() {
+                    
+                    LazyVStack(alignment: .leading, spacing: 8) {
+                        ForEach((1...200).reversed(), id: \.self) { item in
+                            
+                            ListItemRowView("Text")
+                            
+                        }
+                    }.padding(.all, 20)
+                    
+                }
+                    
+                }
+                
             }
             .padding(.all, 0)
             .frame(minWidth: 0, maxWidth: .infinity)
@@ -49,7 +82,6 @@ struct ListView: View {
         }
         
         else {
-           
             
             ForEach((1...200).reversed(), id: \.self) { item in
                 
@@ -61,10 +93,6 @@ struct ListView: View {
             .frame(minHeight: 0, maxHeight: .infinity)
             .background(Color(UIColor.systemBackground))
             .cornerRadius(12)
-//            .shadow(color: Color.black.opacity(0.12),
-//                    radius: 16,
-//                    x: 0,
-//                    y: 12)
             
         }
         
