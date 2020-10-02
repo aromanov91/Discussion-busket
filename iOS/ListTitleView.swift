@@ -40,6 +40,7 @@ struct ListTitleView: View {
                 M7Text("Для дома", style: .title3).accentColor(M7Colors.onBackground.highEmphasis)
             }
             
+            
             Spacer()
             
             Button(action: chatAction) {

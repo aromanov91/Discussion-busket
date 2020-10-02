@@ -12,11 +12,13 @@ struct ListView: View {
     
     var isEmpty = false
     
+   
+    
     @GestureState private var draggedOffset: CGSize = .zero
     
    
     
-    @ObservedObject private var viewModel = iOSRootViewModel()
+    @EnvironmentObject var viewModel: iOSRootViewModel
     
     
 //    init() {
@@ -69,6 +71,7 @@ struct ListView: View {
                                 .updating($draggedOffset) { value, state, transaction in
                                             state = value.translation
                                     
+                                    self.viewModel.isShowMenu = true
                                     
                                         }
 
@@ -78,13 +81,13 @@ struct ListView: View {
 
                                 self.viewModel.listItemsCardPosition.height = 250
                                 
-                             //   self.viewModel.isShowMenu = true
+                               self.viewModel.isShowMenu = true
 
                             } else {
 
                                 self.viewModel.listItemsCardPosition.height = .zero
                                 
-                               // self.viewModel.isShowMenu = false
+                               self.viewModel.isShowMenu = false
 
                             }
                         }

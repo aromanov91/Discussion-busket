@@ -21,6 +21,8 @@ class iOSRootViewModel: ObservableObject{
     
     @Published public var listItemsCardPosition: CGSize = .zero
 
+   // @GestureState public var draggedOffset: CGSize = .zero
+    
     public func menuShowAction() {
         currentIndex = 0
     }

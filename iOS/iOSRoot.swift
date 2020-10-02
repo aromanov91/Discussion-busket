@@ -41,7 +41,7 @@ struct iOSRoot: View {
                             VStack(spacing: .zero) {
                                 
                                 ListTitleView(menuAction: { viewModel.menuShowAction(); viewModel.hideKeyboardAndEditorTextField() },
-                                              nameAction: { viewModel.listButtonsShowAction()},
+                                              nameAction: { viewModel.listButtonsShowAction() },
                                               chatAction: { viewModel.chatShowAction(); viewModel.hideKeyboardAndEditorTextField() })
                                 
                                 //if viewModel.isShowMenu {
@@ -54,8 +54,12 @@ struct iOSRoot: View {
                                     
                                     VStack(spacing: .zero) {
                                         
+                                        if viewModel.isShowMenu {
+                                        
                                         Divider()
                                         
+                                        }
+                                            
                                         ListTitleMenuButtonsView(renameAction: { viewModel.renameAction() },
                                                                  addUserAction: { viewModel.addUserAction() },
                                                                  historyAction: { viewModel.historyAction() },
@@ -64,7 +68,7 @@ struct iOSRoot: View {
                                         Spacer()
                                     }
                                     
-                                    ListView()
+                                    ListView().environmentObject(viewModel)
                                     
                                     
                                     VStack {
