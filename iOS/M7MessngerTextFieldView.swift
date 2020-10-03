@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import M7Native
 
-struct NewItemCreateTextFieldView: View {
+public struct M7MessngerTextFieldView: View {
     
-    @State var text = ""
+    @State public var text = ""
     @State private var focused: Bool = true
     
     let sendAction: () -> Void
@@ -19,7 +18,7 @@ struct NewItemCreateTextFieldView: View {
         self.sendAction = sendAction
     }
     
-    var body: some View {
+    public var body: some View {
 
         HStack(alignment: .top) {
             
@@ -42,12 +41,16 @@ struct NewItemCreateTextFieldView: View {
                             .textFieldStyle(PlainTextFieldStyle())
                             .cornerRadius(16)
                         
+                        if text.count > 0 {
+                        
                         Button(action: sendAction ) {
                             M7Icon(.arrowUp, color: .onPrimaryHighEmphasis)
                         }.frame(width: 28, height: 28)
                         .background(M7Color.primary.color)
                         .cornerRadius(10)
+                       
                         
+                        }
                     }.frame(height: 40)
                     .padding(.leading, 12)
                     .padding(.trailing, 8)

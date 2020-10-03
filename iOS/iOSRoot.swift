@@ -69,7 +69,7 @@ struct iOSRoot: View {
                                         
                                         Spacer()
                                         
-                                        NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                        M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                             .frame(height: 56 + geometry.safeAreaInsets.bottom)
                                     }
                                     
@@ -94,7 +94,7 @@ struct iOSRoot: View {
                                             
                                             Spacer()
                                             
-                                            NewItemCreateTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                            M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                                 .frame(height: 56 + geometry.safeAreaInsets.bottom)
                                             
                                         }

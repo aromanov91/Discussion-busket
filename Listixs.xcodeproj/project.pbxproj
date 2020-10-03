@@ -11,7 +11,6 @@
 		3A061DA3251E5920004E25BF /* ListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DA2251E5920004E25BF /* ListItemRowView.swift */; };
 		3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */; };
 		3A061DBA251F3AD6004E25BF /* NewItemButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB9251F3AD6004E25BF /* NewItemButton.swift */; };
-		3A089A7F252675EC00671CB2 /* NewItemCreateTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */; };
 		3A0B522725129842009F9F12 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A0B522625129842009F9F12 /* LaunchScreen.storyboard */; };
 		3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
 		3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */; };
@@ -49,7 +48,6 @@
 		3A061DA2251E5920004E25BF /* ListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRowView.swift; sourceTree = "<group>"; };
 		3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTextFieldView.swift; sourceTree = "<group>"; };
 		3A061DB9251F3AD6004E25BF /* NewItemButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemButton.swift; sourceTree = "<group>"; };
-		3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemCreateTextFieldView.swift; sourceTree = "<group>"; };
 		3A0B522625129842009F9F12 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discussion_busketApp.swift; sourceTree = "<group>"; };
 		3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -253,7 +251,6 @@
 		3AF2D7E9250585FD00EB239C /* RightViews */ = {
 			isa = PBXGroup;
 			children = (
-				3A089A7E252675EC00671CB2 /* NewItemCreateTextFieldView.swift */,
 				3A4220CC252664B100EDC7CF /* ChatTitleView.swift */,
 				3AF2D7E02504352100EB239C /* ChatView.swift */,
 				3A1AD142252511C500008FE9 /* ChatBubble.swift */,
@@ -376,7 +373,6 @@
 			files = (
 				3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */,
 				3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */,
-				3A089A7F252675EC00671CB2 /* NewItemCreateTextFieldView.swift in Sources */,
 				3A1AD143252511C500008FE9 /* ChatBubble.swift in Sources */,
 				3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */,
 				3A1AD14F2525295600008FE9 /* iOSRootViewModel.swift in Sources */,
