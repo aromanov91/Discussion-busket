@@ -40,15 +40,9 @@ struct iOSRoot: View {
                             
                             VStack(spacing: .zero) {
                                 
-                                ListTitleView(menuAction: { viewModel.menuShowAction(); viewModel.hideKeyboardAndEditorTextField() },
+                                ListTitleView(menuAction: { viewModel.menuShowAction() },
                                               nameAction: { viewModel.listButtonsShowAction() },
-                                              chatAction: { viewModel.chatShowAction(); viewModel.hideKeyboardAndEditorTextField() })
-                                
-                                //if viewModel.isShowMenu {
-                                    
-                                    
-                                    
-                                //}
+                                              chatAction: { viewModel.chatShowAction() })
                                 
                                 ZStack {
                                     
@@ -121,12 +115,9 @@ struct iOSRoot: View {
                     }.edgesIgnoringSafeArea(.all)
                     
                 }
-                
             }
         }
-        
     }
-    
 }
 
 struct iOSRoot_Previews: PreviewProvider {

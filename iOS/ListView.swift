@@ -2,7 +2,7 @@
 //  ListView.swift
 //  Discussion busket (iOS)
 //
-//  Created by Alexander Romanov  on 05.09.2020.
+//  Created by Alexander Romanov on 05.09.2020.
 //
 
 import SwiftUI
@@ -12,22 +12,9 @@ struct ListView: View {
     
     var isEmpty = false
     
-   
-    
     @GestureState private var draggedOffset: CGSize = .zero
     
-   
-    
     @EnvironmentObject var viewModel: iOSRootViewModel
-    
-    
-//    init() {
-//        if #available(iOS 14.0, *) {} else {
-//            UITableView.appearance().tableFooterView = UIView()
-//            UITableView.appearance().separatorStyle = .none
-//        }
-//
-//    }
     
     var body: some View {
         
@@ -38,17 +25,13 @@ struct ListView: View {
                 
                 if isEmpty {
                     
-                    
                     VStack(spacing: M7Space.m) {
                         
-                        
                         Image("EmptyList")
-                        
-                        
+
                         VStack(spacing: M7Space.xxs) {
                             
                             M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
-                            
                             
                             M7Text("Добавьте ваш первый продукт", style: .paragraph1, color: .onSurfaceHighEmphasis, alignment: .center)
                             
@@ -62,33 +45,28 @@ struct ListView: View {
                         
                         Capsule().frame(width: 56, height: 6)
                             .foregroundColor(M7Color.surfaceSecondary.color)
-
                         
                     }.frame(height: 14, alignment: .bottom)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .gesture(DragGesture()
                                 
-                                .updating($draggedOffset) { value, state, transaction in
-                                            state = value.translation
-                                    
-                                    self.viewModel.isShowMenu = true
-                                    
-                                        }
-
+                        .updating($draggedOffset) { value, state, transaction in
+                            state = value.translation
+                            
+                            self.viewModel.isShowMenu = true
+                            
+                        }
+                        
                         .onEnded { value in
-
+                            
                             if value.translation.height > 100 {
-
-                                self.viewModel.listItemsCardPosition.height = 250
                                 
-                               self.viewModel.isShowMenu = true
-
+                                self.viewModel.showListButtons()
+                                
                             } else {
-
-                                self.viewModel.listItemsCardPosition.height = .zero
                                 
-                               self.viewModel.isShowMenu = false
-
+                                self.viewModel.hideListButtons()
+                                
                             }
                         }
                     )
@@ -119,7 +97,7 @@ struct ListView: View {
                     x: 0,
                     y: 12)
             .offset(y: viewModel.listItemsCardPosition.height + draggedOffset.height)
-                   
+            
             
         }
         

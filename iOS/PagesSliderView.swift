@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PagesSliderView<Content: View>: View {
+    
     let pageCount: Int
     @Binding var currentIndex: Int
     let content: Content
@@ -46,16 +47,9 @@ struct PagesSliderView<Content: View>: View {
                         
                         self.currentIndex = min(max(Int(newIndex), 0), self.pageCount - 1)
                         
-                        hideKeyboard() 
-                        
                     }
             )
         }
-    }
-    
-    private func hideKeyboard() {
-        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        
     }
 }
 

@@ -11,7 +11,12 @@ class iOSRootViewModel: ObservableObject{
     
     public let pageCount: Int = 3
     
-    @Published public var currentIndex = 1
+    @Published public var currentIndex = 1 {
+        didSet {
+            hideListButtons()
+            hideKeyboardAndEditorTextField()
+        }
+    }
     
     @Published public var  positionHeight = CGSize.zero
     
@@ -20,8 +25,6 @@ class iOSRootViewModel: ObservableObject{
     @Published public var isNewItemButtonActive = true
     
     @Published public var listItemsCardPosition: CGSize = .zero
-
-   // @GestureState public var draggedOffset: CGSize = .zero
     
     public func menuShowAction() {
         currentIndex = 0
@@ -31,36 +34,29 @@ class iOSRootViewModel: ObservableObject{
         
         if isShowMenu  {
 
-            listItemsCardPosition.height = .zero
-
-            print(0)
-            
-            //isShowMenu = true
+            hideListButtons()
 
         } else {
-
-            listItemsCardPosition.height = 250
-
-            print(200)
             
-            //isShowMenu = false
-
-
-
+            showListButtons()
         }
-//
-//
-//
-//        print("listButtonsShowAction")
-//
+    }
+    
+    public func hideListButtons() {
         
+        listItemsCardPosition.height = .zero
+        isShowMenu = false
+    }
+    
+    public func showListButtons() {
         
-         isShowMenu.toggle()
-        
+        listItemsCardPosition.height = 250
+        isShowMenu = true
     }
     
     public func chatShowAction() {
         currentIndex = 2
+       
     }
     
     public func renameAction() {}
@@ -71,6 +67,5 @@ class iOSRootViewModel: ObservableObject{
     public func hideKeyboardAndEditorTextField() {
         isNewItemButtonActive = true
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-        
     }
 }

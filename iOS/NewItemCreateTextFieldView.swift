@@ -1,8 +1,8 @@
 //
-//  SwiftUIView.swift
+//  NewItemCreateTextFieldView.swift
 //  Listixs (iOS)
 //
-//  Created by 18391981 on 01.10.2020.
+//  Created by Alexander Romanov on 01.10.2020.
 //
 
 import SwiftUI
@@ -25,7 +25,7 @@ struct NewItemCreateTextFieldView: View {
             
             ZStack {
                 
-                BlurView(style: .light)
+                M7BlurView(.light)
                 
                 VStack {
                     
@@ -68,27 +68,3 @@ struct NewItemCreateTextFieldView: View {
     }
 }
 
-struct BlurView: UIViewRepresentable {
-    
-    let style: UIBlurEffect.Style
-    
-    func makeUIView(context: UIViewRepresentableContext<BlurView>) -> UIView {
-        let view = UIView(frame: .zero)
-        view.backgroundColor = .clear
-        let blurEffect = UIBlurEffect(style: style)
-        let blurView = UIVisualEffectView(effect: blurEffect)
-        blurView.translatesAutoresizingMaskIntoConstraints = false
-        view.insertSubview(blurView, at: 0)
-        NSLayoutConstraint.activate([
-            blurView.heightAnchor.constraint(equalTo: view.heightAnchor),
-            blurView.widthAnchor.constraint(equalTo: view.widthAnchor),
-        ])
-        return view
-    }
-    
-    func updateUIView(_ uiView: UIView,
-                      context: UIViewRepresentableContext<BlurView>) {
-        
-    }
-    
-}
