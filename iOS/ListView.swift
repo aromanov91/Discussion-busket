@@ -43,10 +43,10 @@ struct ListView: View {
                     
                     HStack {
                         
-                        Capsule().frame(width: 56, height: 6)
+                        Capsule().frame(width: 40, height: 4)
                             .foregroundColor(M7Color.surfaceSecondary.color)
                         
-                    }.frame(height: 14, alignment: .bottom)
+                    }.frame(height: 16, alignment: .center)
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .gesture(DragGesture()
                                 

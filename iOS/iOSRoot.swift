@@ -75,6 +75,7 @@ struct iOSRoot: View {
                                         
                                         M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                             .frame(height: 56 + geometry.safeAreaInsets.bottom)
+                                            .cornerRadius(12)
                                     }
                                     
                                     
