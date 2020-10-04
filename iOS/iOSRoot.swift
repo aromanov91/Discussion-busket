@@ -62,7 +62,11 @@ struct iOSRoot: View {
                                         Spacer()
                                     }
                                     
-                                    ListView().environmentObject(viewModel)
+                                    ListView()
+                                        .environmentObject(viewModel)
+                                        .sheet(isPresented: $viewModel.isShowRate) {
+                                            M7RateView(image: Image("Rate"))
+                                        }
                                     
                                     
                                     VStack {
@@ -113,7 +117,7 @@ struct iOSRoot: View {
                         .background(Color(UIColor.systemGroupedBackground))
                         
                     }.edgesIgnoringSafeArea(.all)
-                    
+
                 }
             }
         }

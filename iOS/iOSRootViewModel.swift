@@ -22,6 +22,8 @@ class iOSRootViewModel: ObservableObject{
     
     @Published public var isShowMenu = false
     
+    @Published public var isShowRate = true
+    
     @Published public var isNewItemButtonActive = true
     
     @Published public var listItemsCardPosition: CGSize = .zero
