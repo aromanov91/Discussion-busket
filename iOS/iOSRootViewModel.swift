@@ -18,11 +18,11 @@ class iOSRootViewModel: ObservableObject{
         }
     }
     
-    @Published public var  positionHeight = CGSize.zero
+    @Published public var positionHeight = CGSize.zero
     
     @Published public var isShowMenu = false
     
-    @Published public var isShowRate = true
+    @Published public var isShowRate = false
     
     @Published public var isNewItemButtonActive = true
     
