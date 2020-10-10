@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 1101E2BC252FA1AB00130BDF /* M7NativeFirebase */; };
 		3A061D9D251E4225004E25BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A061D9C251E4225004E25BF /* Preview Assets.xcassets */; };
 		3A061DA3251E5920004E25BF /* ListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DA2251E5920004E25BF /* ListItemRowView.swift */; };
 		3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */; };
@@ -29,7 +30,6 @@
 		3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */; };
 		3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C1CF3250F2DDF0076D0C0 /* SettingsModelView.swift */; };
 		3A4220CD252664B100EDC7CF /* ChatTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A4220CC252664B100EDC7CF /* ChatTitleView.swift */; };
-		3A683D9B252595CD00DE2AF4 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3A683D9A252595CD00DE2AF4 /* M7NativeViews */; };
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3ACADB3625114DE90012921A /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACADB3525114DE90012921A /* M7Native */; };
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A683D9B252595CD00DE2AF4 /* M7NativeViews in Frameworks */,
+				1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */,
 				3A22A994251075FD00404E2E /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +277,7 @@
 			name = "Listixs (iOS)";
 			packageProductDependencies = (
 				3A22A993251075FD00404E2E /* M7Native */,
-				3A683D9A252595CD00DE2AF4 /* M7NativeViews */,
+				1101E2BC252FA1AB00130BDF /* M7NativeFirebase */,
 			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
@@ -539,9 +539,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "iOS/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = ER582ZK85C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -551,6 +551,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cc.romanov.Listixs;
 				PRODUCT_NAME = "Discussion busket";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -561,9 +562,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_ASSET_PATHS = "iOS/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = ER582ZK85C;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -573,6 +574,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cc.romanov.Listixs;
 				PRODUCT_NAME = "Discussion busket";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -661,13 +663,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1101E2BC252FA1AB00130BDF /* M7NativeFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7NativeFirebase;
+		};
 		3A22A993251075FD00404E2E /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;
-		};
-		3A683D9A252595CD00DE2AF4 /* M7NativeViews */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = M7NativeViews;
 		};
 		3ACADB3525114DE90012921A /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -111,7 +111,8 @@ struct ListView: View {
             .padding(.all, 0)
             .frame(minWidth: 0, maxWidth: .infinity)
             .frame(minHeight: 0, maxHeight: .infinity)
-            .background(Color(UIColor.systemBackground))
+            //.background(Color(UIColor.systemBackground))
+            .background(M7Color.backgroundPrimary.color)
             .cornerRadius(12)
             .offset( y: self.draggedOffset.height)
             

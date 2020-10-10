@@ -18,6 +18,7 @@ struct ListInfoCard: View {
         
         M7Surface(elevation: .z1, background: .primary, padding: .s) {
             
+        //M7Background(background: .primary, padding: .s) {
             
             HStack(spacing: M7Space.xs) {
                 

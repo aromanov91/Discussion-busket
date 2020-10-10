@@ -62,6 +62,7 @@ struct iOSRoot: View {
                                     }
                                     
                                     ListView()
+                                        
                                         .environmentObject(viewModel)
                                         .sheet(isPresented: $viewModel.isShowRate) {
                                             M7RateView(image: Image("Rate"))
@@ -100,6 +101,7 @@ struct iOSRoot: View {
                                             
                                             M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                                 .frame(height: 56 + geometry.safeAreaInsets.bottom)
+                                                
                                             
                                         }
                                     }
@@ -108,13 +110,14 @@ struct iOSRoot: View {
                                 
                                 Spacer().frame(width: M7Space.m - M7Space.xxs )
                                 
-                            }
+                            }.zIndex(0)
                             
                         }
                         .padding(.trailing, geometry.safeAreaInsets.trailing)
                         .padding(.leading, geometry.safeAreaInsets.leading)
                         .padding(.top, geometry.safeAreaInsets.top)
-                        .background(Color(UIColor.systemGroupedBackground))
+                        .background(M7Color.backgroundSecondary.color)
+//                        .background(Color(UIColor.systemGroupedBackground))
                         
                     }.edgesIgnoringSafeArea(.all)
 

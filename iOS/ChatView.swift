@@ -7,7 +7,7 @@
 
 import SwiftUI
 import M7Native
-import M7NativeViews
+import M7NativeFirebase
 
 struct ChatView: View {
     
