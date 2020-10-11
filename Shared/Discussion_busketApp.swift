@@ -6,15 +6,31 @@
 //
 
 import SwiftUI
+import M7Native
 
 @main
 struct Discussion_busketApp {
     
     static func main() {
         
+        _ = M7Info(privacyPolicyUrl: "http://google.com",
+               termsOfUseUrl: "http://google.com",
+               iconName: "icon",
+               supportUrl: "http://google.com",
+               facebookMessengerChatUrl: "http://google.com",
+               telegramChatUrl: "http://google.com",
+               appStoreUrl: "http://google.com")
+        
+        _ = M7Info(email: "aromanov07@gmail.com",
+                   url: "https://romanov.cc/",
+                   appStoreUrl: "https://apps.apple.com/ru/developer/alexander-romanov/id1459928735",
+                   telegramAccountUrl: "https://t.me/aromanov91",
+                   facebookAccountUrl: "https://www.facebook.com/aromanov91")
+        
         if #available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *) {
             
             SwiftUIApp.main()
+            
         } else {
             #if os(iOS) // iOS 13.0 or lower
             UIApplicationMain(CommandLine.argc,
@@ -36,12 +52,13 @@ struct SwiftUIApp: App {
     
     var body: some Scene {
         return WindowGroup {
+            
             #if os(macOS)
             MacRoot().frame(minWidth: 100, idealWidth: 300, maxWidth: .infinity, minHeight: 100, idealHeight: 200, maxHeight: .infinity)
             #else
             
            
-            iOSRoot()
+            iOSRoot().environmentObject(M7SettingsStore())
             #endif
         }
     }

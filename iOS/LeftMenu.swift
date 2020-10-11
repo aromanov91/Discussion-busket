@@ -10,11 +10,11 @@ import M7Native
 
 struct LeftMenu: View {
     
-    @State var proVersion = false
-    
     @State var showProfileView = false
     
     @State var showSettingsView = false
+    
+    @EnvironmentObject var settings: M7SettingsStore
     
     var body: some View {
         
@@ -25,9 +25,9 @@ struct LeftMenu: View {
             ScrollView {
                 
                 HStack(spacing: .zero) {
-
+                    
                     VStack(spacing: .zero) {
-
+                        
                         UserProfileButton(firstName: "Alex",
                                           lastName: "Rom",
                                           email: "aromanov07@gmail.com",
@@ -54,16 +54,16 @@ struct LeftMenu: View {
                 
                 VStack {
                     
-                    if !proVersion {
+                    if settings.isPro {
                         
                         ProVersonBanner()
                         
                     }
                     
                     ListTitleMenuButtonRowView(icon: .settingsHexagon,
-                                           title: "Настройки",
-                                           color: .onBackgroundHighEmphasis,
-                                           rowAction: { showSettingsView.toggle() })
+                                               title: "Настройки",
+                                               color: .onBackgroundHighEmphasis,
+                                               rowAction: { showSettingsView.toggle() })
                         .padding(.vertical, M7Space.m)
                         .sheet(isPresented: $showSettingsView, content: {
                             M7SettingsViews()
@@ -81,3 +81,4 @@ struct LeftMenu_Previews: PreviewProvider {
         LeftMenu()
     }
 }
+
