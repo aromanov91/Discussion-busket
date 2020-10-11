@@ -21,7 +21,8 @@ struct Discussion_busketApp {
                telegramChatUrl: "http://google.com",
                appStoreUrl: "http://google.com")
         
-        _ = M7Info(email: "aromanov07@gmail.com",
+        _ = M7Info(name: "Alexander Romanov",
+                   email: "aromanov07@gmail.com",
                    url: "https://romanov.cc/",
                    appStoreUrl: "https://apps.apple.com/ru/developer/alexander-romanov/id1459928735",
                    telegramAccountUrl: "https://t.me/aromanov91",
