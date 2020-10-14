@@ -16,6 +16,8 @@ struct ListView: View {
     
     @EnvironmentObject var viewModel: iOSRootViewModel
     
+    @State var code = ""
+    
     var body: some View {
         
         if #available(iOS 14.0, *) {
@@ -75,6 +77,11 @@ struct ListView: View {
                     ScrollView() {
                         
                         LazyVStack(alignment: .leading, spacing: 8) {
+                            
+                            TextField("FFF", text: $code)
+                                .textContentType(.oneTimeCode)
+                                .keyboardType(.numberPad)
+                            
                             ForEach((1...200).reversed(), id: \.self) { item in
                                 
                                 ListItemRowView("Text")

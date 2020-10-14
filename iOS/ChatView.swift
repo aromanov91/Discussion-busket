@@ -11,7 +11,9 @@ import M7NativeFirebase
 
 struct ChatView: View {
     
-    @State var showAuthView = false
+   // @ObservedObject var authmodel = M7AuthModel()
+    
+    @State var showAl = false
     
     @State var isEmpty = true
     
@@ -24,8 +26,8 @@ struct ChatView: View {
                            subtitle: "Отправьте приглашение и делитесь идеями",
                            image: "EmptyMessages",
                            primaryButtonTitle: "Пригласить",
-                           primaryAction: { showAuthView = true }).frame(width: 280)
-            .sheet(isPresented: $showAuthView, content: {
+                           primaryAction: { showAl = true }).frame(width: 280)
+            .sheet(isPresented: $showAl, content: {
                 M7AuthView(title: "Состовляйте списки\nс друзьями и храните\nих в облаке", image: Image("Auth"), registrationGoogleAction: { print() } )
             })
         
