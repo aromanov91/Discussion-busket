@@ -11,7 +11,7 @@ import M7NativeFirebase
 
 struct ChatView: View {
     
-    //@ObservedObject var authmodel = M7AuthModel()
+    @ObservedObject var authmodel = M7AuthModel()
     
     @State var showModal = false
     
@@ -26,10 +26,10 @@ struct ChatView: View {
                            subtitle: "Отправьте приглашение и делитесь идеями",
                            image: "EmptyMessages",
                            primaryButtonTitle: "Пригласить",
-                           primaryAction: { showModal = true }).frame(width: 280)
-            .sheet(isPresented: $showModal, content: {
+                           primaryAction: { authmodel.showModal = true }).frame(width: 280)
+            .sheet(isPresented: $authmodel.showModal, content: {
                 
-                M7PhoneRegistrationView()
+                M7PhoneRegistrationView().environmentObject(authmodel)
 //                M7AuthView(title: "Состовляйте списки\nс друзьями и храните\nих в облаке", image: Image("Auth"), registrationGoogleAction: { print() } )
             })
         

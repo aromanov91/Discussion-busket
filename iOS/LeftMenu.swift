@@ -7,6 +7,7 @@
 
 import SwiftUI
 import M7Native
+import M7NativeFirebase
 
 struct LeftMenu: View {
     
@@ -15,6 +16,8 @@ struct LeftMenu: View {
     @State var showSettingsView = false
     
     @EnvironmentObject var settings: M7SettingsStore
+    
+    @ObservedObject var auth = M7AuthModel()
     
     var body: some View {
         
@@ -31,8 +34,16 @@ struct LeftMenu: View {
                         UserProfileButton(firstName: "Alex",
                                           lastName: "Rom",
                                           email: "aromanov07@gmail.com",
+                                          authStatus: $auth.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
-                                            ProfileView()
+                                            
+                                            
+                                            if auth.status {
+                                                 ProfileView().environmentObject(auth)
+                                            } else {
+                                            
+                                                M7PhoneRegistrationView().environmentObject(auth)
+                                            }
                                           })
                         
                         

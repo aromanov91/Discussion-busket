@@ -7,8 +7,11 @@
 
 import SwiftUI
 import M7Native
+import M7NativeFirebase
 
 struct ProfileView: View {
+    
+    @EnvironmentObject var auth: M7AuthModel
     
     var body: some View {
         
@@ -40,6 +43,8 @@ struct ProfileView: View {
                     Section {
                         Button("Выйти") {
                             print("exit")
+                            
+                            auth.logOut()
                         }
                         
                     }

@@ -18,16 +18,19 @@ struct UserProfileButton: View {
     
     let action: () -> Void
     
+    @Binding var authStatus: Bool
+    
     private struct Constans {
         static var textSpasing: CGFloat { return 4 }
     }
     
-    init(firstName: String, lastName: String, email: String, action: @escaping () -> Void) {
+    init(firstName: String, lastName: String, email: String, authStatus: Binding<Bool> = .constant(true), action: @escaping () -> Void) {
         
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.action = action
+        self._authStatus = authStatus
     }
     
     var body: some View {
@@ -36,16 +39,34 @@ struct UserProfileButton: View {
             
             HStack {
                 
-                M7AvatarView(firstName: "A", lastName: "R", size: .m)
+                if authStatus {
                 
-                VStack(alignment: .leading, spacing: Constans.textSpasing) {
-                    M7Text("\(firstName)" + " " + "\(lastName)", style: .subtitle1)
-                    M7Text(email, style: .caption, color: .onBackgroundMediumEmphasis)
+                M7AvatarView(firstName: firstName, lastName: lastName, size: .m)
+                    
+                } else {
+                    M7Icon(.user)
+                        .frame(width: 48, height: 48)
+                        .background(M7Colors.surface.secondary)
+                        .cornerRadius(24)
                 }
                 
-                Spacer()
+                VStack(alignment: .leading, spacing: Constans.textSpasing) {
+                    M7Text(authStatus
+                            ? ("\(firstName)" + " " + "\(lastName)")
+                        : "Авторизация"
+                        , style: .subtitle1
+                    )
+                    M7Text(authStatus
+                        ? email
+                        : "Войти или зарегистрироваться"
+                        , style: .caption, color: .onBackgroundMediumEmphasis)
+                }
+                
+                
                 
                 M7Icon(.chevronDown)
+                
+                Spacer()
                 
             }
         })

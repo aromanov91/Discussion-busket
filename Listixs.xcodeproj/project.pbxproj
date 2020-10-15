@@ -10,6 +10,7 @@
 		1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 1101E2BC252FA1AB00130BDF /* M7NativeFirebase */; };
 		113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6D253830CB00EC1FB9 /* FirebaseAuth */; };
 		113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6F253830CB00EC1FB9 /* Firebase */; };
+		119243972538D9740073ABB0 /* UnAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119243962538D9740073ABB0 /* UnAuthView.swift */; };
 		11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */; };
 		11EA3A5D2537B1C400EB8BB5 /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */; };
 		11EA3A6A2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
@@ -49,6 +50,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		119243962538D9740073ABB0 /* UnAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthView.swift; sourceTree = "<group>"; };
 		11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Discussion busket.entitlements"; sourceTree = "<group>"; };
 		11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
 		11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
 				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
 				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
+				119243962538D9740073ABB0 /* UnAuthView.swift */,
 				3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */,
 			);
 			name = LeftViews;
@@ -391,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */,
+				119243972538D9740073ABB0 /* UnAuthView.swift in Sources */,
 				3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */,
 				3A1AD143252511C500008FE9 /* ChatBubble.swift in Sources */,
 				3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */,
