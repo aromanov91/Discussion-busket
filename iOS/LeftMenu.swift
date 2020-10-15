@@ -17,7 +17,7 @@ struct LeftMenu: View {
     
     @EnvironmentObject var settings: M7SettingsStore
     
-    @ObservedObject var auth = M7AuthModel()
+    @EnvironmentObject var auth: M7AuthModel
     
     var body: some View {
         

@@ -65,7 +65,7 @@ struct SwiftUIApp: App {
             #else
 
 
-            iOSRoot().environmentObject(M7SettingsStore())//.environmentObject(M7AuthModel())
+            iOSRoot().environmentObject(M7SettingsStore()).environmentObject(M7AuthModel())
                 .onOpenURL(perform: { url in
 
                                     Auth.auth().canHandle(url)
