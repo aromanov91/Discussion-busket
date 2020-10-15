@@ -16,7 +16,7 @@ struct ListView: View {
     
     @EnvironmentObject var viewModel: iOSRootViewModel
     
-    @State var code = ""
+    @State var phone = ""
     
     var body: some View {
         
@@ -78,9 +78,11 @@ struct ListView: View {
                         
                         LazyVStack(alignment: .leading, spacing: 8) {
                             
-                            TextField("FFF", text: $code)
-                                .textContentType(.oneTimeCode)
-                                .keyboardType(.numberPad)
+                          
+                            
+//                            TextField("FFF", text: $code)
+//                                .textContentType(.oneTimeCode)
+//                                .keyboardType(.numberPad)
                             
                             ForEach((1...200).reversed(), id: \.self) { item in
                                 

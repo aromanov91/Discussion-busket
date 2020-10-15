@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 1101E2BC252FA1AB00130BDF /* M7NativeFirebase */; };
+		113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6D253830CB00EC1FB9 /* FirebaseAuth */; };
+		113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6F253830CB00EC1FB9 /* Firebase */; };
+		11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */; };
+		11EA3A5D2537B1C400EB8BB5 /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */; };
+		11EA3A6A2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
+		11EA3A6B2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
 		3A061D9D251E4225004E25BF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A061D9C251E4225004E25BF /* Preview Assets.xcassets */; };
 		3A061DA3251E5920004E25BF /* ListItemRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DA2251E5920004E25BF /* ListItemRowView.swift */; };
 		3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */; };
@@ -33,7 +39,6 @@
 		3A7204FB250415AA00D04910 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7204FA250415AA00D04910 /* ListView.swift */; };
 		3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */; };
 		3ACADB3625114DE90012921A /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 3ACADB3525114DE90012921A /* M7Native */; };
-		3AD71B082526689100830FF6 /* M7NativeViews in Frameworks */ = {isa = PBXBuildFile; productRef = 3AD71B072526689100830FF6 /* M7NativeViews */; };
 		3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7DE2504344300EB239C /* LeftMenu.swift */; };
 		3AF2D7E12504352100EB239C /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E02504352100EB239C /* ChatView.swift */; };
 		3AF2D7E32505759D00EB239C /* ListTitleMenuButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF2D7E22505759D00EB239C /* ListTitleMenuButtonsView.swift */; };
@@ -44,6 +49,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Discussion busket.entitlements"; sourceTree = "<group>"; };
+		11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
+		11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A061D9C251E4225004E25BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A061DA2251E5920004E25BF /* ListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRowView.swift; sourceTree = "<group>"; };
 		3A061DB4251E68E3004E25BF /* NewItemTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemTextFieldView.swift; sourceTree = "<group>"; };
@@ -84,7 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */,
+				11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */,
 				1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */,
+				113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */,
 				3A22A994251075FD00404E2E /* M7Native in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,8 +104,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AD71B082526689100830FF6 /* M7NativeViews in Frameworks */,
 				3ACADB3625114DE90012921A /* M7Native in Frameworks */,
+				11EA3A5D2537B1C400EB8BB5 /* M7NativeFirebase in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +151,7 @@
 		3A19C3D724FC2AE300FD67FB = {
 			isa = PBXGroup;
 			children = (
+				11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */,
 				3A22A991251075DA00404E2E /* M7Native */,
 				3A19C3DC24FC2AE300FD67FB /* Shared */,
 				3A19C3E624FC2AE400FD67FB /* iOS */,
@@ -152,6 +164,7 @@
 		3A19C3DC24FC2AE300FD67FB /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */,
 				3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */,
 				3A22A9B3251079DC00404E2E /* Localizable.strings */,
 				3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */,
@@ -197,6 +210,7 @@
 		3A22A992251075FD00404E2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -278,6 +292,8 @@
 			packageProductDependencies = (
 				3A22A993251075FD00404E2E /* M7Native */,
 				1101E2BC252FA1AB00130BDF /* M7NativeFirebase */,
+				113E2A6D253830CB00EC1FB9 /* FirebaseAuth */,
+				113E2A6F253830CB00EC1FB9 /* Firebase */,
 			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
@@ -298,7 +314,7 @@
 			name = "Listixs (macOS)";
 			packageProductDependencies = (
 				3ACADB3525114DE90012921A /* M7Native */,
-				3AD71B072526689100830FF6 /* M7NativeViews */,
+				11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */,
 			);
 			productName = "Discussion busket (macOS)";
 			productReference = 3A19C3EC24FC2AE400FD67FB /* Discussion busket.app */;
@@ -332,6 +348,7 @@
 			);
 			mainGroup = 3A19C3D724FC2AE300FD67FB;
 			packageReferences = (
+				113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 3A19C3E524FC2AE400FD67FB /* Products */;
 			projectDirPath = "";
@@ -350,6 +367,7 @@
 			files = (
 				3A061D9D251E4225004E25BF /* Preview Assets.xcassets in Resources */,
 				3A0B522725129842009F9F12 /* LaunchScreen.storyboard in Resources */,
+				11EA3A6A2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */,
 				3A19C3F424FC2AE400FD67FB /* Assets.xcassets in Resources */,
 				3A22A9B0251079DC00404E2E /* Localizable.strings in Resources */,
 			);
@@ -361,6 +379,7 @@
 			files = (
 				3A19C3F524FC2AE400FD67FB /* Assets.xcassets in Resources */,
 				3A22A9B1251079DC00404E2E /* Localizable.strings in Resources */,
+				11EA3A6B2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,9 +558,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "Discussion busket.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "iOS/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -562,9 +583,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_ENTITLEMENTS = "Discussion busket.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "iOS/Preview\\ Assets.xcassets";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ER582ZK85C;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = iOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -662,8 +685,33 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				branch = "6.31-spm-beta";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		1101E2BC252FA1AB00130BDF /* M7NativeFirebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = M7NativeFirebase;
+		};
+		113E2A6D253830CB00EC1FB9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		113E2A6F253830CB00EC1FB9 /* Firebase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = Firebase;
+		};
+		11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7NativeFirebase;
 		};
@@ -674,10 +722,6 @@
 		3ACADB3525114DE90012921A /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;
-		};
-		3AD71B072526689100830FF6 /* M7NativeViews */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = M7NativeViews;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
