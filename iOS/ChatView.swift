@@ -29,7 +29,7 @@ struct ChatView: View {
                            primaryAction: { authmodel.showModal = true }).frame(width: 280)
             .sheet(isPresented: $authmodel.showModal, content: {
                 
-                M7PhoneRegistrationView()
+                M7PhoneRegistrationView().environmentObject(authmodel)
 //                M7AuthView(title: "Состовляйте списки\nс друзьями и храните\nих в облаке", image: Image("Auth"), registrationGoogleAction: { print() } )
             })
         

@@ -11,6 +11,8 @@
 		113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6D253830CB00EC1FB9 /* FirebaseAuth */; };
 		113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6F253830CB00EC1FB9 /* Firebase */; };
 		119243972538D9740073ABB0 /* UnAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119243962538D9740073ABB0 /* UnAuthView.swift */; };
+		1192439C2538EF6A0073ABB0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439B2538EF6A0073ABB0 /* FirebaseFirestoreSwift */; };
+		119243A02538F01F0073ABB0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439F2538F01F0073ABB0 /* FirebaseFirestore */; };
 		11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */; };
 		11EA3A5D2537B1C400EB8BB5 /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */; };
 		11EA3A6A2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
@@ -99,6 +101,8 @@
 				1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */,
 				113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */,
 				3A22A994251075FD00404E2E /* M7Native in Frameworks */,
+				1192439C2538EF6A0073ABB0 /* FirebaseFirestoreSwift in Frameworks */,
+				119243A02538F01F0073ABB0 /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +301,8 @@
 				1101E2BC252FA1AB00130BDF /* M7NativeFirebase */,
 				113E2A6D253830CB00EC1FB9 /* FirebaseAuth */,
 				113E2A6F253830CB00EC1FB9 /* Firebase */,
+				1192439B2538EF6A0073ABB0 /* FirebaseFirestoreSwift */,
+				1192439F2538F01F0073ABB0 /* FirebaseFirestore */,
 			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
@@ -714,6 +720,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = Firebase;
+		};
+		1192439B2538EF6A0073ABB0 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		1192439F2538F01F0073ABB0 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 113E2A66253830CB00EC1FB9 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 		11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */ = {
 			isa = XCSwiftPackageProductDependency;
