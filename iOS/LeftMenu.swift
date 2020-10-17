@@ -19,6 +19,8 @@ struct LeftMenu: View {
     
     @EnvironmentObject var auth: M7AuthModel
     
+    @EnvironmentObject var user: M7UserViewModel
+    
     var body: some View {
         
         VStack(spacing: .zero) {
@@ -31,15 +33,15 @@ struct LeftMenu: View {
                     
                     VStack(spacing: .zero) {
                         
-                        UserProfileButton(firstName: "Alex",
-                                          lastName: "Rom",
-                                          email: "aromanov07@gmail.com",
+                        UserProfileButton(firstName: user.info.firstName,
+                                          lastName: user.info.lastName,
+                                          email: user.info.uid,
                                           authStatus: $auth.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
                                             
                                             
                                             if auth.status {
-                                                 ProfileView().environmentObject(auth)
+                                                 ProfileView().environmentObject(user)
                                             } else {
                                             
                                                 M7PhoneRegistrationView().environmentObject(auth)
