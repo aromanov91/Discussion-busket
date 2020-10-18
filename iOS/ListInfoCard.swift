@@ -10,6 +10,8 @@ import M7Native
 
 struct ListInfoCard: View {
     
+    var name: String
+    
     private struct Constans {
         static var textSpasing: CGFloat { return 4 }
     }
@@ -31,7 +33,7 @@ struct ListInfoCard: View {
                     
                     HStack {
                         
-                        M7Text("Название", style: .subtitle1, color: .onSurfaceHighEmphasis)
+                        M7Text(self.name, style: .subtitle1, color: .onSurfaceHighEmphasis)
                         
                         Spacer()
                         
@@ -65,8 +67,8 @@ struct ListInfoCard: View {
     }
 }
 
-struct ListInfoCard_Previews: PreviewProvider {
-    static var previews: some View {
-        ListInfoCard()
-    }
-}
+//struct ListInfoCard_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ListInfoCard()
+//    }
+//}

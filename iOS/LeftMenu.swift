@@ -21,6 +21,8 @@ struct LeftMenu: View {
     
     @EnvironmentObject var user: M7UserViewModel
     
+    @ObservedObject var leftViewModel = LeftViewModel()
+    
     var body: some View {
         
         VStack(spacing: .zero) {
@@ -51,9 +53,32 @@ struct LeftMenu: View {
                         
                         Spacer().frame(height: M7Space.l)
                         
-                        ForEach(0..<3) { item in
-                            ListInfoCard()
+                        ForEach(leftViewModel.userLists) { item in
+                            
+                            ListInfoCard(name: item.name)
                                 .padding(.bottom, M7Space.m)
+                                .contextMenu {
+                                    Button(action: {
+                                        
+                                        self.leftViewModel.deleteUserList(id: item.id)
+                                        
+                                        
+//                                        if let index = self.leftViewModel.userLists.firstIndex(of: item) {
+//                                            self.leftViewModel.userLists.remove(at: index)
+//                                        }
+                                    }, label: {
+                                        HStack {
+                                            Text("Delete")
+                                            Spacer()
+                                            Image(systemName: "trash")
+                                        }
+                                    })
+                                }
+                            
+                        }
+                        
+                        M7Button(action: { leftViewModel.createList() }) {
+                            Text("Create list")
                         }
                         
                     }

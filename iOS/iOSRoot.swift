@@ -8,6 +8,7 @@
 import SwiftUI
 import M7Native
 import Combine
+import Firebase
 
 struct iOSRoot: View {
     

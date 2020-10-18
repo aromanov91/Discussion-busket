@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1101E2BD252FA1AB00130BDF /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 1101E2BC252FA1AB00130BDF /* M7NativeFirebase */; };
+		112DE348253C8F7F00E69687 /* CenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE347253C8F7F00E69687 /* CenterViewModel.swift */; };
+		112DE34F253C9DC300E69687 /* LeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE34E253C9DC300E69687 /* LeftViewModel.swift */; };
+		112DE357253CC0E000E69687 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE356253CC0E000E69687 /* ListModel.swift */; };
 		113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6D253830CB00EC1FB9 /* FirebaseAuth */; };
 		113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6F253830CB00EC1FB9 /* Firebase */; };
 		119243972538D9740073ABB0 /* UnAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119243962538D9740073ABB0 /* UnAuthView.swift */; };
@@ -52,6 +55,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		112DE347253C8F7F00E69687 /* CenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewModel.swift; sourceTree = "<group>"; };
+		112DE34E253C9DC300E69687 /* LeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewModel.swift; sourceTree = "<group>"; };
+		112DE356253CC0E000E69687 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		119243962538D9740073ABB0 /* UnAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthView.swift; sourceTree = "<group>"; };
 		11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Discussion busket.entitlements"; sourceTree = "<group>"; };
 		11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,6 +124,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		112DE346253C8F6600E69687 /*  Views */ = {
+			isa = PBXGroup;
+			children = (
+				3A061DA6251E5947004E25BF /* MenuAndTitleView */,
+				3A061DA7251E595D004E25BF /* ListView */,
+				3A061DB8251F3A62004E25BF /* NewItemTextField */,
+				112DE347253C8F7F00E69687 /* CenterViewModel.swift */,
+			);
+			name = " Views";
+			sourceTree = "<group>";
+		};
+		112DE34D253C9CAA00E69687 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
+				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
+				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
+				119243962538D9740073ABB0 /* UnAuthView.swift */,
+				3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		3A061D8D251E41A1004E25BF /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,9 +269,7 @@
 		3AF2D7E6250585A100EB239C /* CenterViews */ = {
 			isa = PBXGroup;
 			children = (
-				3A061DA6251E5947004E25BF /* MenuAndTitleView */,
-				3A061DA7251E595D004E25BF /* ListView */,
-				3A061DB8251F3A62004E25BF /* NewItemTextField */,
+				112DE346253C8F6600E69687 /*  Views */,
 			);
 			name = CenterViews;
 			sourceTree = "<group>";
@@ -260,11 +287,9 @@
 		3AF2D7E8250585DE00EB239C /* LeftViews */ = {
 			isa = PBXGroup;
 			children = (
-				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
-				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
-				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
-				119243962538D9740073ABB0 /* UnAuthView.swift */,
-				3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */,
+				112DE356253CC0E000E69687 /* ListModel.swift */,
+				112DE34E253C9DC300E69687 /* LeftViewModel.swift */,
+				112DE34D253C9CAA00E69687 /* Views */,
 			);
 			name = LeftViews;
 			sourceTree = "<group>";
@@ -399,10 +424,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112DE34F253C9DC300E69687 /* LeftViewModel.swift in Sources */,
 				3A3C1CF0250EB7250076D0C0 /* ProVersonBanner.swift in Sources */,
 				119243972538D9740073ABB0 /* UnAuthView.swift in Sources */,
 				3A3C1CF2250EBBD60076D0C0 /* ProfileView.swift in Sources */,
 				3A1AD143252511C500008FE9 /* ChatBubble.swift in Sources */,
+				112DE348253C8F7F00E69687 /* CenterViewModel.swift in Sources */,
 				3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */,
 				3A1AD14F2525295600008FE9 /* iOSRootViewModel.swift in Sources */,
 				3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */,
@@ -421,6 +448,7 @@
 				3A19C3F024FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
 				3A061DBA251F3AD6004E25BF /* NewItemButton.swift in Sources */,
 				3A1C0B1D25040E600087E5E3 /* iOSRoot.swift in Sources */,
+				112DE357253CC0E000E69687 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +530,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -557,6 +586,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
