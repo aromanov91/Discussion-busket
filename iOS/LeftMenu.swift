@@ -8,12 +8,15 @@
 import SwiftUI
 import M7Native
 import M7NativeFirebase
+import Combine
 
 struct LeftMenu: View {
     
     @State var showProfileView = false
     
     @State var showSettingsView = false
+    
+    @State var showCreateListView = false
     
     @EnvironmentObject var settings: M7SettingsStore
     
@@ -77,8 +80,10 @@ struct LeftMenu: View {
                             
                         }
                         
-                        M7Button(action: { leftViewModel.createList() }) {
+                        M7Button(action: { showCreateListView = true }) {
                             Text("Create list")
+                        }.sheet(isPresented: $showCreateListView) {
+                            CrateNewListView(name: $leftViewModel.listName, action: leftViewModel.createList)
                         }
                         
                     }

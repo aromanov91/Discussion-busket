@@ -17,14 +17,27 @@ class LeftViewModel: ObservableObject{
     
     @Published var noLists = false
     
+
     let db = Firestore.firestore()
     
-    let uid = Auth.auth().currentUser?.uid ?? ""
+    var uid = Auth.auth().currentUser?.uid ?? ""
     
     @Published var userLists: [ListModel] = []
     
+    public var status: Bool {
+        set { UserDefaults.standard.set(newValue, forKey: "Auth.Status") }
+        get { UserDefaults.standard.bool(forKey: "Auth.Status") }
+    }
+    
     init() {
-        self.getUserLists()
+        
+        if status {
+        
+            self.getUserLists()
+        
+        }
+        
+            
     }
 //    
     func createList() {
@@ -57,26 +70,69 @@ class LeftViewModel: ObservableObject{
     
     func getUserLists() {
         
-        db.collection("lists").addSnapshotListener { (snap, err) in
-            DispatchQueue.main.async {
-                if err != nil {
-                    print((err?.localizedDescription)!)
+        db.collection("users").document(self.uid).collection("lists").addSnapshotListener { querySnapshot, error in
+
+                guard let snapshot = querySnapshot else {
+                    print("Error fetching snapshots: \(error!)")
                     return
-                } else {
-                    print("no errors")
-                    for i in snap!.documentChanges {
-                        let documentID = i.document.documentID
-                        let name = i.document.get("name") as! String
+                }
+
+                snapshot.documentChanges.forEach { diff in
+                    if (diff.type == .added) {
+
+                        let documentID = diff.document.documentID
+                        let name = diff.document.get("name") as! String
                         self.userLists.append(ListModel(name: name, documentID: documentID))
+
+
+                    }
+                    if (diff.type == .modified) {
+                      //  self.leftViewModel.userLists.remove(at: index)
+
+
+                        print("Modified city: \(diff.document.data())")
+                    }
+                    if (diff.type == .removed) {
+                        let id = diff.document.documentID
+
+                        self.userLists.removeAll { (list) -> Bool in
+                            return list.id == id
+                        }
                     }
                 }
             }
-        }
+
+
+        
+        
+
+//        db.collection("users").document(self.uid).collection("lists").addSnapshotListener { (snap, err) in
+//            DispatchQueue.main.async {
+//                if err != nil {
+//                    print((err?.localizedDescription)!)
+//                    return
+//                } else {
+//                    print("no errors")
+//                    for i in snap!.documentChanges {
+//                        let documentID = i.document.documentID
+//                        let name = i.document.get("name") as! String
+//                        self.userLists.append(ListModel(name: name, documentID: documentID))
+//                    }
+//                }
+//            }
+//        }
     }
     
 
         
         func deleteUserList(id: String){
+            
+            db.collection("users").document(self.uid).collection("lists").document(id).delete { (err) in
+                if err != nil{
+                    print(err!.localizedDescription)
+                    return
+                }
+            }
             
             db.collection("lists").document(id).delete { (err) in
                 if err != nil{

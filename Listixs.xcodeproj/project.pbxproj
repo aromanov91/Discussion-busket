@@ -17,6 +17,7 @@
 		1192439C2538EF6A0073ABB0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439B2538EF6A0073ABB0 /* FirebaseFirestoreSwift */; };
 		119243A02538F01F0073ABB0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439F2538F01F0073ABB0 /* FirebaseFirestore */; };
 		11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */; };
+		11BB152D253E2B9400FA930D /* CrateNewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BB152C253E2B9400FA930D /* CrateNewListView.swift */; };
 		11EA3A5D2537B1C400EB8BB5 /* M7NativeFirebase in Frameworks */ = {isa = PBXBuildFile; productRef = 11EA3A5C2537B1C400EB8BB5 /* M7NativeFirebase */; };
 		11EA3A6A2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
 		11EA3A6B2537B59F00EB8BB5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */; };
@@ -61,6 +62,7 @@
 		119243962538D9740073ABB0 /* UnAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthView.swift; sourceTree = "<group>"; };
 		11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Discussion busket.entitlements"; sourceTree = "<group>"; };
 		11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
+		11BB152C253E2B9400FA930D /* CrateNewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrateNewListView.swift; sourceTree = "<group>"; };
 		11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A061D9C251E4225004E25BF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A061DA2251E5920004E25BF /* ListItemRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemRowView.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				3AF2D7DE2504344300EB239C /* LeftMenu.swift */,
+				11BB152C253E2B9400FA930D /* CrateNewListView.swift */,
 				3ACA777B2506D3E9003ECE41 /* UserProfileButton.swift */,
 				3AF369BE250E41F2005D934F /* ListInfoCard.swift */,
 				119243962538D9740073ABB0 /* UnAuthView.swift */,
@@ -439,6 +442,7 @@
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
 				3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */,
 				3A1AD149252511F900008FE9 /* ChatRow.swift in Sources */,
+				11BB152D253E2B9400FA930D /* CrateNewListView.swift in Sources */,
 				3A3C1CF4250F2DDF0076D0C0 /* SettingsModelView.swift in Sources */,
 				3A061DA3251E5920004E25BF /* ListItemRowView.swift in Sources */,
 				3AF2D7E32505759D00EB239C /* ListTitleMenuButtonsView.swift in Sources */,
