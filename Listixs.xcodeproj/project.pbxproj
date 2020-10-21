@@ -13,6 +13,7 @@
 		112DE357253CC0E000E69687 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE356253CC0E000E69687 /* ListModel.swift */; };
 		113E2A6E253830CB00EC1FB9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6D253830CB00EC1FB9 /* FirebaseAuth */; };
 		113E2A70253830CB00EC1FB9 /* Firebase in Frameworks */ = {isa = PBXBuildFile; productRef = 113E2A6F253830CB00EC1FB9 /* Firebase */; };
+		116790632540E0BB000B8718 /* UserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116790622540E0BB000B8718 /* UserListModel.swift */; };
 		119243972538D9740073ABB0 /* UnAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119243962538D9740073ABB0 /* UnAuthView.swift */; };
 		1192439C2538EF6A0073ABB0 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439B2538EF6A0073ABB0 /* FirebaseFirestoreSwift */; };
 		119243A02538F01F0073ABB0 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1192439F2538F01F0073ABB0 /* FirebaseFirestore */; };
@@ -59,6 +60,7 @@
 		112DE347253C8F7F00E69687 /* CenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewModel.swift; sourceTree = "<group>"; };
 		112DE34E253C9DC300E69687 /* LeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewModel.swift; sourceTree = "<group>"; };
 		112DE356253CC0E000E69687 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		116790622540E0BB000B8718 /* UserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModel.swift; sourceTree = "<group>"; };
 		119243962538D9740073ABB0 /* UnAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthView.swift; sourceTree = "<group>"; };
 		11B67A7D25385EE5006651F4 /* Discussion busket.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Discussion busket.entitlements"; sourceTree = "<group>"; };
 		11B67A7E25385EE5006651F4 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AuthenticationServices.framework; sourceTree = DEVELOPER_DIR; };
@@ -291,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				112DE356253CC0E000E69687 /* ListModel.swift */,
+				116790622540E0BB000B8718 /* UserListModel.swift */,
 				112DE34E253C9DC300E69687 /* LeftViewModel.swift */,
 				112DE34D253C9CAA00E69687 /* Views */,
 			);
@@ -439,6 +442,7 @@
 				3A4220CD252664B100EDC7CF /* ChatTitleView.swift in Sources */,
 				3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */,
 				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
+				116790632540E0BB000B8718 /* UserListModel.swift in Sources */,
 				3AF2D7E12504352100EB239C /* ChatView.swift in Sources */,
 				3AF2D7E52505857300EB239C /* PagesSliderView.swift in Sources */,
 				3A1AD149252511F900008FE9 /* ChatRow.swift in Sources */,

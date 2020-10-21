@@ -58,17 +58,14 @@ struct LeftMenu: View {
                         
                         ForEach(leftViewModel.userLists) { item in
                             
-                            ListInfoCard(name: item.name)
+                            ListInfoCard(list: item)
                                 .padding(.bottom, M7Space.m)
                                 .contextMenu {
                                     Button(action: {
                                         
-                                        self.leftViewModel.deleteUserList(id: item.id)
+                                        self.leftViewModel.deleteUserList(item)
                                         
                                         
-//                                        if let index = self.leftViewModel.userLists.firstIndex(of: item) {
-//                                            self.leftViewModel.userLists.remove(at: index)
-//                                        }
                                     }, label: {
                                         HStack {
                                             Text("Delete")
