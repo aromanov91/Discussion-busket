@@ -13,7 +13,7 @@ struct ProfileView: View {
     
     @EnvironmentObject var auth: M7AuthModel
     
-    @EnvironmentObject var user: M7UserViewModel
+    @EnvironmentObject var authenticationService: AuthenticationService
     
     var body: some View {
         
@@ -24,13 +24,13 @@ struct ProfileView: View {
                 Spacer().frame(height: M7Space.xl)
                 
                 
-                M7AvatarView(firstName: user.info.firstName, lastName: user.info.lastName, size: .l)
+                M7AvatarView(firstName: authenticationService.user.firstName, lastName:  authenticationService.user.lastName, size: .l)
                 
                 VStack(spacing: M7Space.xxs) {
                     
-                    M7Text(user.info.firstName + user.info.lastName, style: .title3, color: .onBackgroundHighEmphasis)
+                    M7Text(authenticationService.user.firstName +  authenticationService.user.lastName, style: .title3, color: .onBackgroundHighEmphasis)
                     
-                    M7Text(user.info.uid, style: .paragraph1, color: .onBackgroundMediumEmphasis)
+                    M7Text( authenticationService.user.uid, style: .paragraph1, color: .onBackgroundMediumEmphasis)
                 }
                 
                 

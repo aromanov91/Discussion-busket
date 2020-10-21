@@ -22,7 +22,7 @@ struct LeftMenu: View {
     
     @EnvironmentObject var auth: M7AuthModel
     
-    @EnvironmentObject var user: M7UserViewModel
+    @EnvironmentObject var authenticationService: AuthenticationService
     
     @ObservedObject var leftViewModel = LeftViewModel()
     
@@ -38,15 +38,15 @@ struct LeftMenu: View {
                     
                     VStack(spacing: .zero) {
                         
-                        UserProfileButton(firstName: user.info.firstName,
-                                          lastName: user.info.lastName,
-                                          email: user.info.uid,
-                                          authStatus: $auth.status,
+                        UserProfileButton(firstName: authenticationService.user.firstName,
+                                          lastName: authenticationService.user.lastName,
+                                          email: authenticationService.user.uid,
+                                          authStatus: $authenticationService.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
                                             
                                             
                                             if auth.status {
-                                                 ProfileView().environmentObject(user)
+                                                 ProfileView().environmentObject(authenticationService)
                                             } else {
                                             
                                                 M7PhoneRegistrationView().environmentObject(auth)
