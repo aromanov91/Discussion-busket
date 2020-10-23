@@ -24,7 +24,7 @@ struct LeftMenu: View {
     
     @EnvironmentObject var authenticationService: AuthenticationService
     
-    @ObservedObject var leftViewModel = LeftViewModel()
+    @EnvironmentObject var leftViewModel: LeftViewModel
     
     var body: some View {
         

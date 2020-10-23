@@ -10,7 +10,13 @@ import M7Native
 
 struct ListInfoCard: View {
     
-    var list: ListModel
+    var list: UserListModel
+    
+    @State var listItem = ListModel(id: "Load", name: "Load", icon: "Load", owner: "Load")
+    
+    @EnvironmentObject var leftViewModel: LeftViewModel
+    
+    @State private var isLoad: Bool = true
     
     private struct Constans {
         static var textSpasing: CGFloat { return 4 }
@@ -33,7 +39,7 @@ struct ListInfoCard: View {
                     
                     HStack {
                         
-                        M7Text(list.name, style: .subtitle1, color: .onSurfaceHighEmphasis)
+                        M7Text(listItem.name, style: .subtitle1, color: .onSurfaceHighEmphasis, placeholder: $isLoad)
                         
                         Spacer()
                         
@@ -54,13 +60,23 @@ struct ListInfoCard: View {
                     }
                     
                     
-                    M7Text("Описание", style: .caption, color: .onSurfaceMediumEmphasis)
+                    M7Text(listItem.owner, style: .caption, color: .onSurfaceMediumEmphasis, placeholder: $isLoad)
                 }
                 
                 Spacer()
                 
                 
             }
+            
+            
+        }.onAppear() {
+            
+            let _ = leftViewModel.getListData(userList: list) { listn in
+                listItem = listn
+                isLoad = false
+            }
+            
+            
             
             
         }

@@ -14,4 +14,11 @@ struct ListModel: Identifiable, Codable {
     var name: String
     var icon: String
     var owner: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case icon
+        case owner
+      }
 }
