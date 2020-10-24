@@ -9,9 +9,9 @@ import SwiftUI
 import M7Native
 import Combine
 import Firebase
+import M7NativeFirebase
 
 struct iOSRoot: View {
-    
     
     @ObservedObject private var viewModel = iOSRootViewModel()
     

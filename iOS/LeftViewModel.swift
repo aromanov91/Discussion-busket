@@ -31,14 +31,10 @@ class LeftViewModel: ObservableObject{
     init() {
         
         status = authService.status
-        
-        if status {
             
             self.uid = authService.uid
             
             self.getUserLists()
-        }
-        
     }
     
     func createList() {

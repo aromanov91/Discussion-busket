@@ -15,6 +15,8 @@ import FirebaseFirestoreSwift
 @main
 struct Discussion_busketApp {
     
+    
+    
     static func main() {
         
         _ = M7Info(privacyPolicyUrl: "http://google.com",
@@ -67,7 +69,12 @@ struct SwiftUIApp: App {
             #else
 
 
-            iOSRoot().environmentObject(M7SettingsStore()).environmentObject(M7AuthModel()).environmentObject(AuthenticationService()).environmentObject(LeftViewModel())
+            iOSRoot()
+                .environmentObject(M7AuthFlowViewModel())
+                .environmentObject(AuthenticationService())
+               
+                .environmentObject(M7SettingsStore())
+                .environmentObject(LeftViewModel())
                 .onOpenURL(perform: { url in
 
                                     Auth.auth().canHandle(url)

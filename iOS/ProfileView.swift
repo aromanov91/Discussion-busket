@@ -11,7 +11,7 @@ import M7NativeFirebase
 
 struct ProfileView: View {
     
-    @EnvironmentObject var auth: M7AuthModel
+    @EnvironmentObject var auth: M7AuthFlowViewModel
     
     @EnvironmentObject var authenticationService: AuthenticationService
     

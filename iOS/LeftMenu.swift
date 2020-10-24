@@ -20,7 +20,7 @@ struct LeftMenu: View {
     
     @EnvironmentObject var settings: M7SettingsStore
     
-    @EnvironmentObject var auth: M7AuthModel
+    @EnvironmentObject var auth: M7AuthFlowViewModel
     
     @EnvironmentObject var authenticationService: AuthenticationService
     

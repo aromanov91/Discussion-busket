@@ -11,7 +11,7 @@ import M7NativeFirebase
 
 struct ChatView: View {
     
-    @EnvironmentObject var authmodel: M7AuthModel
+    @EnvironmentObject var authmodel: M7AuthFlowViewModel
     
     @State var showModal = false
     
