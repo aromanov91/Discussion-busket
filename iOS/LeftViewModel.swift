@@ -9,8 +9,9 @@ import Firebase
 import FirebaseFirestoreSwift
 import FirebaseFirestore
 import M7NativeFirebase
+import Combine
 
-class LeftViewModel: ObservableObject{
+class LeftViewModel: ObservableObject {
     
     @Published var listName = "Default"
     
@@ -18,7 +19,8 @@ class LeftViewModel: ObservableObject{
     
     @Published var noLists = false
     
-    @Published var authService = AuthenticationService()
+    @Published var authenticationService = AuthenticationService()
+
     
     let db = Firestore.firestore()
     
@@ -28,11 +30,19 @@ class LeftViewModel: ObservableObject{
     
     var status = false
     
+    private var cancellables = Set<AnyCancellable>()
+    
     init() {
         
-        self.status = authService.status
+        self.authenticationService.objectWillChange
+                    .sink { _ in
+                        self.objectWillChange.send()
+                    }
+                    .store(in: &cancellables)
+        
+        self.status = authenticationService.status
             
-        self.uid = authService.uid
+        self.uid = authenticationService.uid
             
         //self.getUserLists()
     }

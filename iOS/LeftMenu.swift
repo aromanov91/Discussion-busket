@@ -18,13 +18,13 @@ struct LeftMenu: View {
     
     @State var showCreateListView = false
     
-    @EnvironmentObject var settings: M7SettingsStore
-    
-    @EnvironmentObject var auth: M7AuthFlowViewModel
-    
     @EnvironmentObject var authenticationService: AuthenticationService
     
+    @EnvironmentObject var authenticationFlowViewModel: M7AuthFlowViewModel
+    
     @EnvironmentObject var leftViewModel: LeftViewModel
+    
+    @EnvironmentObject var settings: M7SettingsStore
     
     var body: some View {
         
@@ -49,7 +49,7 @@ struct LeftMenu: View {
                                                  ProfileView().environmentObject(authenticationService)
                                             } else {
                                             
-                                                M7PhoneRegistrationView().environmentObject(auth)
+                                                M7PhoneRegistrationView().environmentObject(authenticationFlowViewModel)
                                             }
                                           })
                         
