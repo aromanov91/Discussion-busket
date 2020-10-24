@@ -20,12 +20,12 @@ struct Discussion_busketApp {
     static func main() {
         
         _ = M7Info(privacyPolicyUrl: "http://google.com",
-               termsOfUseUrl: "http://google.com",
-               iconName: "icon",
-               supportUrl: "http://google.com",
-               facebookMessengerChatUrl: "http://google.com",
-               telegramChatUrl: "http://google.com",
-               appStoreUrl: "http://google.com")
+                   termsOfUseUrl: "http://google.com",
+                   iconName: "icon",
+                   supportUrl: "http://google.com",
+                   facebookMessengerChatUrl: "http://google.com",
+                   telegramChatUrl: "http://google.com",
+                   appStoreUrl: "http://google.com")
         
         _ = M7Info(name: "Alexander Romanov",
                    email: "aromanov07@gmail.com",
@@ -38,47 +38,45 @@ struct Discussion_busketApp {
             
             SwiftUIApp.main()
         }
-//        } else {
-//            #if os(iOS) // iOS 13.0 or lower
-//            UIApplicationMain(CommandLine.argc,
-//                              CommandLine.unsafeArgv,
-//                              nil,
-//                              NSStringFromClass(AppDelegate.self))
-//            #else
-//            print("This app doesn't run (yet) on this OS, so Bye")
-//            return
-//            #endif
-//        }
+        //        } else {
+        //            #if os(iOS) // iOS 13.0 or lower
+        //            UIApplicationMain(CommandLine.argc,
+        //                              CommandLine.unsafeArgv,
+        //                              nil,
+        //                              NSStringFromClass(AppDelegate.self))
+        //            #else
+        //            print("This app doesn't run (yet) on this OS, so Bye")
+        //            return
+        //            #endif
+        //        }
     }
 }
 
 @available(iOS 14.0, macOS 11.0, tvOS 14.0, watchOS 7.0, *)
 struct SwiftUIApp: App {
-
-//    init() {
-//        FirebaseApp.configure()
-//      }
-
+    
+    //    init() {
+    //        FirebaseApp.configure()
+    //      }
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
+    
     var body: some Scene {
         return WindowGroup {
-
+            
             #if os(macOS)
             MacRoot().frame(minWidth: 100, idealWidth: 300, maxWidth: .infinity, minHeight: 100, idealHeight: 200, maxHeight: .infinity)
             #else
-
-
+            
             iOSRoot()
-                .environmentObject(M7AuthFlowViewModel())
                 .environmentObject(AuthenticationService())
-               
+                .environmentObject(M7AuthFlowViewModel())
                 .environmentObject(M7SettingsStore())
                 .environmentObject(LeftViewModel())
                 .onOpenURL(perform: { url in
-
-                                    Auth.auth().canHandle(url)
-                                })
+                    
+                    Auth.auth().canHandle(url)
+                })
             #endif
         }
     }

@@ -38,14 +38,14 @@ struct LeftMenu: View {
                     
                     VStack(spacing: .zero) {
                         
-                        UserProfileButton(firstName: authenticationService.user.firstName,
-                                          lastName: authenticationService.user.lastName,
-                                          email: authenticationService.user.uid,
+                        UserProfileButton(firstName: authenticationService.userData.firstName,
+                                          lastName: authenticationService.userData.lastName,
+                                          email: authenticationService.uid,
                                           authStatus: $authenticationService.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
                                             
-                                            
-                                            if auth.status {
+        
+                                            if authenticationService.status {
                                                  ProfileView().environmentObject(authenticationService)
                                             } else {
                                             

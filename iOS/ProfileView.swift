@@ -24,13 +24,13 @@ struct ProfileView: View {
                 Spacer().frame(height: M7Space.xl)
                 
                 
-                M7AvatarView(firstName: authenticationService.user.firstName, lastName:  authenticationService.user.lastName, size: .l)
+                M7AvatarView(firstName: authenticationService.userData.firstName, lastName:  authenticationService.userData.lastName, size: .l)
                 
                 VStack(spacing: M7Space.xxs) {
                     
-                    M7Text(authenticationService.user.firstName +  authenticationService.user.lastName, style: .title3, color: .onBackgroundHighEmphasis)
+                    M7Text(authenticationService.userData.firstName +  authenticationService.userData.lastName, style: .title3, color: .onBackgroundHighEmphasis)
                     
-                    M7Text( authenticationService.user.uid, style: .paragraph1, color: .onBackgroundMediumEmphasis)
+                    M7Text( authenticationService.uid, style: .paragraph1, color: .onBackgroundMediumEmphasis)
                 }
                 
                 

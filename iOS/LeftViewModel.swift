@@ -30,11 +30,11 @@ class LeftViewModel: ObservableObject{
     
     init() {
         
-        status = authService.status
+        self.status = authService.status
             
-            self.uid = authService.uid
+        self.uid = authService.uid
             
-            self.getUserLists()
+        //self.getUserLists()
     }
     
     func createList() {
