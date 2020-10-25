@@ -5,11 +5,10 @@
 //  Created by 18391981 on 18.10.2020.
 //
 import Foundation
+import Combine
 import Firebase
 import FirebaseFirestoreSwift
-import FirebaseFirestore
 import M7NativeFirebase
-import Combine
 
 class LeftViewModel: ObservableObject {
     
@@ -21,7 +20,6 @@ class LeftViewModel: ObservableObject {
     
     @Published var authenticationService = AuthenticationService()
 
-    
     let db = Firestore.firestore()
     
     var uid = ""

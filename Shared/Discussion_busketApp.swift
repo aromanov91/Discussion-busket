@@ -19,6 +19,9 @@ struct Discussion_busketApp {
     
     static func main() {
         
+     
+        
+       
         _ = M7Info(privacyPolicyUrl: "http://google.com",
                    termsOfUseUrl: "http://google.com",
                    iconName: "icon",
@@ -59,16 +62,24 @@ struct SwiftUIApp: App {
     //        FirebaseApp.configure()
     //      }
     
+    
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     var body: some Scene {
         return WindowGroup {
             
+           
+            
+            
             #if os(macOS)
             MacRoot().frame(minWidth: 100, idealWidth: 300, maxWidth: .infinity, minHeight: 100, idealHeight: 200, maxHeight: .infinity)
             #else
             
+            
+            
             iOSRoot()
+                
                 .environmentObject(AuthenticationService())
                 .environmentObject(M7AuthFlowViewModel())
                 .environmentObject(M7SettingsStore())
@@ -77,15 +88,25 @@ struct SwiftUIApp: App {
                     
                     Auth.auth().canHandle(url)
                 })
+            
+            
+            
             #endif
         }
     }
 }
 
 class AppDelegate: NSObject, UIApplicationDelegate {
+    
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         
         FirebaseApp.configure()
+        
+       // authenticationService.signInAnonymously()
+        
+        
         let _ = Firestore.firestore()
         return true
     }

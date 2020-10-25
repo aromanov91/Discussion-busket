@@ -40,15 +40,15 @@ struct LeftMenu: View {
                         
                         UserProfileButton(firstName: authenticationService.userData.firstName,
                                           lastName: authenticationService.userData.lastName,
-                                          email: authenticationService.uid,
+                                          email: authenticationService.currentUser?.phoneNumber ?? "",
                                           authStatus: $authenticationService.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
                                             
-        
-                                            if authenticationService.status {
-                                                 ProfileView().environmentObject(authenticationService)
-                                            } else {
                                             
+                                            if authenticationService.status {
+                                                ProfileView().environmentObject(authenticationService)
+                                            } else {
+                                                
                                                 M7PhoneRegistrationView().environmentObject(authenticationFlowViewModel)
                                             }
                                           })

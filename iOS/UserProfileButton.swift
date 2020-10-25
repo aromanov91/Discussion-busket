@@ -40,8 +40,8 @@ struct UserProfileButton: View {
             HStack {
                 
                 if authStatus {
-                
-                M7AvatarView(firstName: firstName, lastName: lastName, size: .m)
+                    
+                    M7AvatarView(firstName: firstName, lastName: lastName, size: .m)
                     
                 } else {
                     M7Icon(.user)
@@ -51,18 +51,18 @@ struct UserProfileButton: View {
                 }
                 
                 VStack(alignment: .leading, spacing: Constans.textSpasing) {
+                    
                     M7Text(authStatus
                             ? ("\(firstName)" + " " + "\(lastName)")
-                        : "Авторизация"
-                        , style: .subtitle1
+                            : "Авторизация"
+                           , style: .subtitle1
                     )
+                    
                     M7Text(authStatus
-                        ? email
-                        : "Войти или зарегистрироваться"
-                        , style: .caption, color: .onBackgroundMediumEmphasis)
+                            ? email
+                            : "Войти или зарегистрироваться"
+                           , style: .caption, color: .onBackgroundMediumEmphasis)
                 }
-                
-                
                 
                 M7Icon(.chevronDown)
                 
