@@ -38,9 +38,7 @@ struct LeftMenu: View {
                     
                     VStack(spacing: .zero) {
                         
-                        UserProfileButton(firstName: authenticationService.currentUser?.displayName ?? "",
-                                          lastName: authenticationService.userData.lastName,
-                                          email: authenticationService.currentUser?.phoneNumber ?? "",
+                        UserProfileButton(user: authenticationService.currentUser,
                                           authStatus: $authenticationService.status,
                                           action: { showProfileView.toggle() }).sheet(isPresented: $showProfileView, content: {
                                             

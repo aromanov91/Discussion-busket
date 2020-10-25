@@ -7,14 +7,11 @@
 
 import SwiftUI
 import M7Native
+import Firebase
 
 struct UserProfileButton: View {
     
-    let firstName: String
-    
-    let lastName: String
-    
-    let email: String
+    let user: User?
     
     let action: () -> Void
     
@@ -24,11 +21,9 @@ struct UserProfileButton: View {
         static var textSpasing: CGFloat { return 4 }
     }
     
-    init(firstName: String, lastName: String, email: String, authStatus: Binding<Bool> = .constant(true), action: @escaping () -> Void) {
+    init(user: User?, authStatus: Binding<Bool> = .constant(true), action: @escaping () -> Void) {
         
-        self.firstName = firstName
-        self.lastName = lastName
-        self.email = email
+        self.user = user
         self.action = action
         self._authStatus = authStatus
     }
@@ -41,7 +36,7 @@ struct UserProfileButton: View {
                 
                 if authStatus {
                     
-                    M7AvatarView(firstName: firstName, lastName: lastName, size: .m)
+                    M7AvatarView(firstName: self.user?.displayName ?? "", size: .m)
                     
                 } else {
                     M7Icon(.user)
@@ -53,13 +48,13 @@ struct UserProfileButton: View {
                 VStack(alignment: .leading, spacing: Constans.textSpasing) {
                     
                     M7Text(authStatus
-                            ? ("\(firstName)" + " " + "\(lastName)")
+                            ? self.user?.displayName ?? ""
                             : "Авторизация"
                            , style: .subtitle1
                     )
                     
                     M7Text(authStatus
-                            ? email
+                            ? self.user?.phoneNumber ?? ""
                             : "Войти или зарегистрироваться"
                            , style: .caption, color: .onBackgroundMediumEmphasis)
                 }
@@ -73,9 +68,9 @@ struct UserProfileButton: View {
     }
 }
 
-struct UserProfileButton_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfileButton(firstName: "Ivan", lastName: "Ivanov", email: "mail@mail.com", action: { print(#function) })
-            .previewLayout(.fixed(width: 375.0, height: 100.0))
-    }
-}
+//struct UserProfileButton_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserProfileButton(firstName: "Ivan", lastName: "Ivanov", email: "mail@mail.com", action: { print(#function) })
+//            .previewLayout(.fixed(width: 375.0, height: 100.0))
+//    }
+//}
