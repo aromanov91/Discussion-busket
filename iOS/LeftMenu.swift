@@ -38,7 +38,7 @@ struct LeftMenu: View {
                     
                     VStack(spacing: .zero) {
                         
-                        UserProfileButton(firstName: authenticationService.userData.firstName,
+                        UserProfileButton(firstName: authenticationService.currentUser?.displayName ?? "",
                                           lastName: authenticationService.userData.lastName,
                                           email: authenticationService.currentUser?.phoneNumber ?? "",
                                           authStatus: $authenticationService.status,
