@@ -15,13 +15,8 @@ import FirebaseFirestoreSwift
 @main
 struct Discussion_busketApp {
     
-    
-    
     static func main() {
-        
-     
-        
-       
+
         _ = M7Info(privacyPolicyUrl: "http://google.com",
                    termsOfUseUrl: "http://google.com",
                    iconName: "icon",
