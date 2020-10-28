@@ -5,4 +5,53 @@
   Created on 15.09.2020.
   
 */
-"Settings.Title" = "Settings";
+"List.AddList" = "Добавить категорию";
+"List.Adding" = "Добавляет";
+"List.WhatToBuy?" = "Что купить?";
+"List.History" = "История";
+"List.Participants" = "Участников";
+"List.Online" = "В сети";
+"List.Messagess" = "Сообщения";
+"List.Message" = "Сообщение";
+
+// Banner
+"List.ProTitile" = "Расширьте рабочее пространство";
+"List.ProInfoText" = "Добавляйте неограниченное количество корзин, участников и все без рекламы";
+
+// Alerts
+"List.DeleteAllTitle" = "Вы уверены, что хотите
+все удалить?";
+"List.DeleteAllSubtitile" = "После удаления восстановит данные будет нвозможно";
+
+// Success infos
+"List.InviteSended" = "Приглашение отправлено";
+"List.CategoryAdded" = "Категория
+создана";
+"List.AccoundAdded" = "Аккаунт
+создан";
+
+
+// Empty screens
+"List.EmptyListTitle" = "Здесь будет ваш список";
+"List.EmptyListSubtitle" = "Добавьте ваш первый продукт,
+например макароны :)";
+
+"Messages.EmptyListTitle" = "Обсуждайте список
+с друзьями";
+"Messages.EmptyListSubtitle" = "Отправьте приглашение
+и делитесь идеями";
+
+// Auth
+"Auth.Title" = "Составляйте списки с друзьями и храните их в облаке";
+
+// Profile
+"Profile.Message" = "Имя и email";
+"Profile.Message" = "Список корзин";
+"Profile.Message" = "Список контактов";
+
+// Frends list
+"Frends.Title" = "Участники";
+
+// New list
+"List.NewListPageTitle" = "Новый список";
+"List.ListTitleTextField" = "Название";

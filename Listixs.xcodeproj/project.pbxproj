@@ -85,7 +85,6 @@
 		3A1C0B1B250408DE0087E5E3 /* iOSRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSRoot.swift; sourceTree = "<group>"; };
 		3A1C0B1C25040B350087E5E3 /* MacRoot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacRoot.swift; sourceTree = "<group>"; };
 		3A22A991251075DA00404E2E /* M7Native */ = {isa = PBXFileReference; lastKnownFileType = folder; name = M7Native; path = ../M7Native; sourceTree = "<group>"; };
-		3A22A9B2251079DC00404E2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A22A9B4251079DF00404E2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3A3C1CEF250EB7250076D0C0 /* ProVersonBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProVersonBanner.swift; sourceTree = "<group>"; };
 		3A3C1CF1250EBBD60076D0C0 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -384,7 +383,6 @@
 			knownRegions = (
 				en,
 				Base,
-				ru,
 			);
 			mainGroup = 3A19C3D724FC2AE300FD67FB;
 			packageReferences = (
@@ -476,7 +474,6 @@
 		3A22A9B3251079DC00404E2E /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3A22A9B2251079DC00404E2E /* ru */,
 				3A22A9B4251079DF00404E2E /* en */,
 			);
 			name = Localizable.strings;
