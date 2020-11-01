@@ -55,7 +55,7 @@ struct LeftMenu: View {
                         
                         Spacer().frame(height: M7Space.l)
                         
-                        ForEach(leftViewModel.userLists) { item in
+                        ForEach(leftViewModel.firestoreService.userLists) { item in
                             
                             ListInfoCard(list: item)
                                 .padding(.bottom, M7Space.m)

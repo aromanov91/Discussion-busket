@@ -12,4 +12,9 @@ struct UserListModel: Identifiable, Codable {
     
     @DocumentID var id: String?
     var name: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+      }
 }

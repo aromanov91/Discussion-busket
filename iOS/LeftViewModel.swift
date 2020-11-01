@@ -6,159 +6,111 @@
 //
 import Foundation
 import Combine
-import Firebase
-import FirebaseFirestoreSwift
-import M7NativeFirebase
 
 class LeftViewModel: ObservableObject {
     
     @Published var listName = "Default"
+
     
     @Published var isShowEditor = false
     
     @Published var noLists = false
     
-    @Published var authenticationService = AuthenticationService()
-
-    let db = Firestore.firestore()
-    
-    var uid = ""
-    
-    @Published var userLists: [UserListModel] = []
-    
-    var status = false
+    @Published var firestoreService = FirestoreService()
     
     private var cancellables = Set<AnyCancellable>()
     
-    init() {
+    public init() {
+        self.firestoreService.objectWillChange
+            .sink { _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &cancellables)
         
-        self.authenticationService.objectWillChange
-                    .sink { _ in
-                        self.objectWillChange.send()
-                    }
-                    .store(in: &cancellables)
-        
-        self.status = authenticationService.status
-            
-        self.uid = authenticationService.uid
-            
-        //self.getUserLists()
+        self.getUserLists()
     }
+    
     
     func createList() {
         
-        createList(ListModel(name: listName, icon: "home", owner: uid))
+        //createList(ListModel(name: listName, icon: "home", owner: authenticationService.uid))
     }
     
-    func createList(_ list: ListModel) {
+    
+    
+    func createDefaultList() {
         
-        do {
-            let doc = try db.collection("lists")
-                .addDocument(from: list)
-            
-            let _ = try  self.db.collection("users").document(self.uid).collection("lists").document(doc.documentID)
-                .setData(from: UserListModel(name: list.name))
-            
-        }
-        catch {
-            print(error)
-        }
+//        let defaultlist = ListModel(name: "Default", icon: "home", owner: self.authenticationService.uid)
+//
+//        do {
+//            let doc = try db.collection("lists")
+//                .addDocument(from: defaultlist)
+//
+//            let _ = try  self.db.collection("users").document(self.authenticationService.uid).collection("lists").document(doc.documentID)
+//                .setData(from: UserListModel(name: defaultlist.name))
+//        }
+//        catch {
+//            print(error)
+//        }
     }
     
-//    func checkUserListsEmpty() {
+    func getUserLists() {
+        
+//        if authenticationService.currentUser != nil {
 //
-//        let thisUser = db.collection("users").document(self.uid).collection("lists")
+//        }
 //
-//        thisUser.getDocuments(completion: { snapshot, error in
+//        db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
+//
+//            guard let documents = querySnapshot?.documents else {
+//                print("No documents")
+//                return
+//            }
+//
+//            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
+//                return try? queryDocumentSnapshot.data(as: UserListModel.self)
+//            }
+//
+//            if self.userLists.isEmpty {
+//
+//                self.createDefaultList()
+//
+//            }
+        
+    }
+    
+    func getListData(userList: UserListModel, completion: @escaping (ListModel)->()) {
+        
+//        let thisUser = db.collection("lists").document(userList.id ?? "")
+//
+//        thisUser.getDocument(completion: { snapshot, error in
 //
 //            if let err = error {
 //                print(err.localizedDescription)
 //                return
 //            }
+//            let list = try? snapshot?.data(as: ListModel.self)
 //
-//            print(snapshot?.documents)
-//
-//            if snapshot?.documents.isEmpty {
-//                self.createDefaultList()
-//                print("Создать пустой спсис")
-//
-//            }
-//
-//
+//            completion(list ?? ListModel(name: "", icon: "", owner: ""))
 //        })
-//
-//
-//    }
-    
-    func createDefaultList() {
-        
-        let defaultlist = ListModel(name: "Default", icon: "home", owner: self.uid)
-        
-        do {
-            let doc = try db.collection("lists")
-                .addDocument(from: defaultlist)
-            
-            let _ = try  self.db.collection("users").document(self.uid).collection("lists").document(doc.documentID)
-                .setData(from: UserListModel(name: defaultlist.name))
-        }
-        catch {
-            print(error)
-        }
-    }
-    
-    func getUserLists() {
-        
-        db.collection("users").document(self.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
-            
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
-                return try? queryDocumentSnapshot.data(as: UserListModel.self)
-            }
-            
-            if self.userLists.isEmpty {
-                
-                self.createDefaultList()
-                
-            }
-        }
-    }
-    
-    func getListData(userList: UserListModel, completion: @escaping (ListModel)->()) {
-        
-        let thisUser = db.collection("lists").document(userList.id ?? "")
-        
-        thisUser.getDocument(completion: { snapshot, error in
-            
-            if let err = error {
-                print(err.localizedDescription)
-                return
-            }
-            let list = try? snapshot?.data(as: ListModel.self)
-            
-            completion(list ?? ListModel(name: "", icon: "", owner: ""))
-        })
     }
     
     func deleteUserList(_ list: UserListModel) {
         
-        if let documentId = list.id {
-            
-            db.collection("lists").document(documentId).delete { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-            
-            db.collection("users").document(self.uid).collection("lists").document(documentId).delete { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-        }
+//        if let documentId = list.id {
+//
+//            db.collection("lists").document(documentId).delete { error in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//
+//            db.collection("users").document(self.authenticationService.uid).collection("lists").document(documentId).delete { error in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                }
+//            }
+//        }
     }
     
 }

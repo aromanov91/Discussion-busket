@@ -10,6 +10,8 @@
 		112DE348253C8F7F00E69687 /* CenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE347253C8F7F00E69687 /* CenterViewModel.swift */; };
 		112DE34F253C9DC300E69687 /* LeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE34E253C9DC300E69687 /* LeftViewModel.swift */; };
 		112DE357253CC0E000E69687 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE356253CC0E000E69687 /* ListModel.swift */; };
+		115E4196254F463100539D7E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115E4195254F463100539D7E /* FirestoreService.swift */; };
+		115E419B254F49B700539D7E /* FirestoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115E4195254F463100539D7E /* FirestoreService.swift */; };
 		116790632540E0BB000B8718 /* UserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116790622540E0BB000B8718 /* UserListModel.swift */; };
 		119243972538D9740073ABB0 /* UnAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119243962538D9740073ABB0 /* UnAuthView.swift */; };
 		1193BA77254F3CD4004329C1 /* M7Native in Frameworks */ = {isa = PBXBuildFile; productRef = 1193BA76254F3CD4004329C1 /* M7Native */; };
@@ -60,6 +62,7 @@
 		112DE347253C8F7F00E69687 /* CenterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenterViewModel.swift; sourceTree = "<group>"; };
 		112DE34E253C9DC300E69687 /* LeftViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftViewModel.swift; sourceTree = "<group>"; };
 		112DE356253CC0E000E69687 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		115E4195254F463100539D7E /* FirestoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreService.swift; sourceTree = "<group>"; };
 		116790622540E0BB000B8718 /* UserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModel.swift; sourceTree = "<group>"; };
 		116EEDA2254F123B0032C4A9 /* M7Private */ = {isa = PBXFileReference; lastKnownFileType = folder; name = M7Private; path = ../M7Private; sourceTree = "<group>"; };
 		119243962538D9740073ABB0 /* UnAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnAuthView.swift; sourceTree = "<group>"; };
@@ -206,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				11EA3A692537B59E00EB8BB5 /* GoogleService-Info.plist */,
+				115E4195254F463100539D7E /* FirestoreService.swift */,
 				3A19C3DD24FC2AE300FD67FB /* Discussion_busketApp.swift */,
 				3A22A9B3251079DC00404E2E /* Localizable.strings */,
 				3A19C3DF24FC2AE400FD67FB /* Assets.xcassets */,
@@ -439,6 +443,7 @@
 				3A061DB5251E68E3004E25BF /* NewItemTextFieldView.swift in Sources */,
 				3A1AD14F2525295600008FE9 /* iOSRootViewModel.swift in Sources */,
 				3AF2D7DF2504344300EB239C /* LeftMenu.swift in Sources */,
+				115E4196254F463100539D7E /* FirestoreService.swift in Sources */,
 				3A4220CD252664B100EDC7CF /* ChatTitleView.swift in Sources */,
 				3AF369BF250E41F2005D934F /* ListInfoCard.swift in Sources */,
 				3ACA777C2506D3E9003ECE41 /* UserProfileButton.swift in Sources */,
@@ -465,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A1C0B2025040E630087E5E3 /* MacRoot.swift in Sources */,
+				115E419B254F49B700539D7E /* FirestoreService.swift in Sources */,
 				3AF369C0250E41F2005D934F /* ListInfoCard.swift in Sources */,
 				3A19C3F124FC2AE400FD67FB /* Discussion_busketApp.swift in Sources */,
 			);
