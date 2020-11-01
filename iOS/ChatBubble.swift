@@ -2,7 +2,7 @@
 //  SwiftUIView.swift
 //  Listixs (iOS)
 //
-//  Created by 18391981 on 30.09.2020.
+//  Created by Alexander Romanov on 30.09.2020.
 //
 
 import SwiftUI

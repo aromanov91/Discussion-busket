@@ -2,7 +2,7 @@
 //  IOSRootViewModel.swift
 //  Listixs (iOS)
 //
-//  Created by 18391981 on 01.10.2020.
+//  Created by Alexander Romanov on 01.10.2020.
 //
 
 import SwiftUI
