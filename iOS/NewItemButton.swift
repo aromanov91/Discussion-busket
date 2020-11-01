@@ -2,7 +2,7 @@
 //  NewItemButton.swift
 //  Discussion busket (iOS)
 //
-//  Created by 18391981 on 26.09.2020.
+//  Created by Alexander Romanov on 26.09.2020.
 //
 
 import SwiftUI

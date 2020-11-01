@@ -2,7 +2,7 @@
 //  CrateNewListView.swift
 //  Listixs (iOS)
 //
-//  Created by 18391981 on 19.10.2020.
+//  Created by Alexander Romanov on 19.10.2020.
 //
 
 import SwiftUI
@@ -14,9 +14,7 @@ struct CrateNewListView: View {
     
     let action: () -> Void
     
-    init(   name: Binding<String>,
-                action: @escaping () -> Void
-                ) {
+    init(name: Binding<String>, action: @escaping () -> Void) {
         self._categoryName = name
         self.action = action
     }
@@ -32,7 +30,6 @@ struct CrateNewListView: View {
                 M7Button(style: .secondary, size: .m, action: action) {
                     Text("Save")
                 }
-                
             }
         
         M7Icon(.home)
@@ -41,9 +38,7 @@ struct CrateNewListView: View {
             .cornerRadius(12)
             
             M7TextField("Categoty name", text: $categoryName)
-            
-           
-            
+
         }
     }
 }

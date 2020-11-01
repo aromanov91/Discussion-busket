@@ -2,7 +2,7 @@
 //  UnAuthView.swift
 //  Listixs (iOS)
 //
-//  Created by 18391981 on 15.10.2020.
+//  Created by Alexander Romanov on 15.10.2020.
 //
 
 import SwiftUI
