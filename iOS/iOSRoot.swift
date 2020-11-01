@@ -15,116 +15,127 @@ struct iOSRoot: View {
     
     @ObservedObject private var viewModel = iOSRootViewModel()
     
+    @State var showAlert = true
+    
     var body: some View {
         
-        M7ThemingView {
+        
+        
+        GeometryReader { geometry in
             
-            GeometryReader { geometry in
+            
+            
+            M7ThemingView {
                 
-                M7ThemingView {
+                ZStack {
                     
-                    ZStack {
+                    
+                    PagesSliderView(pageCount: viewModel.pageCount, currentIndex: $viewModel.currentIndex) {
                         
-                        PagesSliderView(pageCount: viewModel.pageCount, currentIndex: $viewModel.currentIndex) {
+                        // Left menu
+                        HStack {
                             
-                            // Left menu
-                            HStack {
-                                
-                                Spacer().frame(width: M7Space.s + M7Space.m)
-                                
-                                LeftMenu().padding(.bottom, geometry.safeAreaInsets.bottom)
-                                
-                            }
+                            Spacer().frame(width: M7Space.s + M7Space.m)
                             
-                            // Center
+                            LeftMenu().padding(.bottom, geometry.safeAreaInsets.bottom)
                             
-                            VStack(spacing: .zero) {
+                        }
+                        
+                        // Center
+                        
+                        VStack(spacing: .zero) {
+                            
+                            ListTitleView(menuAction: { viewModel.menuShowAction() },
+                                          nameAction: { viewModel.listButtonsShowAction() },
+                                          chatAction: { viewModel.chatShowAction() })
+                            
+                            ZStack {
                                 
-                                ListTitleView(menuAction: { viewModel.menuShowAction() },
-                                              nameAction: { viewModel.listButtonsShowAction() },
-                                              chatAction: { viewModel.chatShowAction() })
-                                
-                                ZStack {
+                                VStack(spacing: .zero) {
                                     
-                                    VStack(spacing: .zero) {
-                                        
-                                        if viewModel.isShowMenu {
+                                    if viewModel.isShowMenu {
                                         
                                         Divider()
                                         
-                                        }
-                                            
-                                        ListTitleMenuButtonsView(renameAction: { viewModel.renameAction() },
-                                                                 addUserAction: { viewModel.addUserAction() },
-                                                                 historyAction: { viewModel.historyAction() },
-                                                                 deleteAction: { viewModel.deleteAction() })
-                                        
-                                        Spacer()
                                     }
                                     
-                                    ListView()
+                                    ListTitleMenuButtonsView(renameAction: { showAlert.toggle() },
+                                                             addUserAction: { viewModel.addUserAction() },
+                                                             historyAction: { viewModel.historyAction() },
+                                                             deleteAction: { viewModel.deleteAction() })
+                                    
+                                    
+                                    Spacer()
+                                }
+                                
+                                ListView()
+                                    
+                                    .environmentObject(viewModel)
+                                    .sheet(isPresented: $viewModel.isShowRate) {
+                                        M7RateView(image: Image("Rate"))
                                         
-                                        .environmentObject(viewModel)
-                                        .sheet(isPresented: $viewModel.isShowRate) {
-                                            M7RateView(image: Image("Rate"))
-                                        }
+
+                                    }
+                                
+                                
+                                VStack {
                                     
+                                    Spacer()
                                     
-                                    VStack {
+                                    M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                        .frame(height: 56 + geometry.safeAreaInsets.bottom)
+                                        .cornerRadius(12)
+                                }
+                                
+                                
+                            }.frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                            
+                        }
+                        
+                        
+                        // Right
+                        HStack {
+                            
+                            VStack(spacing: 0) {
+                                
+                                ChatTitleView()
+                                
+                                ZStack {
+                                    
+                                    ChatView()
+                                    
+                                    VStack(spacing: 0) {
                                         
                                         Spacer()
                                         
                                         M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                             .frame(height: 56 + geometry.safeAreaInsets.bottom)
-                                            .cornerRadius(12)
+                                        
+                                        
                                     }
-                                    
-                                    
-                                }.frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                                }
                                 
                             }
                             
+                            Spacer().frame(width: M7Space.m - M7Space.xxs )
                             
-                            // Right
-                            HStack {
-                                
-                                VStack(spacing: 0) {
-                                    
-                                    ChatTitleView()
-                                    
-                                    ZStack {
-                                        
-                                        ChatView()
-                                        
-                                        VStack(spacing: 0) {
-                                            
-                                            Spacer()
-                                            
-                                            M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
-                                                .frame(height: 56 + geometry.safeAreaInsets.bottom)
-                                                
-                                            
-                                        }
-                                    }
-                                    
-                                }
-                                
-                                Spacer().frame(width: M7Space.m - M7Space.xxs )
-                                
-                            }.zIndex(0)
-                            
-                        }
-                        .padding(.trailing, geometry.safeAreaInsets.trailing)
-                        .padding(.leading, geometry.safeAreaInsets.leading)
-                        .padding(.top, geometry.safeAreaInsets.top)
-                        .background(M7Color.backgroundSecondary.color)
-//                        .background(Color(UIColor.systemGroupedBackground))
+                        }.zIndex(0)
                         
-                    }.edgesIgnoringSafeArea(.all)
+                    }
+                    .padding(.trailing, geometry.safeAreaInsets.trailing)
+                    .padding(.leading, geometry.safeAreaInsets.leading)
+                    .padding(.top, geometry.safeAreaInsets.top)
+                    .background(M7Color.backgroundSecondary.color)
+                    //                        .background(Color(UIColor.systemGroupedBackground))
+                    
 
-                }
+                    
+                }.edgesIgnoringSafeArea(.all)
+                
             }
         }
+        
+        
     }
 }
 

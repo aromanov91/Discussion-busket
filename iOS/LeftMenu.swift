@@ -77,9 +77,11 @@ struct LeftMenu: View {
                         
                         M7Button(action: { showCreateListView = true }) {
                             Text("Create list")
-                        }.sheet(isPresented: $showCreateListView) {
-                            CrateNewListView(name: $leftViewModel.listName, action: leftViewModel.createList)
                         }
+                     
+//                        .sheet(isPresented: $showCreateListView) {
+//                            CrateNewListView(name: $leftViewModel.listName, action: leftViewModel.createList)
+//                        }
                         
                     }
                     
@@ -110,6 +112,15 @@ struct LeftMenu: View {
                 
                 Spacer().frame(width: M7Space.m)
             }
+        }//.toast(isShowing: $showCreateListView, text: Text("Hello toast!"))
+//        .alertX(isPresented: $showCreateListView, content: {
+//
+//
+//
+//
+//                        })
+        .m7alert(isPresented: $showCreateListView) {
+            M7Alert(title: "Воу")
         }
     }
 }
