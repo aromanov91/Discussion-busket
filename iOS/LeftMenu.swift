@@ -9,6 +9,7 @@ import SwiftUI
 import M7Native
 import M7NativeFirebase
 import Combine
+import M7Private
 
 struct LeftMenu: View {
     
@@ -120,7 +121,10 @@ struct LeftMenu: View {
 //
 //                        })
         .m7alert(isPresented: $showCreateListView) {
-            M7Alert(title: "Воу")
+            
+            M7Alert(title: "Получилось", image: getM7Image(.folder), autohide: true)
+            
+            //M7Alert(title: "Воу")
         }
     }
 }
