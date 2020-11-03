@@ -35,7 +35,7 @@ struct iOSRoot: View {
                         // Left menu
                         HStack {
                             
-                            Spacer().frame(width: M7Space.s + M7Space.m)
+                            Spacer().frame(width: M7Space.small + M7Space.medium)
                             
                             LeftMenu().padding(.bottom, geometry.safeAreaInsets.bottom)
                             
@@ -88,7 +88,7 @@ struct iOSRoot: View {
                                 }
                                 
                                 
-                            }.frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxl : .infinity )
+                            }.frame(maxHeight: viewModel.currentIndex != 1 ? geometry.size.height - M7Space.xxxLarge : .infinity )
                             
                         }
                         
@@ -117,7 +117,7 @@ struct iOSRoot: View {
                                 
                             }
                             
-                            Spacer().frame(width: M7Space.m - M7Space.xxs )
+                            Spacer().frame(width: M7Space.medium - M7Space.xxSmall )
                             
                         }.zIndex(0)
                         

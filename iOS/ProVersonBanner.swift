@@ -12,7 +12,7 @@ struct ProVersonBanner: View {
     var body: some View {
         
         M7Surface(elevation: .z4, background: .primary, padding: .s) {
-            VStack(spacing: M7Space.xxs) {
+            VStack(spacing: M7Space.xxSmall) {
                 
                 M7Text("Про версия", style: .title3, color: .onSurfaceHighEmphasis, alignment: .center)
                 

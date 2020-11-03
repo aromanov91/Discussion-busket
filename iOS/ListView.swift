@@ -27,11 +27,11 @@ struct ListView: View {
                 
                 if isEmpty {
                     
-                    VStack(spacing: M7Space.m) {
+                    VStack(spacing: M7Space.medium) {
                         
                         Image("EmptyList")
 
-                        VStack(spacing: M7Space.xxs) {
+                        VStack(spacing: M7Space.xxSmall) {
                             
                             M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
                             

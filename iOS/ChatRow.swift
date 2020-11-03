@@ -31,7 +31,7 @@ struct ChatRow: View {
     /*@AppStorage("current_user")*/ var user = ""
     var body: some View {
         
-        HStack(spacing: M7Space.xs){
+        HStack(spacing: M7Space.xSmall){
             
             // NickName View...
             
@@ -47,8 +47,8 @@ struct ChatRow: View {
                 Text(chatData.msg)
                     .fontWeight(.semibold)
                     .foregroundColor(M7Color.onPrimaryHighEmphasis.color)
-                    .padding(.horizontal, M7Space.s)
-                    .padding(.vertical, M7Space.s)
+                    .padding(.horizontal, M7Space.small)
+                    .padding(.vertical, M7Space.small)
                     .background(M7Color.primary.color)
                 
                     .clipShape(ChatBubble(myMsg: chatData.user == user))

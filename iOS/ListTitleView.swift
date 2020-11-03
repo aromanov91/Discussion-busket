@@ -47,7 +47,7 @@ struct ListTitleView: View {
                 M7Icon(.send)
             }
             
-        }.padding(.all, M7Space.m)
+        }.padding(.all, M7Space.medium)
     }
 }
 

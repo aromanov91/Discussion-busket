@@ -31,7 +31,7 @@ struct ListTitleMenuButtonsView: View {
     
     var body: some View {
         
-        VStack(spacing: M7Space.l) {
+        VStack(spacing: M7Space.large) {
            
             ListTitleMenuButtonRowView(icon: .newItem, title: "Переименовать", rowAction: renameAction )
             
@@ -42,7 +42,7 @@ struct ListTitleMenuButtonsView: View {
             ListTitleMenuButtonRowView(icon: .trash2, title: "Удалить", color: .error, rowAction: renameAction )
             
         }
-        .padding(.all, M7Space.m)
+        .padding(.all, M7Space.medium)
         .frame(minWidth: 0, maxWidth: .infinity)
     }
 }

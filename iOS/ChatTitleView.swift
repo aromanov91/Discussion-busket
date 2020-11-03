@@ -13,7 +13,7 @@ struct ChatTitleView: View {
         
         HStack(alignment: .center) {
             
-            VStack(alignment: .leading, spacing: M7Space.xxxs) {
+            VStack(alignment: .leading, spacing: M7Space.xxxSmall) {
                 
                 M7Text("Messages", style: .title3, color: .onBackgroundMediumEmphasis)
                 
@@ -25,8 +25,8 @@ struct ChatTitleView: View {
             
             M7AvatarView(firstName: "A", size: .s)
             
-        }.padding(.horizontal, M7Paddings.all.s)
-        .padding(.vertical, M7Space.xxs)
+        }.padding(.horizontal, M7Paddings.all.small)
+        .padding(.vertical, M7Space.xxSmall)
         
     }
 }

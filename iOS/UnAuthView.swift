@@ -20,7 +20,7 @@ struct UnAuthView: View {
             
         //M7Background(background: .primary, padding: .s) {
             
-            HStack(spacing: M7Space.xs) {
+            HStack(spacing: M7Space.xSmall) {
                 
                 M7Icon(.user)
                     .frame(width: 48, height: 48)

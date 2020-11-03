@@ -28,7 +28,7 @@ struct ListInfoCard: View {
             
         //M7Background(background: .primary, padding: .s) {
             
-            HStack(spacing: M7Space.xs) {
+            HStack(spacing: M7Space.xSmall) {
                 
                 M7Icon(.home)
                     .frame(width: 48, height: 48)
@@ -55,7 +55,7 @@ struct ListInfoCard: View {
                                             .previewDisplayName("Only avatar")
                             
                             
-                        }.offset(x: M7Space.s + M7Space.xxxs)
+                        }.offset(x: M7Space.small + M7Space.xxxSmall)
                         
                     }
                     

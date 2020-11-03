@@ -31,7 +31,7 @@ struct LeftMenu: View {
         
         VStack(spacing: .zero) {
             
-            Spacer().frame(height: M7Space.s)
+            Spacer().frame(height: M7Space.small)
             
             ScrollView {
                 
@@ -53,12 +53,12 @@ struct LeftMenu: View {
                                           })
                         
                         
-                        Spacer().frame(height: M7Space.l)
+                        Spacer().frame(height: M7Space.large)
                         
                         ForEach(leftViewModel.firestoreService.userLists) { item in
                             
                             ListInfoCard(list: item)
-                                .padding(.bottom, M7Space.m)
+                                .padding(.bottom, M7Space.medium)
                                 .contextMenu {
                                     Button(action: { self.leftViewModel.deleteUserList(item)
                                     }, label: {
@@ -76,12 +76,14 @@ struct LeftMenu: View {
                             Text("Create list")
                             
                         }.sheet(isPresented: $showCreateListView) {
-                            CrateNewListView(name: $leftViewModel.listName, action: leftViewModel.createList)
+                            CrateNewListView(name: $leftViewModel.listName,
+                                             iconName: $leftViewModel.iconName,
+                                             saveAction: leftViewModel.createList)
                         }
                         
                     }
                     
-                    Spacer().frame(width: M7Space.m)
+                    Spacer().frame(width: M7Space.medium)
                 }
                 
             }
@@ -100,13 +102,13 @@ struct LeftMenu: View {
                                                title: "Настройки",
                                                color: .onBackgroundHighEmphasis,
                                                rowAction: { showSettingsView.toggle() })
-                        .padding(.vertical, M7Space.m)
+                        .padding(.vertical, M7Space.medium)
                         .sheet(isPresented: $showSettingsView, content: {
                             M7SettingsViews()
                         })
                 }
                 
-                Spacer().frame(width: M7Space.m)
+                Spacer().frame(width: M7Space.medium)
             }
         }//.toast(isShowing: $showCreateListView, text: Text("Hello toast!"))
         //        .alertX(isPresented: $showCreateListView, content: {

@@ -15,10 +15,10 @@ struct NewItemButton: View {
     private struct Constants {
         
         /// Size
-        static var height: CGFloat { return M7Space.xl + M7Space.xxs }
+        static var height: CGFloat { return M7Space.xLarge + M7Space.xxSmall }
         
         /// Radius
-        static var radius: CGFloat { return M7Radius.m }
+        static var radius: CGFloat { return M7Radius.medium }
         
         /// Background
         static var background: Color { return M7Color.surfaceSecondary.color }
@@ -37,7 +37,7 @@ struct NewItemButton: View {
         
         Button(action: action) {
             
-            HStack(spacing: M7Space.xs) {
+            HStack(spacing: M7Space.xSmall) {
                 
                 M7Icon(.camera,color: .onSurfaceMediumEmphasis)
                 
@@ -45,8 +45,8 @@ struct NewItemButton: View {
                 
                 Spacer()
                 
-            }.padding(.horizontal, M7Space.xs)
-            .padding(.vertical, M7Space.xxs)
+            }.padding(.horizontal, M7Space.xSmall)
+            .padding(.vertical, M7Space.xxSmall)
             .frame(minWidth: 0, maxWidth: .infinity)
             .frame(height: Constants.height)
             .background(Constants.background)

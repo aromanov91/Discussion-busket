@@ -6,10 +6,13 @@
 //
 import Foundation
 import Combine
+import M7Native
 
 class LeftViewModel: ObservableObject {
     
     @Published var listName = "Default"
+    
+    @Published var iconName: M7IconNames = .folder
 
     @Published var isShowEditor = false
     
@@ -39,7 +42,7 @@ class LeftViewModel: ObservableObject {
         errorText = ""
         isLoad = true
         
-        let newList = ListModel(name: listName, icon: "home", owner: firestoreService.authenticationService.uid)
+        let newList = ListModel(name: listName, icon: iconName.rawValue, owner: firestoreService.authenticationService.uid)
         
         firestoreService.createList(newList) { (result) in
 
@@ -92,5 +95,11 @@ class LeftViewModel: ObservableObject {
             
         }
     }
+    
+//    func setIconName(_ iconName: M7IconNames) {
+//        
+//        self.iconName = iconName
+//        
+//    }
     
 }

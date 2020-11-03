@@ -25,7 +25,7 @@ struct NewItemTextFieldView: View {
         
         HStack {
             
-            HStack(spacing: M7Space.s) {
+            HStack(spacing: M7Space.small) {
                 
                 Button(action: sendAction ) {
                     M7Icon(.camera)
@@ -37,7 +37,7 @@ struct NewItemTextFieldView: View {
                     M7Icon(.arrowUp)
                 }
 
-            }.padding(.horizontal, M7Paddings.all.m)
+            }.padding(.horizontal, M7Paddings.all.medium)
         }
         .padding(.all, 0)
         .frame(minWidth: 0, maxWidth: .infinity)

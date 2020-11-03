@@ -16,7 +16,7 @@ struct ListTitleMenuButtonRowView: View {
     let color: M7Color
     
     private struct Constans {
-        static var textSpasing: CGFloat { return M7Space.xs }
+        static var textSpasing: CGFloat { return M7Space.xSmall }
     }
     
     public init(icon: M7IconNames, title: String, color: M7Color = .onBackgroundHighEmphasis, rowAction: @escaping () -> Void) {

@@ -19,14 +19,14 @@ struct ProfileView: View {
         
         ZStack {
             
-            VStack(spacing: M7Space.m) {
+            VStack(spacing: M7Space.medium) {
                 
-                Spacer().frame(height: M7Space.xl)
+                Spacer().frame(height: M7Space.xLarge)
                 
                 
                 M7AvatarView(firstName: authenticationService.currentUser?.displayName ?? "", size: .l)
                 
-                VStack(spacing: M7Space.xxs) {
+                VStack(spacing: M7Space.xxSmall) {
                     
                     M7Text(authenticationService.currentUser?.displayName ?? "", style: .title3, color: .onBackgroundHighEmphasis)
                     
