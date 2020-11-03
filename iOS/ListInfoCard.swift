@@ -83,8 +83,3 @@ struct ListInfoCard: View {
     }
 }
 
-//struct ListInfoCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ListInfoCard()
-//    }
-//}

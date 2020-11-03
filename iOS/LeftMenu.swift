@@ -60,16 +60,12 @@ struct LeftMenu: View {
                             ListInfoCard(list: item)
                                 .padding(.bottom, M7Space.m)
                                 .contextMenu {
-                                    Button(action: {
-                                        
-                                        self.leftViewModel.deleteUserList(item)
-                                        
-                                        
+                                    Button(action: { self.leftViewModel.deleteUserList(item)
                                     }, label: {
                                         HStack {
-                                            Text("Delete")
+                                            M7Text(M7Localize.button.delete, style: .button)
                                             Spacer()
-                                            Image(systemName: "trash")
+                                            M7Icon(.trash2)
                                         }
                                     })
                                 }
@@ -113,16 +109,16 @@ struct LeftMenu: View {
                 Spacer().frame(width: M7Space.m)
             }
         }//.toast(isShowing: $showCreateListView, text: Text("Hello toast!"))
-//        .alertX(isPresented: $showCreateListView, content: {
-//
-//
-//
-//
-//                        })
-//        .m7alert(isPresented: $showCreateListView) {
-//
-//            M7Alert(title: "Получилось", image: getM7Image(.folder), autohide: true)
-//        }
+        //        .alertX(isPresented: $showCreateListView, content: {
+        //
+        //
+        //
+        //
+        //                        })
+        //        .m7alert(isPresented: $showCreateListView) {
+        //
+        //            M7Alert(title: "Получилось", image: getM7Image(.folder), autohide: true)
+        //        }
     }
 }
 

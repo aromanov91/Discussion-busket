@@ -11,10 +11,13 @@ class LeftViewModel: ObservableObject {
     
     @Published var listName = "Default"
 
-    
     @Published var isShowEditor = false
     
     @Published var noLists = false
+    
+    @Published var isLoad = false
+    
+    @Published var errorText = ""
     
     @Published var firestoreService = FirestoreService()
     
@@ -33,84 +36,61 @@ class LeftViewModel: ObservableObject {
     
     func createList() {
         
-        //createList(ListModel(name: listName, icon: "home", owner: authenticationService.uid))
-    }
-    
-    
-    
-    func createDefaultList() {
+        errorText = ""
+        isLoad = true
         
-//        let defaultlist = ListModel(name: "Default", icon: "home", owner: self.authenticationService.uid)
-//
-//        do {
-//            let doc = try db.collection("lists")
-//                .addDocument(from: defaultlist)
-//
-//            let _ = try  self.db.collection("users").document(self.authenticationService.uid).collection("lists").document(doc.documentID)
-//                .setData(from: UserListModel(name: defaultlist.name))
-//        }
-//        catch {
-//            print(error)
-//        }
+        let newList = ListModel(name: listName, icon: "home", owner: firestoreService.authenticationService.uid)
+        
+        firestoreService.createList(newList) { (result) in
+
+            switch result {
+        
+            case .success(_):
+                self.isLoad = false
+                
+            case .failure(let error):
+                self.isLoad = false
+                self.errorText = error.localizedDescription
+                
+            }
+        }
     }
     
     func getUserLists() {
         
-//        if authenticationService.currentUser != nil {
-//
-//        }
-//
-//        db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
-//
-//            guard let documents = querySnapshot?.documents else {
-//                print("No documents")
-//                return
-//            }
-//
-//            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
-//                return try? queryDocumentSnapshot.data(as: UserListModel.self)
-//            }
-//
-//            if self.userLists.isEmpty {
-//
-//                self.createDefaultList()
-//
-//            }
+        
+        firestoreService.updateUserLists()
         
     }
     
     func getListData(userList: UserListModel, completion: @escaping (ListModel)->()) {
         
-//        let thisUser = db.collection("lists").document(userList.id ?? "")
-//
-//        thisUser.getDocument(completion: { snapshot, error in
-//
-//            if let err = error {
-//                print(err.localizedDescription)
-//                return
-//            }
-//            let list = try? snapshot?.data(as: ListModel.self)
-//
-//            completion(list ?? ListModel(name: "", icon: "", owner: ""))
-//        })
+        firestoreService.getListData(userList: userList) { (result) in
+            
+            switch result {
+            case .success(let list):
+                completion(list)
+            case .failure(_):
+                break
+            }
+ 
+        }
+        
     }
     
     func deleteUserList(_ list: UserListModel) {
         
-//        if let documentId = list.id {
-//
-//            db.collection("lists").document(documentId).delete { error in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//
-//            db.collection("users").document(self.authenticationService.uid).collection("lists").document(documentId).delete { error in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
+        firestoreService.deleteUserList(list) { (result) in
+            
+            switch result {
+            
+            case .success(_):
+                break
+            case .failure(_):
+                break
+            }
+            
+        }
     }
     
 }
