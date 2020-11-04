@@ -23,8 +23,7 @@ struct ListItemRowView: View {
         self.title = title
         //    self.rowAction = rowAction
     }
-    
-    
+
     var body: some View {
         
         HStack(spacing: Constans.textSpasing, content: {

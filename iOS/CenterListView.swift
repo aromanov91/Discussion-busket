@@ -8,7 +8,7 @@
 import SwiftUI
 import M7Native
 
-struct ListView: View {
+struct CenterListView: View {
     
     var isEmpty = false
     
@@ -16,12 +16,7 @@ struct ListView: View {
     
     @EnvironmentObject var viewModel: iOSRootViewModel
     
-    @State var phone = ""
-    
     var body: some View {
-        
-        if #available(iOS 14.0, *) {
-            
             
             VStack(spacing: .zero) {
                 
@@ -74,21 +69,15 @@ struct ListView: View {
                     )
                     
                     
-                    ScrollView() {
+                    List() {
                         
-                        LazyVStack(alignment: .leading, spacing: 8) {
-                            
-                          
-                            
-//                            TextField("FFF", text: $code)
-//                                .textContentType(.oneTimeCode)
-//                                .keyboardType(.numberPad)
+                        //LazyVStack(alignment: .leading, spacing: 8) {
                             
                             ForEach((1...200).reversed(), id: \.self) { item in
                                 
                                 ListItemRowView("Text")
                                 
-                            }
+                            //}
                         }.padding(.all, 20)
                         
                     }
@@ -109,30 +98,14 @@ struct ListView: View {
             
             
         }
-        
-        else {
-            
-            ForEach((1...200).reversed(), id: \.self) { item in
-                
-                ListItemRowView("Text")
-                
-            }
-            .padding(.all, 0)
-            .frame(minWidth: 0, maxWidth: .infinity)
-            .frame(minHeight: 0, maxHeight: .infinity)
-            //.background(Color(UIColor.systemBackground))
-            .background(M7Color.backgroundPrimary.color)
-            .cornerRadius(12)
-            .offset( y: self.draggedOffset.height)
-            
-        }
+
         
         
-    }
+    
 }
 
 struct ListView_Previews: PreviewProvider {
     static var previews: some View {
-        ListView()
+        CenterListView()
     }
 }

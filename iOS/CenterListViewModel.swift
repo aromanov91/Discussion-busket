@@ -8,7 +8,9 @@
 import SwiftUI
 import Firebase
 
-class CenterViewModel : ObservableObject{
+class CenterListViewModel : ObservableObject {
 
+    
+    
     
 }

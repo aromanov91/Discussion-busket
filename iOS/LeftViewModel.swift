@@ -33,7 +33,7 @@ class LeftViewModel: ObservableObject {
     func getUserLists() {
         
         
-        firestoreService.updateUserLists()
+        firestoreService.getUserLists()
         
     }
     
@@ -63,7 +63,6 @@ class LeftViewModel: ObservableObject {
             case .failure(_):
                 break
             }
-            
         }
     }
     

@@ -68,7 +68,7 @@ struct iOSRoot: View {
                                     Spacer()
                                 }
                                 
-                                ListView()
+                                CenterListView()
                                     
                                     .environmentObject(viewModel)
                                     .sheet(isPresented: $viewModel.isShowRate) {

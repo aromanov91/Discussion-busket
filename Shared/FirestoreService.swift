@@ -18,7 +18,11 @@ class FirestoreService: ObservableObject {
     
     let db = Firestore.firestore()
     
+    //@Published var selectedList: ItemRowModel
+    
     @Published var userLists: [UserListModel] = []
+    
+    @Published var itemRows: [ItemRowModel] = []
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -33,7 +37,7 @@ class FirestoreService: ObservableObject {
         
         if authenticationService.currentUser != nil {
             
-            self.updateUserLists()
+            self.getUserLists()
             
         }
     }
@@ -55,30 +59,7 @@ class FirestoreService: ObservableObject {
         }
     }
     
-    //    func checkUserListsEmpty() {
-    //
-    //        let thisUser = db.collection("users").document(self.uid).collection("lists")
-    //
-    //        thisUser.getDocuments(completion: { snapshot, error in
-    //
-    //            if let err = error {
-    //                print(err.localizedDescription)
-    //                return
-    //            }
-    //
-    //            print(snapshot?.documents)
-    //
-    //            if snapshot?.documents.isEmpty {
-    //                self.createDefaultList()
-    //                print("Создать пустой спсис")
-    //
-    //            }
-    //
-    //
-    //        })
-    //
-    //
-    //    }
+
     
     func createDefaultList(complition: @escaping(Result<String, Error>) -> Void ) {
         
@@ -97,7 +78,7 @@ class FirestoreService: ObservableObject {
         }
     }
     
-    func updateUserLists() {
+    func getUserLists() {
         
         db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
             
@@ -123,51 +104,7 @@ class FirestoreService: ObservableObject {
         }
     }
     
-    //    func updateUserLists(complition: @escaping(Result<Bool, Error>) -> Void) {
-    //
-    //        db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
-    //
-    //            if let err = error {
-    //                print(err.localizedDescription)
-    //                complition(.failure(err))
-    //            }
-    //
-    //            guard let documents = querySnapshot?.documents else {
-    //                print("No documents")
-    //
-    //                return
-    //
-    //            }
-    //
-    //            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
-    //
-    //                complition(.success(true))
-    //
-    //                return try? queryDocumentSnapshot.data(as: UserListModel.self)
-    //
-    //            }
-    //
-    //            if self.userLists.isEmpty {
-    //
-    //                self.createDefaultList { (result) in
-    //
-    //                    switch result {
-    //
-    //                    case .success(_):
-    //                        complition(.success(false))
-    //
-    //
-    //                    case .failure(let error):
-    //
-    //                        complition(.failure(error))
-    //
-    //                    }
-    //
-    //                }
-    //
-    //            }
-    //        }
-    //    }
+
     
     func getListData(userList: UserListModel, completion: @escaping (Result<ListModel, Error>)->()) {
         
@@ -206,5 +143,132 @@ class FirestoreService: ObservableObject {
         }
     }
     
+    func createItemRow(list: ListModel, item: ItemRowModel, complition: @escaping(Result<String, Error>) -> Void ) {
+        
+        do {
+            let _ = try db.collection("lists").document(list.id ?? "")
+                .setData(from: item)
+                //.addDocument(from: list)
+            
+//            let _ = try self.db.collection("users").document(self.authenticationService.uid).collection("lists").document(doc.documentID)
+//                .setData(from: UserListModel(name: list.name, icon: list.icon))
+            
+            complition(.success(""))
+        }
+        catch {
+            print(error)
+            complition(.failure(error))
+        }
+    }
     
+    func getItemRows() {
+        
+        db.collection("lists").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
+            
+            guard let documents = querySnapshot?.documents else {
+                print("No documents")
+                return
+            }
+            
+            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
+                return try? queryDocumentSnapshot.data(as: UserListModel.self)
+            }
+            
+            if self.userLists.isEmpty {
+                
+                self.createDefaultList { (result) in
+                    
+                    switch result {
+                    case .success(_): break
+                    case .failure(_): break
+                    }
+                }
+            }
+        }
+    }
+    
+
 }
+
+
+
+
+
+
+
+
+
+//    func checkUserListsEmpty() {
+//
+//        let thisUser = db.collection("users").document(self.uid).collection("lists")
+//
+//        thisUser.getDocuments(completion: { snapshot, error in
+//
+//            if let err = error {
+//                print(err.localizedDescription)
+//                return
+//            }
+//
+//            print(snapshot?.documents)
+//
+//            if snapshot?.documents.isEmpty {
+//                self.createDefaultList()
+//                print("Создать пустой спсис")
+//
+//            }
+//
+//
+//        })
+//
+//
+//    }
+
+
+
+
+
+//    func updateUserLists(complition: @escaping(Result<Bool, Error>) -> Void) {
+//
+//        db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
+//
+//            if let err = error {
+//                print(err.localizedDescription)
+//                complition(.failure(err))
+//            }
+//
+//            guard let documents = querySnapshot?.documents else {
+//                print("No documents")
+//
+//                return
+//
+//            }
+//
+//            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
+//
+//                complition(.success(true))
+//
+//                return try? queryDocumentSnapshot.data(as: UserListModel.self)
+//
+//            }
+//
+//            if self.userLists.isEmpty {
+//
+//                self.createDefaultList { (result) in
+//
+//                    switch result {
+//
+//                    case .success(_):
+//                        complition(.success(false))
+//
+//
+//                    case .failure(let error):
+//
+//                        complition(.failure(error))
+//
+//                    }
+//
+//                }
+//
+//            }
+//        }
+//    }
