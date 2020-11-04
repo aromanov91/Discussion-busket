@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		111FC0A52551EFA10022F410 /* Grid in Frameworks */ = {isa = PBXBuildFile; productRef = 111FC0A42551EFA10022F410 /* Grid */; };
 		112DE348253C8F7F00E69687 /* CenterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE347253C8F7F00E69687 /* CenterViewModel.swift */; };
 		112DE34F253C9DC300E69687 /* LeftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE34E253C9DC300E69687 /* LeftViewModel.swift */; };
 		112DE357253CC0E000E69687 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112DE356253CC0E000E69687 /* ListModel.swift */; };
@@ -114,7 +113,6 @@
 			files = (
 				11B67A7F25385EE5006651F4 /* AuthenticationServices.framework in Frameworks */,
 				11FEB05C254F39A900B3D0D6 /* FirebaseFirestore in Frameworks */,
-				111FC0A52551EFA10022F410 /* Grid in Frameworks */,
 				1193BA79254F3CD4004329C1 /* M7NativeFirebase in Frameworks */,
 				11FEB05A254F39A900B3D0D6 /* FirebaseAuth in Frameworks */,
 				11FEB058254F39A900B3D0D6 /* FirebaseFirestoreSwift-Beta in Frameworks */,
@@ -344,7 +342,6 @@
 				1193BA76254F3CD4004329C1 /* M7Native */,
 				1193BA78254F3CD4004329C1 /* M7NativeFirebase */,
 				1193BA7A254F3CD9004329C1 /* M7Private */,
-				111FC0A42551EFA10022F410 /* Grid */,
 			);
 			productName = "Discussion busket (iOS)";
 			productReference = 3A19C3E424FC2AE400FD67FB /* Discussion busket.app */;
@@ -399,7 +396,6 @@
 			mainGroup = 3A19C3D724FC2AE300FD67FB;
 			packageReferences = (
 				11FEB056254F39A900B3D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				111FC0A32551EFA10022F410 /* XCRemoteSwiftPackageReference "swiftui-grid" */,
 			);
 			productRefGroup = 3A19C3E524FC2AE400FD67FB /* Products */;
 			projectDirPath = "";
@@ -749,14 +745,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		111FC0A32551EFA10022F410 /* XCRemoteSwiftPackageReference "swiftui-grid" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/swift-extensions/swiftui-grid.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.4;
-			};
-		};
 		11FEB056254F39A900B3D0D6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -768,11 +756,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		111FC0A42551EFA10022F410 /* Grid */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 111FC0A32551EFA10022F410 /* XCRemoteSwiftPackageReference "swiftui-grid" */;
-			productName = Grid;
-		};
 		1193BA76254F3CD4004329C1 /* M7Native */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = M7Native;

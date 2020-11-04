@@ -30,7 +30,7 @@ struct ListInfoCard: View {
             
             HStack(spacing: M7Space.xSmall) {
                 
-                M7Icon(.home)
+                M7Icon(M7IconNames(rawValue: list.icon) ?? .none)
                     .frame(width: 48, height: 48)
                     .background(M7Colors.surface.secondary)
                     .cornerRadius(12)

@@ -45,9 +45,9 @@
 "Auth.Title" = "Составляйте списки с друзьями и храните их в облаке";
 
 // Profile
-"Profile.Message" = "Имя и email";
-"Profile.Message" = "Список корзин";
-"Profile.Message" = "Список контактов";
+"Profile.NameAndPhone" = "Имя и телефон";
+"Profile.Lists" = "Список корзин";
+"Profile.Contacts" = "Список контактов";
 
 // Frends list
 "Frends.Title" = "Участники";

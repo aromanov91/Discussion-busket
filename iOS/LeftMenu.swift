@@ -55,30 +55,28 @@ struct LeftMenu: View {
                         
                         Spacer().frame(height: M7Space.large)
                         
+                        
+                        
                         ForEach(leftViewModel.firestoreService.userLists) { item in
                             
                             ListInfoCard(list: item)
                                 .padding(.bottom, M7Space.medium)
                                 .contextMenu {
-                                    Button(action: { self.leftViewModel.deleteUserList(item)
-                                    }, label: {
-                                        HStack {
-                                            M7Text(M7Localize.button.delete, style: .button)
-                                            Spacer()
-                                            M7Icon(.trash2)
-                                        }
-                                    })
+                                    
+                                    LeftContextMenu(renameAction: {},
+                                                    addUserAction: {},
+                                                    historyAction: {},
+                                                    deleteAction: { leftViewModel.deleteUserList(item) })
+                                    
                                 }
                             
                         }
                         
                         M7Button(action: { showCreateListView = true }) {
-                            Text("Create list")
+                            Text(LocalizedStringKey("List.AddList"))
                             
                         }.sheet(isPresented: $showCreateListView) {
-                            CrateNewListView(name: $leftViewModel.listName,
-                                             iconName: $leftViewModel.iconName,
-                                             saveAction: leftViewModel.createList)
+                            CrateNewListView(show: $showCreateListView).environmentObject(CrateNewListViewModel())
                         }
                         
                     }
@@ -99,7 +97,7 @@ struct LeftMenu: View {
                     }
                     
                     ListTitleMenuButtonRowView(icon: .settingsHexagon,
-                                               title: "Настройки",
+                                               title: M7Localize.settings.title,
                                                color: .onBackgroundHighEmphasis,
                                                rowAction: { showSettingsView.toggle() })
                         .padding(.vertical, M7Space.medium)

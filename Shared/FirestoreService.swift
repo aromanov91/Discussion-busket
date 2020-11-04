@@ -9,6 +9,7 @@ import Foundation
 import Combine
 import Firebase
 import FirebaseFirestoreSwift
+import M7Native
 import M7NativeFirebase
 
 class FirestoreService: ObservableObject {
@@ -44,7 +45,7 @@ class FirestoreService: ObservableObject {
                 .addDocument(from: list)
             
             let _ = try self.db.collection("users").document(self.authenticationService.uid).collection("lists").document(doc.documentID)
-                .setData(from: UserListModel(name: list.name))
+                .setData(from: UserListModel(name: list.name, icon: list.icon))
             
             complition(.success(doc.documentID))
         }

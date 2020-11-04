@@ -10,12 +10,6 @@ import M7Native
 
 class LeftViewModel: ObservableObject {
     
-    @Published var listName = "Default"
-    
-    @Published var iconName: M7IconNames = .folder
-
-    @Published var isShowEditor = false
-    
     @Published var noLists = false
     
     @Published var isLoad = false
@@ -34,29 +28,6 @@ class LeftViewModel: ObservableObject {
             .store(in: &cancellables)
         
         self.getUserLists()
-    }
-    
-    
-    func createList() {
-        
-        errorText = ""
-        isLoad = true
-        
-        let newList = ListModel(name: listName, icon: iconName.rawValue, owner: firestoreService.authenticationService.uid)
-        
-        firestoreService.createList(newList) { (result) in
-
-            switch result {
-        
-            case .success(_):
-                self.isLoad = false
-                
-            case .failure(let error):
-                self.isLoad = false
-                self.errorText = error.localizedDescription
-                
-            }
-        }
     }
     
     func getUserLists() {

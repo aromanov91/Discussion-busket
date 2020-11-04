@@ -37,17 +37,23 @@ struct ProfileView: View {
                 M7List(style: .insetGroupedListStyle) {
                     Section {
                         
-                        Text("Имя и email")
-                        Text("Список контактов")
+                        Text("Profile.NameAndPhone")
+                        Text("Profile.Contacts")
                         
                     }
                     
-                    Section {
-                        Button("Выйти") {
-                            print("exit")
-                            
-                            auth.logOut()
+                  Section {
+//                        M7Button() {
+//                            print("exit")
+//
+//
+//                        }
+                        
+                    M7Button(style: .link, size: .m, action: { auth.logOut() }) {
+                            M7Text(M7Localize.button.exit, style: .button, color: .error)
                         }
+                    
+                    
                         
                     }
                 }
