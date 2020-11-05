@@ -25,6 +25,8 @@ struct LeftMenu: View {
     
     @EnvironmentObject var leftViewModel: LeftViewModel
     
+    @EnvironmentObject private var iOSRootModel: iOSRootViewModel
+    
     @EnvironmentObject var settings: M7SettingsStore
     
     var body: some View {
@@ -61,12 +63,19 @@ struct LeftMenu: View {
                             
                             ListInfoCard(list: item)
                                 .padding(.bottom, M7Space.medium)
+                                
                                 .contextMenu {
                                     
                                     LeftContextMenu(renameAction: {},
                                                     addUserAction: {},
                                                     historyAction: {},
                                                     deleteAction: { leftViewModel.deleteUserList(item) })
+                                    
+                                }
+                                .onTapGesture() {
+                                    
+                                    leftViewModel.setDefaultList(item)
+                                    iOSRootModel.currentIndex = 1
                                     
                                 }
                             

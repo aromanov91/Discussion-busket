@@ -52,6 +52,20 @@ class LeftViewModel: ObservableObject {
         
     }
     
+    func setDefaultList(_ list: UserListModel) {
+        
+        firestoreService.setDefaultList(list) { (result) in
+            
+            switch result {
+            
+            case .success(_):
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
     func deleteUserList(_ list: UserListModel) {
         
         firestoreService.deleteUserList(list) { (result) in

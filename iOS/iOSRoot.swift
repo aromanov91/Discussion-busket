@@ -37,7 +37,8 @@ struct iOSRoot: View {
                             
                             Spacer().frame(width: M7Space.small + M7Space.medium)
                             
-                            LeftMenu().padding(.bottom, geometry.safeAreaInsets.bottom)
+                            LeftMenu().environmentObject(viewModel)
+                                .padding(.bottom, geometry.safeAreaInsets.bottom)
                             
                         }
                         

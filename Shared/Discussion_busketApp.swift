@@ -7,10 +7,9 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestoreSwift
 import M7Native
 import M7NativeFirebase
-import FirebaseFirestore
-import FirebaseFirestoreSwift
 
 @main
 struct Discussion_busketApp {
