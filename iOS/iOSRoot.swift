@@ -76,7 +76,6 @@ struct iOSRoot: View {
                                     .environmentObject(viewModel)
                                     .sheet(isPresented: $viewModel.isShowRate) {
                                         M7RateView(image: Image("Rate"))
-                                        
 
                                     }
                                 
@@ -133,11 +132,13 @@ struct iOSRoot: View {
                     .padding(.leading, geometry.safeAreaInsets.leading)
                     .padding(.top, geometry.safeAreaInsets.top)
                     .background(M7Color.backgroundSecondary.color)
+                    
                     //                        .background(Color(UIColor.systemGroupedBackground))
                     
 
                     
                 }.edgesIgnoringSafeArea(.all)
+                
                 
             }
         }

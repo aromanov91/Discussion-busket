@@ -18,6 +18,7 @@ struct CenterListView: View {
     
     var body: some View {
             
+        if #available(iOS 14.0, *) {
             VStack(spacing: .zero) {
                 
                 if centerListViewModel.firestoreService.itemRows.isEmpty {
@@ -25,7 +26,7 @@ struct CenterListView: View {
                     VStack(spacing: M7Space.medium) {
                         
                         Image("EmptyList")
-
+                        
                         VStack(spacing: M7Space.xxSmall) {
                             
                             M7Text("Здесь будет ваш список", style: .title2, color: .onSurfaceHighEmphasis, alignment: .center)
@@ -47,36 +48,36 @@ struct CenterListView: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .gesture(DragGesture()
                                 
-                        .updating($draggedOffset) { value, state, transaction in
-                            state = value.translation
-                            
-                            self.rootViewModel.isShowMenu = true
-                            
-                        }
-                        
-                        .onEnded { value in
-                            
-                            if value.translation.height > 100 {
+                                .updating($draggedOffset) { value, state, transaction in
+                                    state = value.translation
+                                    
+                                    self.rootViewModel.isShowMenu = true
+                                    
+                                }
                                 
-                                self.rootViewModel.showListButtons()
-                                
-                            } else {
-                                
-                                self.rootViewModel.hideListButtons()
-                                
-                            }
-                        }
+                                .onEnded { value in
+                                    
+                                    if value.translation.height > 100 {
+                                        
+                                        self.rootViewModel.showListButtons()
+                                        
+                                    } else {
+                                        
+                                        self.rootViewModel.hideListButtons()
+                                        
+                                    }
+                                }
                     )
                     
                     
                     List() {
                         
                         //LazyVStack(alignment: .leading, spacing: 8) {
-                            
+                        
                         ForEach(centerListViewModel.firestoreService.itemRows) { item in
-                                
+                            
                             ListItemRowView(item.text)
-                                
+                            
                             //}
                         }.padding(.all, 20)
                         
@@ -98,6 +99,10 @@ struct CenterListView: View {
             .onAppear() {
                 print(centerListViewModel.firestoreService.itemRows)
             }
+            .redacted(reason:  centerListViewModel.firestoreService.isLoadData ? .placeholder : .init())
+        } else {
+            // Fallback on earlier versions
+        }
             
             
         }

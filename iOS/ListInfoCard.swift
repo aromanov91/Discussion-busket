@@ -60,7 +60,7 @@ struct ListInfoCard: View {
                     }
                     
                     
-                    M7Text(listItem.owner, style: .caption, color: .onSurfaceMediumEmphasis, placeholder: $isLoad)
+                    M7Text(listItem.id ?? "", style: .caption, color: .onSurfaceMediumEmphasis, placeholder: $isLoad)
                 }
                 
                 Spacer()

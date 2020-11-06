@@ -24,25 +24,41 @@ class FirestoreService: ObservableObject {
     
     @Published var itemRows: [ItemRowModel] = []
     
+    @Published var isLoadData = true
+    
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         
         self.authenticationService.objectWillChange
             .sink { _ in
-                self.objectWillChange.send()
-            }
+                self.objectWillChange.send() }
             .store(in: &cancellables)
         
-        self.defaultListUID = self.authenticationService.userData.defaultList
+        getStartData { (result) in }
+    }
+    
+    func getStartData(complition: @escaping(Result<UserData, Error>) -> Void) {
         
-        if authenticationService.currentUser != nil {
+        authenticationService.run { (data) in
+            switch data {
             
-            self.getUserLists()
-            
-            self.getItemRows()
-            
+            case .success(let userData):
+                
+                self.defaultListUID = userData.defaultList
+                
+                self.getUserLists()
+                
+                self.getItemRows()
+                
+                self.isLoadData = false
+                
+            case .failure(_):
+                
+                self.isLoadData = false
+            }
         }
+        
     }
     
     // MARK:- List
@@ -83,7 +99,7 @@ class FirestoreService: ObservableObject {
         }
     }
     
-
+    
     
     func createDefaultList(complition: @escaping(Result<String, Error>) -> Void ) {
         
@@ -104,31 +120,32 @@ class FirestoreService: ObservableObject {
     
     func getUserLists() {
         
-        db.collection("users").document(self.authenticationService.uid).collection("lists").addSnapshotListener { (querySnapshot, error) in
-            
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
-            }
-            
-            self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
-                return try? queryDocumentSnapshot.data(as: UserListModel.self)
-            }
-            
-            if self.userLists.isEmpty {
+        db.collection("users").document(self.authenticationService.uid).collection("lists")
+            .addSnapshotListener { (querySnapshot, error) in
                 
-                self.createDefaultList { (result) in
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
+                
+                self.userLists = documents.compactMap { queryDocumentSnapshot -> UserListModel? in
+                    return try? queryDocumentSnapshot.data(as: UserListModel.self)
+                }
+                
+                if self.userLists.isEmpty {
                     
-                    switch result {
-                    case .success(_): break
-                    case .failure(_): break
+                    self.createDefaultList { (result) in
+                        
+                        switch result {
+                        case .success(_): break
+                        case .failure(_): break
+                        }
                     }
                 }
             }
-        }
     }
     
-
+    
     
     func getListData(userList: UserListModel, completion: @escaping (Result<ListModel, Error>)->()) {
         
@@ -150,20 +167,22 @@ class FirestoreService: ObservableObject {
         
         if let documentId = list.id {
             
-            db.collection("lists").document(documentId).delete { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    complition(.failure(error))
+            db.collection("lists").document(documentId)
+                .delete { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        complition(.failure(error))
+                    }
                 }
-            }
             
-            db.collection("users").document(self.authenticationService.uid).collection("lists").document(documentId).delete { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    complition(.failure(error))
+            db.collection("users").document(self.authenticationService.uid).collection("lists").document(documentId)
+                .delete { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        complition(.failure(error))
+                    }
+                    complition(.success(()))
                 }
-                complition(.success(()))
-            }
         }
     }
     
@@ -172,9 +191,9 @@ class FirestoreService: ObservableObject {
     func createItemRow(list: ListModel, row: ItemRowModel, complition: @escaping(Result<String, Error>) -> Void ) {
         
         do {
-            let _ = try db.collection("lists").document(list.id ?? "").collection("rows")
+            let _ = try db.collection("lists").document(authenticationService.userData.defaultList).collection("rows")
                 .addDocument(from: row)
-
+            
             complition(.success(""))
         }
         catch {
@@ -190,11 +209,11 @@ class FirestoreService: ObservableObject {
         print(row)
         
         do {
-            let item = try db.collection("lists").document("l0EeJNSoCTDeLbLiOvDc").collection("rows")
+            let item = try db.collection("lists").document(authenticationService.userData.defaultList).collection("rows")
                 .addDocument(from: row)
             
             print(item)
-
+            
             complition(.success(""))
         }
         catch {
@@ -205,34 +224,36 @@ class FirestoreService: ObservableObject {
     
     func getItemRows() {
         
-        db.collection("lists").document("l0EeJNSoCTDeLbLiOvDc").collection("rows").addSnapshotListener { (querySnapshot, error) in
-            
-            guard let documents = querySnapshot?.documents else {
-                print("No documents")
-                return
+        db.collection("lists").document(authenticationService.userData.defaultList).collection("rows")
+            .addSnapshotListener { (querySnapshot, error) in
+                
+                guard let documents = querySnapshot?.documents else {
+                    print("No documents")
+                    return
+                }
+                
+                self.itemRows = documents.compactMap { queryDocumentSnapshot -> ItemRowModel? in
+                    return try? queryDocumentSnapshot.data(as: ItemRowModel.self)
+                }
             }
-            
-            self.itemRows = documents.compactMap { queryDocumentSnapshot -> ItemRowModel? in
-                return try? queryDocumentSnapshot.data(as: ItemRowModel.self)
-            }
-        }
     }
     
     func  deleteItemRows(list: String, row: ItemRowModel, complition: @escaping(Result<Void, Error>) -> Void ) {
         
         if let documentId = row.id {
             
-            db.collection("lists").document(list).collection("rows").document(documentId).delete { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    complition(.failure(error))
+            db.collection("lists").document(list).collection("rows").document(documentId)
+                .delete { error in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        complition(.failure(error))
+                    }
+                    complition(.success(()))
                 }
-                complition(.success(()))
-            }
         }
     }
     
-
+    
 }
 
 
