@@ -18,7 +18,7 @@ class FirestoreService: ObservableObject {
     
     let db = Firestore.firestore()
     
-    //@Published var selectedList: ItemRowModel
+    @Published var defaultListUID: String = ""
     
     @Published var userLists: [UserListModel] = []
     
@@ -34,10 +34,13 @@ class FirestoreService: ObservableObject {
             }
             .store(in: &cancellables)
         
+        self.defaultListUID = self.authenticationService.userData.defaultList
         
         if authenticationService.currentUser != nil {
             
             self.getUserLists()
+            
+            self.getItemRows()
             
         }
     }
@@ -166,16 +169,32 @@ class FirestoreService: ObservableObject {
     
     // MARK:- Row Item
     
-    func createItemRow(list: ListModel, item: ItemRowModel, complition: @escaping(Result<String, Error>) -> Void ) {
+    func createItemRow(list: ListModel, row: ItemRowModel, complition: @escaping(Result<String, Error>) -> Void ) {
         
         do {
             let _ = try db.collection("lists").document(list.id ?? "").collection("rows")
-                .addDocument(from: item)
-                //.addDocument(from: list)
+                .addDocument(from: row)
+
+            complition(.success(""))
+        }
+        catch {
+            print(error)
+            complition(.failure(error))
+        }
+    }
+    
+    func createItemRow(list: String, row: ItemRowModel, complition: @escaping(Result<String, Error>) -> Void ) {
+        
+        print("List" + list)
+        
+        print(row)
+        
+        do {
+            let item = try db.collection("lists").document("l0EeJNSoCTDeLbLiOvDc").collection("rows")
+                .addDocument(from: row)
             
-//            let _ = try self.db.collection("users").document(self.authenticationService.uid).collection("lists").document(doc.documentID)
-//                .setData(from: UserListModel(name: list.name, icon: list.icon))
-            
+            print(item)
+
             complition(.success(""))
         }
         catch {
@@ -186,7 +205,7 @@ class FirestoreService: ObservableObject {
     
     func getItemRows() {
         
-        db.collection("lists").document(self.authenticationService.uid).collection("rows").addSnapshotListener { (querySnapshot, error) in
+        db.collection("lists").document("l0EeJNSoCTDeLbLiOvDc").collection("rows").addSnapshotListener { (querySnapshot, error) in
             
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
@@ -199,11 +218,11 @@ class FirestoreService: ObservableObject {
         }
     }
     
-    func  deleteItemRows(list: ListModel, item: ItemRowModel, complition: @escaping(Result<Void, Error>) -> Void ) {
+    func  deleteItemRows(list: String, row: ItemRowModel, complition: @escaping(Result<Void, Error>) -> Void ) {
         
-        if let documentId = item.id {
+        if let documentId = row.id {
             
-            db.collection("lists").document(list.id ?? "").collection("rows").document(documentId).delete { error in
+            db.collection("lists").document(list).collection("rows").document(documentId).delete { error in
                 if let error = error {
                     print(error.localizedDescription)
                     complition(.failure(error))

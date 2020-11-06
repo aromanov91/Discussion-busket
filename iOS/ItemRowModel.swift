@@ -11,13 +11,13 @@ import FirebaseFirestoreSwift
 struct ItemRowModel: Identifiable, Codable {
     
     @DocumentID var id: String?
-    var name: String
+    var text: String
     var time: String
     var owner: String
     
     enum CodingKeys: String, CodingKey {
         case id
-        case name
+        case text
         case time
         case owner
       }

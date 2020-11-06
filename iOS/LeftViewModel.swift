@@ -27,7 +27,7 @@ class LeftViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
-        self.getUserLists()
+      // self.getUserLists()
     }
     
     func getUserLists() {

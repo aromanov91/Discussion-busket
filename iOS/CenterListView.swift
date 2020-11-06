@@ -10,17 +10,17 @@ import M7Native
 
 struct CenterListView: View {
     
-    var isEmpty = false
-    
     @GestureState private var draggedOffset: CGSize = .zero
     
-    @EnvironmentObject var viewModel: iOSRootViewModel
+    @EnvironmentObject var rootViewModel: iOSRootViewModel
+    
+    @EnvironmentObject var centerListViewModel: CenterListViewModel
     
     var body: some View {
             
             VStack(spacing: .zero) {
                 
-                if isEmpty {
+                if centerListViewModel.firestoreService.itemRows.isEmpty {
                     
                     VStack(spacing: M7Space.medium) {
                         
@@ -50,7 +50,7 @@ struct CenterListView: View {
                         .updating($draggedOffset) { value, state, transaction in
                             state = value.translation
                             
-                            self.viewModel.isShowMenu = true
+                            self.rootViewModel.isShowMenu = true
                             
                         }
                         
@@ -58,11 +58,11 @@ struct CenterListView: View {
                             
                             if value.translation.height > 100 {
                                 
-                                self.viewModel.showListButtons()
+                                self.rootViewModel.showListButtons()
                                 
                             } else {
                                 
-                                self.viewModel.hideListButtons()
+                                self.rootViewModel.hideListButtons()
                                 
                             }
                         }
@@ -73,9 +73,9 @@ struct CenterListView: View {
                         
                         //LazyVStack(alignment: .leading, spacing: 8) {
                             
-                            ForEach((1...200).reversed(), id: \.self) { item in
+                        ForEach(centerListViewModel.firestoreService.itemRows) { item in
                                 
-                                ListItemRowView("Text")
+                            ListItemRowView(item.text)
                                 
                             //}
                         }.padding(.all, 20)
@@ -94,7 +94,10 @@ struct CenterListView: View {
                     radius: 16,
                     x: 0,
                     y: 12)
-            .offset(y: viewModel.listItemsCardPosition.height + draggedOffset.height)
+            .offset(y: rootViewModel.listItemsCardPosition.height + draggedOffset.height)
+            .onAppear() {
+                print(centerListViewModel.firestoreService.itemRows)
+            }
             
             
         }

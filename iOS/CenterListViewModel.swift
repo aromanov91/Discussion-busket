@@ -11,6 +11,8 @@ import M7Native
 
 class CenterListViewModel : ObservableObject {
     
+    @Published var itemRowText = ""
+    
     @Published var isLoad = false
     
     @Published var errorText = ""
@@ -25,64 +27,67 @@ class CenterListViewModel : ObservableObject {
                 self.objectWillChange.send()
             }
             .store(in: &cancellables)
-        
-        self.getRows()
     }
     
-    func getRows() {
+    func createRow(/*completeon: @escaping(Result<String, Error>) -> Void*/) {
         
+        errorText = ""
+        isLoad = true
         
-        firestoreService.getItemRows()
+        let newRow = ItemRowModel(text: itemRowText, time: "", owner: firestoreService.authenticationService.uid)
         
-    }
-    
-    func getListData(userList: UserListModel, completion: @escaping (ListModel)->()) {
+        print(newRow)
         
-        firestoreService.getListData(userList: userList) { (result) in
-            
-            switch result {
-            case .success(let list):
-                completion(list)
-            case .failure(_):
-                break
-            }
- 
-        }
-        
-    }
-    
-    func setDefaultList(_ list: UserListModel) {
-        
-        firestoreService.setDefaultList(list) { (result) in
+        firestoreService.createItemRow(list: firestoreService.defaultListUID, row: newRow) { (result) in
             
             switch result {
             
             case .success(_):
-                break
-            case .failure(_):
-                break
+                self.isLoad = false
+                //completeon(.success(result))
+                
+            case .failure(let error):
+                self.isLoad = false
+                self.errorText = error.localizedDescription
+                //completeon(.failure(error))
+                
             }
         }
     }
     
-    func deleteUserList(_ list: UserListModel) {
-        
-        firestoreService.deleteUserList(list) { (result) in
-            
-            switch result {
-            
-            case .success(_):
-                break
-            case .failure(_):
-                break
-            }
-        }
-    }
-    
-//    func setIconName(_ iconName: M7IconNames) {
+//    func getRowsItem() {
 //
-//        self.iconName = iconName
+//
+//        firestoreService.getItemRows()
+//
+//    }
+//
+//    func getRowsData(userList: UserListModel, completion: @escaping (ListModel)->()) {
+//
+//        firestoreService.getListData(userList: userList) { (result) in
+//
+//            switch result {
+//            case .success(let list):
+//                completion(list)
+//            case .failure(_):
+//                break
+//            }
+//
+//        }
 //
 //    }
     
+    func deleteUserList(row: ItemRowModel) {
+        
+        firestoreService.deleteItemRows(list: firestoreService.defaultListUID, row: row) { (result) in
+            
+            switch result {
+            
+            case .success(_):
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
 }

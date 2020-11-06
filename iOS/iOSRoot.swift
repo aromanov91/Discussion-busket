@@ -15,6 +15,8 @@ struct iOSRoot: View {
     
     @ObservedObject private var viewModel = iOSRootViewModel()
     
+    @ObservedObject private var centerViewModel = CenterListViewModel()
+    
     @State var showAlert = true
     
     var body: some View {
@@ -69,7 +71,7 @@ struct iOSRoot: View {
                                     Spacer()
                                 }
                                 
-                                CenterListView()
+                                CenterListView().environmentObject(centerViewModel).environmentObject(viewModel)
                                     
                                     .environmentObject(viewModel)
                                     .sheet(isPresented: $viewModel.isShowRate) {
@@ -83,7 +85,11 @@ struct iOSRoot: View {
                                     
                                     Spacer()
                                     
-                                    M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                    M7MessengerTextFieldView(text: $centerViewModel.itemRowText, sendAction: {
+                                                                
+                                                                centerViewModel.createRow()
+                                                                
+                                                                viewModel.isNewItemButtonActive.toggle() })
                                         .frame(height: 56 + geometry.safeAreaInsets.bottom)
                                         .cornerRadius(12)
                                 }
@@ -109,7 +115,7 @@ struct iOSRoot: View {
                                         
                                         Spacer()
                                         
-                                        M7MessengerTextFieldView(sendAction: { viewModel.isNewItemButtonActive.toggle() })
+                                        M7MessengerTextFieldView(text: .constant("Message"), sendAction: { viewModel.isNewItemButtonActive.toggle() })
                                             .frame(height: 56 + geometry.safeAreaInsets.bottom)
                                         
                                         
