@@ -18,8 +18,6 @@ class FirestoreService: ObservableObject {
     
     let db = Firestore.firestore()
     
-    @Published var defaultListUID: String = ""
-    
     @Published var userLists: [UserListModel] = []
     
     @Published var itemRows: [ItemRowModel] = []
@@ -41,16 +39,17 @@ class FirestoreService: ObservableObject {
     func getStartData(complition: @escaping(Result<UserData, Error>) -> Void) {
         
         authenticationService.run { (data) in
+            
             switch data {
             
-            case .success(let userData):
+            case .success(_):
                 
-                self.defaultListUID = userData.defaultList
+                //self.defaultListUID = userData.defaultList
                 
                 self.getUserLists()
-                
+
                 self.getItemRows()
-                
+
                 self.isLoadData = false
                 
             case .failure(_):
@@ -58,7 +57,6 @@ class FirestoreService: ObservableObject {
                 self.isLoadData = false
             }
         }
-        
     }
     
     // MARK:- List

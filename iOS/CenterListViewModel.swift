@@ -38,7 +38,7 @@ class CenterListViewModel : ObservableObject {
         
         print(newRow)
         
-        firestoreService.createItemRow(list: firestoreService.defaultListUID, row: newRow) { (result) in
+        firestoreService.createItemRow(list: firestoreService.authenticationService.userData.defaultList, row: newRow) { (result) in
             
             switch result {
             
@@ -79,7 +79,7 @@ class CenterListViewModel : ObservableObject {
     
     func deleteUserList(row: ItemRowModel) {
         
-        firestoreService.deleteItemRows(list: firestoreService.defaultListUID, row: row) { (result) in
+        firestoreService.deleteItemRows(list: firestoreService.authenticationService.userData.defaultList, row: row) { (result) in
             
             switch result {
             
