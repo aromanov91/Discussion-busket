@@ -5,9 +5,10 @@
 //  Created by Alexander Romanov on 18.10.2020.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 import M7Native
+
 
 class CenterListViewModel : ObservableObject {
     
@@ -55,6 +56,22 @@ class CenterListViewModel : ObservableObject {
         }
     }
     
+    func deleteRow(row: ItemRowModel) {
+        
+        firestoreService.deleteItemRows(list: firestoreService.authenticationService.userData.defaultList, row: row) { (result) in
+            
+            switch result {
+            
+            case .success(_):
+                break
+            case .failure(_):
+                break
+            }
+        }
+    }
+    
+}
+
 //    func getRowsItem() {
 //
 //
@@ -76,18 +93,3 @@ class CenterListViewModel : ObservableObject {
 //        }
 //
 //    }
-    
-    func deleteUserList(row: ItemRowModel) {
-        
-        firestoreService.deleteItemRows(list: firestoreService.authenticationService.userData.defaultList, row: row) { (result) in
-            
-            switch result {
-            
-            case .success(_):
-                break
-            case .failure(_):
-                break
-            }
-        }
-    }
-}

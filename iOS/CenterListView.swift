@@ -16,8 +16,10 @@ struct CenterListView: View {
     
     @EnvironmentObject var centerListViewModel: CenterListViewModel
     
+    @State var isEditable = false
+    
     var body: some View {
-            
+        
         if #available(iOS 14.0, *) {
             VStack(spacing: .zero) {
                 
@@ -77,11 +79,21 @@ struct CenterListView: View {
                         ForEach(centerListViewModel.firestoreService.itemRows) { item in
                             
                             ListItemRowView(item.text)
+                               
                             
                             //}
-                        }.padding(.all, 20)
+                        }
+                        .onMove(perform: self.move)
+                       // .onMove(perform: centerListViewModel.move())
+                        .onLongPressGesture {
+                                        withAnimation {
+                                            self.isEditable = true
+                                        }
+                                    }
                         
-                    }
+                        .padding(.all, 20)
+                        
+                    }.environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
                     
                 }
                 
@@ -100,15 +112,28 @@ struct CenterListView: View {
                 print(centerListViewModel.firestoreService.itemRows)
             }
             .redacted(reason:  centerListViewModel.firestoreService.isLoadData ? .placeholder : .init())
-        } else {
+        }
+        
+        else {
             // Fallback on earlier versions
         }
-            
-            
-        }
-
         
         
+    }
+    
+    func move(from source: IndexSet, to destination: Int) {
+        
+        centerListViewModel.firestoreService.itemRows.move(fromOffsets: source, toOffset: destination)
+        
+        
+        withAnimation {
+                    isEditable = false
+                }
+        
+       }
+    
+    
+    
     
 }
 

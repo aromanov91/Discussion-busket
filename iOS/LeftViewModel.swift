@@ -47,9 +47,7 @@ class LeftViewModel: ObservableObject {
             case .failure(_):
                 break
             }
- 
         }
-        
     }
     
     func setDefaultList(_ list: UserListModel) {
@@ -59,11 +57,44 @@ class LeftViewModel: ObservableObject {
             switch result {
             
             case .success(_):
-                break
+                
+//               break
+                
+                self.firestoreService.authenticationService.run { (result2) in
+                    switch result2 {
+                    case .success(_):
+
+                        self.firestoreService.getItemRows()
+
+                        self.firestoreService.getDefaultListData()
+                        
+                        print(self.firestoreService.itemRows)
+
+//                        self.firestoreService.getStartData { (result3) in
+//                            switch result3 {
+//                            case .success(_):
+//                                break
+//                            case .failure(_):
+//                                break
+//                            }
+//                        }
+
+                    case .failure(_):
+                        break
+                    }
+
+                }
+                
+                
             case .failure(_):
                 break
             }
         }
+        
+
+        
+        
+
     }
     
     func deleteUserList(_ list: UserListModel) {

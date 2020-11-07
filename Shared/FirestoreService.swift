@@ -5,7 +5,6 @@
 //  Created by Alexander Romanov on 01.11.2020.
 //
 
-import Foundation
 import Combine
 import Firebase
 import FirebaseFirestoreSwift
@@ -23,6 +22,8 @@ class FirestoreService: ObservableObject {
     @Published var itemRows: [ItemRowModel] = []
     
     @Published var isLoadData = true
+    
+    @Published var dafaultListData = ListModel(id: "Load", name: "Load", icon: "Load", owner: "Load")
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -44,11 +45,11 @@ class FirestoreService: ObservableObject {
             
             case .success(_):
                 
-                //self.defaultListUID = userData.defaultList
-                
                 self.getUserLists()
 
                 self.getItemRows()
+                
+                self.getDefaultListData()
 
                 self.isLoadData = false
                 
@@ -159,6 +160,36 @@ class FirestoreService: ObservableObject {
             
             completion(.success(list ?? ListModel(name: "", icon: "", owner: "")))
         })
+    }
+    
+    func getListData(userList: String, completion: @escaping (Result<ListModel, Error>)->()) {
+        
+        let thisUser = db.collection("lists").document(userList)
+        
+        thisUser.getDocument(completion: { snapshot, error in
+            
+            if let err = error {
+                print(err.localizedDescription)
+                completion(.failure(err))
+            }
+            let list = try? snapshot?.data(as: ListModel.self)
+            
+            completion(.success(list ?? ListModel(name: "", icon: "", owner: "")))
+        })
+    }
+    
+    func getDefaultListData (/*userList: UserListModel, completion: @escaping (ListModel) -> Void*/) {
+        
+        getListData(userList: authenticationService.userData.defaultList) { (result) in
+            
+            switch result {
+            case .success(let list):
+                self.dafaultListData = list
+                //completion(list)
+            case .failure(_):
+                break
+            }
+        }
     }
     
     func deleteUserList(_ list: UserListModel, complition: @escaping(Result<Void, Error>) -> Void ) {

@@ -10,6 +10,8 @@ import M7Native
 
 struct ListTitleView: View {
     
+    @EnvironmentObject var centerListViewModel: CenterListViewModel
+    
     let menuAction: () -> Void
     
     let nameAction: () -> Void
@@ -37,7 +39,8 @@ struct ListTitleView: View {
             Spacer()
             
             Button(action: nameAction) {
-                M7Text("Для дома", style: .title3).accentColor(M7Colors.onBackground.highEmphasis)
+                M7Text(centerListViewModel.firestoreService.dafaultListData.name , style: .title3)
+                    .accentColor(M7Colors.onBackground.highEmphasis)
             }
             
             

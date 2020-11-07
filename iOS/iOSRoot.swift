@@ -20,13 +20,9 @@ struct iOSRoot: View {
     @State var showAlert = true
     
     var body: some View {
-        
-        
-        
+    
         GeometryReader { geometry in
-            
-            
-            
+
             M7ThemingView {
                 
                 ZStack {
@@ -39,7 +35,9 @@ struct iOSRoot: View {
                             
                             Spacer().frame(width: M7Space.small + M7Space.medium)
                             
-                            LeftMenu().environmentObject(viewModel)
+                            LeftMenu()
+                                .environmentObject(viewModel)
+                                
                                 .padding(.bottom, geometry.safeAreaInsets.bottom)
                             
                         }
@@ -51,6 +49,7 @@ struct iOSRoot: View {
                             ListTitleView(menuAction: { viewModel.menuShowAction() },
                                           nameAction: { viewModel.listButtonsShowAction() },
                                           chatAction: { viewModel.chatShowAction() })
+                                .environmentObject(centerViewModel)
                             
                             ZStack {
                                 
